@@ -1,0 +1,19 @@
+#bgContainer
+{
+    position:fixed;
+    padding:1px;
+    margin:0;
+
+    width: 100%;
+    height: 100%;
+    background:rgba(0,255,255,0.5);
+}
+#mainContainer
+{
+    padding:1px;
+    margin:40px;
+
+    width: 100%;
+    height: 100%;
+    background:rgba(255,255,255,100);
+}
