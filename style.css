@@ -1,8 +1,6 @@
 #bgContainer
 {
     position:fixed;
-    padding:1px;
-    margin:0;
 
     width: 100%;
     height: 100%;
@@ -10,10 +8,16 @@
 }
 #mainContainer
 {
-    padding:1px;
-    margin:40px;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
 
-    width: 100%;
-    height: 100%;
+    padding:1px;
+    margin: auto;
+    overflow: auto;
+
+    width: 99.5%;
+    height: 99%;
+
     background:rgba(255,255,255,100);
+
 }

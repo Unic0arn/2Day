@@ -13,9 +13,23 @@
   
  <body>
 
+  <!-- bgContainer is just if we want some other color in the margins -->
   <div id="bgContainer" class="container">
+    <!-- mainContainer covers the whole screen and contains all Views -->
     <div id="mainContainer" class="container">
-    Haha
+    Main container
+      <!-- Welcome view is the first screen -->
+      <div id="welcomeView" class="container">Welcome</div>
+      <!-- Main view contains the sidebar, and activity grid and scheduler -->
+      <div id="mainView" class="container">
+        <div id="sidebarView" class="">Sidebar</div>
+        
+        <div id="activityGridView" class="">Activity grid</div>
+        <div id="scheduleView" class="">Schedule</div>
+      </div>
+      <!-- Day view is the result of the planning in main view -->
+      <div id="dayView" class="container">Day view</div>
+    
     </div>
   </div>
 
