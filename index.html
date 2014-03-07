@@ -7,6 +7,8 @@
    <title>2Day planner</title>
    <!-- Bootstrap:  CSS -->
    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+   <!-- Gridster: CSS -->
+   <link rel="stylesheet" href = "js/gridster/jquery.gridster.css"/>
    <!-- Our own CSS -->
    <link rel="stylesheet" type="text/css" href="style.css">
  </head>
@@ -25,7 +27,36 @@
         <div id="sidebarView" class="col-md-4">Sidebar view goes here</div>
         
         <div id="schedulingContainer" class="col-md-8">
-          <div id="activityGridView" class="row">Activity grid view goes here</div>
+          <div id="activityGridView" class="row">
+
+
+
+              <div class="gridster">
+               <ul>
+                <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">a</li>
+                <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">b</li>
+                <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">c</li>
+ 
+                <li data-row="1" data-col="2" data-sizex="1" data-sizey="1">d</li>
+                <li data-row="2" data-col="2" data-sizex="1" data-sizey="1">e</li>
+ 
+                <li data-row="1" data-col="3" data-sizex="1" data-sizey="1">f</li>
+                <li data-row="2" data-col="3" data-sizex="1" data-sizey="1">g</li>
+ 
+                <li data-row="1" data-col="4" data-sizex="1" data-sizey="1">i</li>
+                <li data-row="3" data-col="4" data-sizex="1" data-sizey="1">j</li>
+
+              </ul>
+            </div>
+
+
+
+
+
+
+
+
+          </div>
           <div id="scheduleView" class="row">Schedule view goes here</div>
         </div>
       </div>
@@ -41,6 +72,8 @@
 
     <!-- Bootstrap JavaScript -->
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <!-- Gridster JavaScript -->
+    <script src = "js/gridster/jquery.gridster.min.js"></script>
 
 	<!-- The application JavaScript code: Put all references to our js files here -->
   <script src="js/app.js"></script>

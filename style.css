@@ -16,3 +16,7 @@
     height: 99%;
     background:rgba(255,255,255,100);
 }
+#activityGridView
+{
+	background:rgba(0,255,255,0.5);
+}
