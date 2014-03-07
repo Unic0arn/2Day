@@ -22,4 +22,21 @@ $(function() {
       });
 
 
+      //This is a test for a droppable div located in 
+       $(function() {
+		$( "#dayView" ).draggable();
+		
+		
+		$( "#scheduleView" ).droppable({
+		drop: function( event, ui ) {
+		$( this )
+		.addClass( "ui-state-highlight" )
+		.find( "p" )
+		.html( "Dropped!" );
+		}
+		});
+		});
+
+
+
 });	
