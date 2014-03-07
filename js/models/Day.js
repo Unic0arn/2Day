@@ -1,0 +1,5 @@
+var Day = function(){
+	
+
+	
+}
