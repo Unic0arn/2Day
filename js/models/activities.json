@@ -1,0 +1,24 @@
+{
+	"activities":[
+		{"name":"Brush teeth", "type":"morning","duration":"10","image":"test.jpg"},	
+		{"name":"Shower", "type":"morning","duration":"20","image":"test2.jpg"}
+	],
+	"days":[
+		{"date":"2014-03-05","activites":[
+			{"name":"Brush teeth", "type":"morning","duration":"10","image":"test.jpg"},	
+			{"name":"Shower", "type":"morning","duration":"20","image":"test2.jpg"},
+			{"name":"Brush teeth", "type":"morning","duration":"10","image":"test.jpg"},	
+			{"name":"Shower", "type":"morning","duration":"20","image":"test2.jpg"},
+			{"name":"Brush teeth", "type":"morning","duration":"10","image":"test.jpg"},	
+			{"name":"Shower", "type":"morning","duration":"20","image":"test2.jpg"}
+		]},
+		{"date":"2013-03-06","activites":[
+			{"name":"Brush teeth", "type":"morning","duration":"10","image":"test.jpg"},	
+			{"name":"Shower", "type":"morning","duration":"20","image":"test2.jpg"},
+			{"name":"Brush teeth", "type":"morning","duration":"10","image":"test.jpg"},	
+			{"name":"Shower", "type":"morning","duration":"20","image":"test2.jpg"},
+			{"name":"Brush teeth", "type":"morning","duration":"10","image":"test.jpg"},	
+			{"name":"Shower", "type":"morning","duration":"20","image":"test2.jpg"}
+		]}
+	]
+}
