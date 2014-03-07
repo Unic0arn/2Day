@@ -18,6 +18,8 @@
 .gridster li {
     position: absolute;
     background-color: #000;
+    list-style-type: none;
+    background-image:url('sample.jpg');
 }
 .gridster .gs-w {
     z-index: 2;
