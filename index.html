@@ -9,6 +9,8 @@
    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
    <!-- Gridster: CSS -->
    <link rel="stylesheet" href = "js/gridster/jquery.gridster.css"/>
+   <!-- Simply scroll: CSS -->
+   <link rel="stylesheet" href="js/simplyscroll/jquery.simplyscroll.css" media="all" type="text/css">
    <!-- Our own CSS -->
    <link rel="stylesheet" type="text/css" href="style.css">
  </head>
@@ -19,7 +21,6 @@
   <div id="bgContainer" class="container">
     <!-- mainContainer covers the whole screen and contains all Views -->
     <div id="mainContainer" class="container">
-    Main container.
       <!-- Welcome view is the first screen -->
       <div id="welcomeView" class="container">Welcome view goes here</div>
       <!-- Main view contains the sidebar, and activity grid and scheduler -->
@@ -61,37 +62,43 @@
           </div>
           <div id="scheduleView" class="row">
               
-                <p>Schedule view goes here. Drop here</p>
+                <p>Schedule view goes here. remove this.</p>
               
           </div>
         </div>
       </div>
       <!-- Day view is the result of the planning in main view -->
-      <div id="dayView" class="container">Day view goes here. Can be dragged at the moment.</div>
+      <div id="dayView" class="container"></div>
     
     </div>
   </div>
 
  	<!-- jQuery: Easier than JavaScript -->
     <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
-	<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	  <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 
     <!-- Bootstrap JavaScript -->
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <!-- Gridster JavaScript -->
     <script src = "js/gridster/jquery.gridster.min.js"></script>
     <script src = "js/simplyscroll/jquery.simplyscroll.js"></script>
-    <link rel="stylesheet" href="js/simplyscroll/jquery.simplyscroll.css" media="all" 
-type="text/css">
+    
 
 	<!-- The application JavaScript code: Put all references to our js files here -->
 
   <script src="js/models/day.js"></script>
   <script src="js/models/mainModel.js"></script>
   <script src="js/models/activity.js"></script>
+
   <script src="js/controllers/mainController.js"></script>
+  <script src="js/controllers/activityGridController.js"></script>
   <script src="js/controllers/dayViewController.js"></script>
+
+   <script src="js/views/activityGridView.js"></script>
   <script src="js/views/dayView.js"></script>
+  
+
 	<script src="js/app.js"></script>
+
  </body>
 </html>

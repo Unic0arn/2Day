@@ -20,7 +20,6 @@
 {
 	background:rgba(0,255,255,0.5);
 }
-
 .gridster_img{
 margin:6px;
 width:90%;
@@ -28,7 +27,6 @@ height:90%;
 }
 #sun{
     height: 400px;
-
 }
 #daySchedule{
     border: 1px solid black;
@@ -40,7 +38,6 @@ height:90%;
 #dayView{
     border:1px solid black;
 }
-
 .activity{
     border:1px solid black;
     float:left;
@@ -48,11 +45,12 @@ height:90%;
     padding: 10px;
     margin: 20px;
 }
-
 .dayImage{
     width: 100%;
-
 }
 #dayScheduleContainer{
     float:left;
 }
+
+/*
+*/

@@ -8,8 +8,7 @@ var MainController = function(model) {
 	var views = []; //Array-list thingy for storing all view objects
 
 	// BEGIN View & Controller declarations -------------------------------------------------------
-	var dayView = new DayView($("#dayView"));
-	var dayViewController = new DayViewController(dayView, this, model);
+
 		//And create the needed controllers and views
 	/* EXAMPLE (Copy paste these 3 rows for each view/controller and rename:
 	// --- Create an object variable that is an instance of the Function/object NameView, pass 
@@ -23,8 +22,18 @@ var MainController = function(model) {
 	// --- Put this view object in the views Array-list thingy and give it a key with the same name.
 	views['nameView'] = nameView;
 		*/
+
+	var activityGridView = new ActivityGridView($("#activityGridView"),this,model);
+	var activityGridController = new ActivityGridController(activityGridView,this,model);
+	views['activityGridView'] = activityGridView;
+
+
+	var dayView = new DayView($("#dayView"),this,model); //Don't we need to send this and model to view?
+	var dayViewController = new DayViewController(dayView,this,model);
+	views['dayView'] = dayView;
+
 	
-	//var activityGridView = new ActivityGrid($("#activityGridView"),this,model);
+	
 	
 	/*
 	var selectorView = new SelectorView($("#selectorView"),this, model);

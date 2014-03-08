@@ -1,5 +1,8 @@
 var DayView = function(container){
 
+		this.container = container;
+    	$(container).hide();
+	
 	this.displayDay = function(day){
 		$('#dayView').html(""); //Empty current div.
 
