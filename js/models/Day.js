@@ -18,5 +18,5 @@ var Day = function(_date){
 	this.getActivites = function(){
 		return activites;
 	}
-	this.setActivities = function(newActivities){activities = newActivities;}
+	this.setActivities = function(newActivities){this.activities = newActivities;}
 }

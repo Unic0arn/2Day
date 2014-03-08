@@ -8,7 +8,8 @@ var MainController = function(model) {
 	var views = []; //Array-list thingy for storing all view objects
 
 	// BEGIN View & Controller declarations -------------------------------------------------------
-
+	var dayView = new DayView($("#dayView"));
+	var dayViewController = new DayViewController(dayView, this, model);
 		//And create the needed controllers and views
 	/* EXAMPLE (Copy paste these 3 rows for each view/controller and rename:
 	// --- Create an object variable that is an instance of the Function/object NameView, pass 
@@ -23,8 +24,9 @@ var MainController = function(model) {
 	views['nameView'] = nameView;
 		*/
 	
-	var activityGridView = new ActivityGrid($("#activityGridView"),this,model);
-
+	//var activityGridView = new ActivityGrid($("#activityGridView"),this,model);
+	
+	/*
 	var selectorView = new SelectorView($("#selectorView"),this, model);
 	var selectorViewController = new SelectorViewController(selectorView,this, model);
 	views['selectorView'] = selectorView;
@@ -32,22 +34,7 @@ var MainController = function(model) {
 	var cartView = new CartView($("#cartView"),this, model);
    	var cartViewController = new CartViewController(cartView,this, model);
 	views['cartView'] = cartView;
-	
-	var dishView = new DishView($("#dishView"),this, model);
-   	var dishViewController = new DishViewController(dishView,this, model);
-	views['dishView'] = dishView;
-	
-    var dinnerConfirmationView = new DinnerConfirmationView($('#dinnerConfirmationView'), this, model);
-    var dinnerConfirmationViewController = new DinnerConfirmationViewController(dinnerConfirmationView, this, model);
-	views['dinnerConfirmationView'] = dinnerConfirmationView;
-	
-	var overviewView = new OverviewView($('#overviewView'), this, model);
-    var overviewViewController = new OverviewViewController(overviewView, this, model);
-	views['overviewView'] = overviewView;
-
-	var fullRecipeView = new FullRecipeView($('#fullRecipeView'), this, model);
-    var fullRecipeViewController = new FullRecipeViewController(fullRecipeView, this, model);
-	views['fullRecipeView'] = fullRecipeView;	
+	*/
 	
 
 	// END View declarations --------------------------------------------------------------------------------
@@ -56,10 +43,12 @@ var MainController = function(model) {
 	// Functions that can be called from all controllers. ---------------------------------------------------
 	
 	// This function should probably be modified to return selected activityId.
-	this.getSelectedDishId = function() {return selectedDishId;};
+	
 
 
 	// Three functions for switching, showing and hiding views.---------------------------------------------
+	
+
 	this.switchView = function(newView){
 		for(var key in views){
 			views[key].container.hide();
@@ -76,11 +65,11 @@ var MainController = function(model) {
 		console.log(view);
 		views[view].container.hide();
 	
-
+	}
 	// Functions for updating data from the model to view. -------------------------------------------------
 
 	//These are just examples from lab4. Need to be modified to suit our views.
-
+/*
 	this.updateConfirmation = function(){
 		overviewViewController.update();
 	}
@@ -96,6 +85,6 @@ var MainController = function(model) {
 		selectedDishId = dishId;
 		dishView.displayDish(selectedDishId);
 	}
-
+*/
 
 }

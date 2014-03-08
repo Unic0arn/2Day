@@ -4,7 +4,7 @@ $(function() {
 	
 	//We instantiate our model
 	var model = new MainModel();
-
+	var mainController = new MainController(model);
 
 
 
@@ -21,9 +21,23 @@ $(function() {
 
       });
 
+/*
+
+
+	// Simplyscroll autoscrolling 
+			$(function() { //on DOM ready 
+				$("#daySchedule").simplyScroll({
+					frameRate:0.1,
+					speed:1,
+
+
+				});
+			});
+  */
+
 
       //This is a test for a droppable div located in 
-       $(function() {
+    /*   $(function() {
 		$( "#dayView" ).draggable();
 		
 		
@@ -36,7 +50,7 @@ $(function() {
 		}
 		});
 		});
-
+*/
 
 
 });	
