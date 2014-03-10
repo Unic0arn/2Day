@@ -20,7 +20,16 @@
 {
 	background:rgba(0,255,255,0.5);
 }
-.gridster_img{
+.activityItem{
+    width:100px;
+    height:100px;
+    background:rgba(200,200,150,100);
+    padding:2px;
+    margin:3px;
+    list-style-type:none;
+}
+
+.activityImg{
 margin:6px;
 width:90%;
 height:90%;
@@ -51,6 +60,12 @@ height:90%;
 #dayScheduleContainer{
     float:left;
 }
-
+.item
+    {
+        background-color: #DDDDDD;
+        border: solid 1px #777777;
+        margin: 2px;
+        width: 300px;
+    }
 /*
 */
