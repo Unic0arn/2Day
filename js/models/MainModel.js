@@ -4,7 +4,8 @@ var MainModel = function(){
 	var days = [];
 
 	/** Returns the list of activity objects */
-	var getActivities = function(){
+	//var getActivities = function(){
+	this.getActivities = function(){
 		return activities;
 	}
 
