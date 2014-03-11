@@ -45,6 +45,9 @@ var MainController = function(model) {
 	views['cartView'] = cartView;
 	*/
 	
+	//Test
+	activityGridView.displayActivities();
+
 
 	// END View declarations --------------------------------------------------------------------------------
 
