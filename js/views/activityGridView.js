@@ -28,7 +28,7 @@ var ActivityGridView = function(container,main,model){
 			$(activityGridList).append(activityItem);
 
 			             var img = $(document.createElement('img'));
-							img.attr('src', "images/" + "sample.jpg"); // replace with activity.name
+							img.attr('src', "images/" + "shower.png"); // replace with activity.name
 							img.attr('alt', "activityItem");
 							img.attr('id', "act42");
 							img.addClass("activityImg");
