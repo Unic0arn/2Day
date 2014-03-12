@@ -78,6 +78,7 @@ var MainController = function(model) {
 		views[view].container.hide();
 	
 	}
+	//this.switchView('dayView')
 	// Functions for updating data from the model to view. -------------------------------------------------
 
 	//These are just examples from lab4. Need to be modified to suit our views.

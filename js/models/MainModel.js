@@ -26,7 +26,7 @@ var MainModel = function(){
 		for (var i = 0; i<jsonActivities.length; i++){
 			var object = jsonActivities[i];
 			//console.log(object);
-			newActivities.push(new Activity(object.name,object.type,object.duration,object.image));
+			newActivities.push(new Activity(i, object.name,object.type,object.duration,object.image));
 			
 		}
 		return newActivities;
@@ -47,7 +47,7 @@ var MainModel = function(){
 
 
 	parseDays(jsonObject.days)
-	//parseActivities(jsonObject.activities);
+	activities = parseActivities(jsonObject.activities);
 	console.log(days);
 
 }

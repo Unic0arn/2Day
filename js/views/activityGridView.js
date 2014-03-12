@@ -5,6 +5,8 @@ var ActivityGridView = function(container,main,model){
 
     	this.displayActivities = function(){
     		activities = model.getActivities();
+    		console.log("From agv:")
+    		console.log(container.html)
     		container.html(""); //Clear container
 
     		var activityGrid  = document.createElement('div');
@@ -19,22 +21,23 @@ var ActivityGridView = function(container,main,model){
 			$(activityGrid).append(activityGridList);
 
 			// Start adding activity items to activityGridList
-			for (var i=0; i < 10; i++){
-			 var activity = activities[i];
-			var activityItem = document.createElement('li');
-			activityItem.className = "activityItem";
-			activityItem.id = "id1";
+			for (var i=0; i < activities.length; i++){
+			 	var activity = activities[i];
+			 	console.log(activity)
+				var activityItem = document.createElement('li');
+				activityItem.className = "activityItem";
+				activityItem.id = "activityID-" + activity.id;
 
-			$(activityGridList).append(activityItem);
+				$(activityGridList).append(activityItem);
 
-			             var img = $(document.createElement('img'));
-							img.attr('src', "images/" + "shower.png"); // replace with activity.name
-							img.attr('alt', "activityItem");
-							img.attr('id', "act42");
-							img.addClass("activityImg");
-							 
-            
-							$(activityItem).append(img);
+			    var img = $(document.createElement('img'));
+				img.attr('src', "images/" + activity.image); // replace with activity.name
+				img.attr('alt', "activityItem");
+				img.attr('id', "activityID-" + activity.id);
+				img.addClass("activityImg");
+				 
+
+				$(activityItem).append(img);
 
 			}//end adding activity items
 

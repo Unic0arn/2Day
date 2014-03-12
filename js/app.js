@@ -1,9 +1,7 @@
 $(function() {
 	//The global variable so we can access it from other controller and views
 	window.stage = "starter";
-	$('#welcomeView').hide();
-	$('#mainView').hide();
-
+	
 	//We instantiate our model
 	var model = new MainModel();
 	var mainController = new MainController(model);
