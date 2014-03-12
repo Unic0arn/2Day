@@ -73,5 +73,12 @@ height:90%;
 
     list-style-type: none;
 }
+
+#clock {
+font-size: 36px;
+font-family: fantasy;
+text-align: center;
+
+}
 /*
 */

@@ -15,7 +15,7 @@ var DayViewController = function(view, main, model){
 		
 		} */
 	}
-	initDay('2013-03-06');
+	initDay('2014-03-05');
 
 	setInterval(function() {
 		var time = new Date();
@@ -23,21 +23,22 @@ var DayViewController = function(view, main, model){
     	view.updateClock(time);
 
     	
-    	var daystart = new Date(2014,2,12,14,0); //this.day.getStart();
-    	var dayend  = new Date(2014,2,12,19,10);//this.day.getEnd();
+    	var daystart = this.day.getStart();
+    	var dayend  = this.day.getEnd();
     	var daylength = dayend - daystart;
     	var farday = time - daystart;
     	var maxWidth = view.getScheduleContainerWidth();
-    	
-    	console.log(daystart)
-    	console.log(dayend)
     	scrollPlace = (maxWidth * farday) / daylength;
-    	//console.log(maxWidth);
-    	console.log(daylength);
-
-    	console.log(farday);
-		console.log(scrollPlace)
+    	console.log("Start: " + getTime(daystart) + " End: " + getTime(dayend) + " Length of day: " + daylength);
+    	console.log("Current time: " + getTime(time) + " which is " + farday + "ns since daystart" + ", widh of container is: " + maxWidth);
     	view.updateScroll(scrollPlace);
-    }, 1000);
+    }, 10);
 
+}
+
+function getTime(date){
+	var h = ( date.getHours() < 10 ? "0" : "" ) + date.getHours();
+	var m = ( date.getMinutes() < 10 ? "0" : "" ) + date.getMinutes();
+	var s = ( date.getSeconds() < 10 ? "0" : "" ) + date.getSeconds();
+	return h + ":" + m + ":" + s;
 }

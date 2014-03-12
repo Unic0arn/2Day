@@ -54,12 +54,22 @@ var DayView = function(container){
 		$('#clock').text(h +":" + m + ":" + s);
 	}
 	
-	this.updateScroll = function(place){
-		$('#daySchedule').scrollLeft(place);
+	this.updateScroll = function(target){
+		var currentPos = $('#daySchedule').scrollLeft();
+
+		if(currentPos < (target + 10) && currentPos > (target - 10)){
+			//target - currentPos < 10 || currentPos - target < 10){
+			console.log("Hit")
+			$('#daySchedule').scrollLeft(target);
+		}else{
+			console.log("Current pos: " + currentPos + " Target: " + target + " Diff: " + (target-currentPos));
+			var newPos = currentPos + ((target - currentPos) / 100);
+			console.log(target-currentPos);
+			$('#daySchedule').scrollLeft(newPos);
+		}			
 	}
 
 	this.getScheduleContainerWidth = function(){
-		console.log($('#daySchedule').width());
-		return $('#daySchedule').width();
+		return $('.divScheduleContainer').width();
 	}
 }

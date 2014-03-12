@@ -27,7 +27,7 @@ var MainModel = function(){
 			
 			//console.log(object);
 			var act = new Activity(i, object.name,object.type,object.duration,object.image);
-			act.setStartTime(new Date(2014,03,12,i,i));
+			act.setStartTime(new Date(object.starttime));
 			newActivities.push(act);
 			
 		}
@@ -61,12 +61,18 @@ var jsonObject = {
 	],
 	"days":[
 		{"date":"2014-03-05","activites":[
-			{"name":"Brush teeth", "type":"morning","duration":"10","image":"sample.jpg"},	
-			{"name":"Shower", "type":"morning","duration":"20","image":"sample.jpg"},
-			{"name":"Brush teeth", "type":"morning","duration":"10","image":"sample.jpg"},	
-			{"name":"Shower", "type":"morning","duration":"20","image":"sample.jpg"},
-			{"name":"Brush teeth", "type":"morning","duration":"10","image":"sample.jpg"},	
-			{"name":"Shower", "type":"morning","duration":"20","image":"sample.jpg"}
+			{"name":"Brush teeth", "type":"morning","duration":"10","image":"sample.jpg","starttime": "Wed Mar 12 2014 08:07:00"},	
+			{"name":"Shower", "type":"morning","duration":"20","image":"sample.jpg","starttime": "Wed Mar 12 2014 09:07:00"},
+			{"name":"Brush teeth", "type":"morning","duration":"10","image":"sample.jpg","starttime": "Wed Mar 12 2014 10:07:00"},	
+			{"name":"Shower", "type":"morning","duration":"20","image":"sample.jpg","starttime": "Wed Mar 12 2014 11:07:00"},
+			{"name":"Brush teeth", "type":"morning","duration":"10","image":"sample.jpg","starttime": "Wed Mar 12 2014 12:07:00"},	
+			{"name":"Shower", "type":"morning","duration":"20","image":"sample.jpg","starttime": "Wed Mar 12 2014 13:07:00"},
+			{"name":"Brush teeth", "type":"morning","duration":"10","image":"sample.jpg","starttime": "Wed Mar 12 2014 14:07:00"},	
+			{"name":"Shower", "type":"morning","duration":"20","image":"sample.jpg","starttime": "Wed Mar 12 2014 15:07:00"},
+			{"name":"Brush teeth", "type":"morning","duration":"10","image":"sample.jpg","starttime": "Wed Mar 12 2014 16:07:00"},	
+			{"name":"Shower", "type":"morning","duration":"20","image":"sample.jpg","starttime": "Wed Mar 12 2014 21:07:00"},
+			{"name":"Brush teeth", "type":"morning","duration":"10","image":"sample.jpg","starttime": "Wed Mar 12 2014 21:07:00"},	
+			{"name":"Shower", "type":"morning","duration":"20","image":"sample.jpg", "starttime": "Wed Mar 12 2014 23:07:00"}
 		]},
 		{"date":"2013-03-06","activites":[
 			{"name":"Brush teeth", "type":"morning","duration":"10","image":"sample.jpg"},	

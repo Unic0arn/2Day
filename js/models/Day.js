@@ -14,15 +14,15 @@ var Day = function(_date){
 				}
 
 			});
-			return earliest;
-		}else{
-			return start;
+			start = earliest;
 		}
+		return start;
+		
 	}
 
 	this.getEnd = function(){
 		if(end == null){
-			var latest = new Date(2015,12);
+			var latest = new Date(1997,12);
 			console.log(this.activities);
 			$.each(this.activities, function(i, a){
 				console.log(a.startTime);
@@ -31,10 +31,9 @@ var Day = function(_date){
 				}
 
 			});
-			return latest;
-		}else{
-			return start;
+			end = latest;
 		}
+		return end;
 	}
 
 
