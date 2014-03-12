@@ -11,7 +11,6 @@ var MainModel = function(){
 
 	this.getDay = function(_day){
 		var day = days[_day];
-		console.log(day);
 		return day;
 	}
 
@@ -25,8 +24,11 @@ var MainModel = function(){
 		var newActivities = [];
 		for (var i = 0; i<jsonActivities.length; i++){
 			var object = jsonActivities[i];
+			
 			//console.log(object);
-			newActivities.push(new Activity(i, object.name,object.type,object.duration,object.image));
+			var act = new Activity(i, object.name,object.type,object.duration,object.image);
+			act.setStartTime(new Date(2014,03,12,i,i));
+			newActivities.push(act);
 			
 		}
 		return newActivities;
@@ -48,7 +50,6 @@ var MainModel = function(){
 
 	parseDays(jsonObject.days)
 	activities = parseActivities(jsonObject.activities);
-	console.log(days);
 
 }
 

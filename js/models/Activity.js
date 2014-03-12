@@ -3,13 +3,13 @@ var Activity = function(_id,_name,_type,_duration,_image){
 	this.name = _name;
 	this.type = _type;
 	this.duration = _duration;
-	this.starttime;
+	this.startTime;
 	this.image = _image;
 
 	this.changeDuration = function(newDuration){
-		duration = newDuration;
+		this.duration = newDuration;
 	}
-	this.setStartTime = function(newStartTime){
-		starttime = newStartTime;
+	this.setStartTime = function(newTime){
+		this.startTime = newTime;
 	}
 }

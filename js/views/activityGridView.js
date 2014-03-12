@@ -5,8 +5,6 @@ var ActivityGridView = function(container,main,model){
 
     	this.displayActivities = function(){
     		activities = model.getActivities();
-    		console.log("From agv:")
-    		console.log(container.html)
     		container.html(""); //Clear container
 
     		var activityGrid  = document.createElement('div');
@@ -23,7 +21,6 @@ var ActivityGridView = function(container,main,model){
 			// Start adding activity items to activityGridList
 			for (var i=0; i < activities.length; i++){
 			 	var activity = activities[i];
-			 	console.log(activity)
 				var activityItem = document.createElement('li');
 				activityItem.className = "activityItem";
 				activityItem.id = "activityID-" + activity.id;

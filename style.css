@@ -36,7 +36,7 @@ width:90%;
 height:90%;
 }
 #sun{
-    height: 400px;
+    height: 0px;
 }
 #daySchedule{
     border: 1px solid black;
@@ -68,5 +68,10 @@ height:90%;
         margin: 2px;
         width: 300px;
     }
+
+#dayView ul{
+
+    list-style-type: none;
+}
 /*
 */
