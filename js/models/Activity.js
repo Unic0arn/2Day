@@ -12,4 +12,8 @@ var Activity = function(_id,_name,_type,_duration,_image){
 	this.setStartTime = function(newTime){
 		this.startTime = newTime;
 	}
+
+	this.getEnd = function(){
+		return new Date(this.startTime.getTime() + this.duration*60000)
+	}
 }

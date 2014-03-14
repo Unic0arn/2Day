@@ -70,7 +70,7 @@ var jsonObject = {
 			{"name":"Brush teeth", "type":"morning","duration":"10","image":"sample.jpg","starttime": "Wed Mar 14 2014 14:07:00"},	
 			{"name":"Shower", "type":"morning","duration":"20","image":"sample.jpg","starttime": "Wed Mar 14 2014 15:07:00"},
 			{"name":"Brush teeth", "type":"morning","duration":"10","image":"sample.jpg","starttime": "Wed Mar 14 2014 16:07:00"},	
-			{"name":"Shower", "type":"morning","duration":"20","image":"sample.jpg","starttime": "Wed Mar 14 2014 21:07:00"},
+			{"name":"Shower", "type":"morning","duration":"20","image":"sample.jpg","starttime": "Wed Mar 14 2014 20:07:00"},
 			{"name":"Brush teeth", "type":"morning","duration":"10","image":"sample.jpg","starttime": "Wed Mar 14 2014 21:07:00"},	
 			{"name":"Shower", "type":"morning","duration":"20","image":"sample.jpg", "starttime": "Wed Mar 14 2014 23:07:00"}
 		]},

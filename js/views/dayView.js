@@ -20,28 +20,45 @@ var DayView = function(container){
             var divScheduleContainer = $(document.createElement('ul'));
 			divScheduleContainer.addClass("divScheduleContainer");
 
-			var containerWidth = $(".activity").length * parseInt($(".activity").css('width')) +  $(".activity").length * (parseInt($(".activity").css('margin-left')) + parseInt($(".activity").css('margin-right')));
-			$(".divScheduleContainer").width(containerWidth);
-           
-			var pxPerMin = containerWidth / day.getLength()
-			console.log(day.getLength());
 
+			var pxPerMin = 2;
+
+			
+			//var containerWidth = $(".activity").length * parseInt($(".activity").css('width')) +  $(".activity").length * (parseInt($(".activity").css('margin-left')) + parseInt($(".activity").css('margin-right')));
+			
             for(var i=0; i < day.activities.length ; i++){
             	var activity = day.activities[i];
             	var divActivity = $(document.createElement('li'));
-            	divActivity.addClass("col-md-2 activity");
+            	divActivity.addClass("activity");
             	var img = $(document.createElement('img'));
 			 	img.attr('src', "images/" + activity.image);
 				img.addClass("dayImage");
 
             	divActivity.append(getTime(activity.startTime))
 				divActivity.append(img);
+				divActivity.width(activity.duration * pxPerMin); 
+
 				divScheduleContainer.append(divActivity);
+
+				if(i+1 < day.activities.length){
+					var breakTilNext = day.activities[i + 1].startTime - activity.getEnd();
+
+					var divBreak = $(document.createElement('li'));
+					divBreak.addClass("break");
+					divBreak.width(toMins(breakTilNext) * pxPerMin);
+					divScheduleContainer.append(divBreak);
+				}
             }
             container.append(row.clone().append(divSun));
             container.append(row.clone().append(divSchedule));
             divSchedule.append(divScheduleContainer);
 
+            
+ 			var activityMargins =  $(".activity").length * (parseInt($(".activity").css('margin-left')) + parseInt($(".activity").css('margin-right')));
+ 			var breakMargins =  $(".break").length * (parseInt($(".break").css('margin-left')) + parseInt($(".break").css('margin-right')));
+			var containerWidth = toMins(day.getDayLength()) * pxPerMin + activityMargins + breakMargins; // Minutes * 2
+ 			$(".divScheduleContainer").width(containerWidth + 20);
+			
 			var divClock = $(document.createElement('div'));
 			divClock.addClass("col-md-12");
             divClock.attr('id','clock');

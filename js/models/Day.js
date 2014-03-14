@@ -8,7 +8,6 @@ var Day = function(_date){
 			var earliest = new Date(2015,12);
 			console.log(this.activities);
 			$.each(this.activities, function(i, a){
-				console.log(a.startTime);
 				if(a.startTime < earliest){
 					earliest = a.startTime;
 				}
@@ -23,13 +22,10 @@ var Day = function(_date){
 	this.getEnd = function(){
 		if(end == null){
 			var latest = new Date(1997,12);
-			console.log(this.activities);
 			$.each(this.activities, function(i, a){
-				console.log(a.startTime);
 				if(a.startTime > latest){
-					latest = a.startTime;
+					latest = a.getEnd(); // Add the duration to time
 				}
-
 			});
 			end = latest;
 		}
@@ -37,12 +33,16 @@ var Day = function(_date){
 	}
 
 
-	this.getLength = function(){
+	this.getActivitiesLength = function(){
 		var length = 0;
 		for (var activity in this.activites){
 			length += activity.getDuration();
 		}
 		return length;
+	}
+	this.getDayLength = function(){
+		return this.getEnd() - this.getStart(); 
+
 	}
 	this.addActivity = function(activity){
 		activities.push(activity);
