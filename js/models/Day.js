@@ -39,7 +39,7 @@ var Day = function(_date){
 
 	this.getLength = function(){
 		var length = 0;
-		for (var activity in activites){
+		for (var activity in this.activites){
 			length += activity.getDuration();
 		}
 		return length;

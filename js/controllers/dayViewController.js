@@ -29,8 +29,8 @@ var DayViewController = function(view, main, model){
     	var farday = time - daystart;
     	var maxWidth = view.getScheduleContainerWidth();
     	scrollPlace = (maxWidth * farday) / daylength;
-    	console.log("Start: " + getTime(daystart) + " End: " + getTime(dayend) + " Length of day: " + daylength);
-    	console.log("Current time: " + getTime(time) + " which is " + farday + "ns since daystart" + ", widh of container is: " + maxWidth);
+    	//console.log("Start: " + getTime(daystart) + " End: " + getTime(dayend) + " Length of day: " + daylength);
+    	//console.log("Current time: " + getTime(time) + " which is " + farday + "ns since daystart" + ", widh of container is: " + maxWidth);
     	view.updateScroll(scrollPlace);
     }, 10);
 

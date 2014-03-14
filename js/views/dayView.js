@@ -20,7 +20,12 @@ var DayView = function(container){
             var divScheduleContainer = $(document.createElement('ul'));
 			divScheduleContainer.addClass("divScheduleContainer");
 
+			var containerWidth = $(".activity").length * parseInt($(".activity").css('width')) +  $(".activity").length * (parseInt($(".activity").css('margin-left')) + parseInt($(".activity").css('margin-right')));
+			$(".divScheduleContainer").width(containerWidth);
            
+			var pxPerMin = containerWidth / day.getLength()
+			console.log(day.getLength());
+
             for(var i=0; i < day.activities.length ; i++){
             	var activity = day.activities[i];
             	var divActivity = $(document.createElement('li'));
@@ -29,15 +34,13 @@ var DayView = function(container){
 			 	img.attr('src', "images/" + activity.image);
 				img.addClass("dayImage");
 
-            
+            	divActivity.append(getTime(activity.startTime))
 				divActivity.append(img);
 				divScheduleContainer.append(divActivity);
             }
             container.append(row.clone().append(divSun));
             container.append(row.clone().append(divSchedule));
             divSchedule.append(divScheduleContainer);
-			var containerWidth = $(".activity").length * parseInt($(".activity").css('width')) +  $(".activity").length * (parseInt($(".activity").css('margin-left')) + parseInt($(".activity").css('margin-right')));
-			$(".divScheduleContainer").width(containerWidth);
 
 			var divClock = $(document.createElement('div'));
 			divClock.addClass("col-md-12");
@@ -62,9 +65,9 @@ var DayView = function(container){
 			console.log("Hit")
 			$('#daySchedule').scrollLeft(target);
 		}else{
-			console.log("Current pos: " + currentPos + " Target: " + target + " Diff: " + (target-currentPos));
+			//console.log("Current pos: " + currentPos + " Target: " + target + " Diff: " + (target-currentPos));
 			var newPos = currentPos + ((target - currentPos) / 100);
-			console.log(target-currentPos);
+			//console.log(target-currentPos);
 			$('#daySchedule').scrollLeft(newPos);
 		}			
 	}
