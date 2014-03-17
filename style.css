@@ -3,7 +3,6 @@
     position:fixed;
     width: 100%;
     height: 100%;
-    background:rgba(0,255,255,0.5);
 }
 #mainContainer
 {
@@ -96,5 +95,116 @@ font-family: fantasy;
 text-align: center;
 
 }
-/*
-*/
+
+#mainView{
+
+}
+
+#sidebarView{
+    border: 1px solid black;
+    width: 250px;
+    height: 100%;
+    margin-right: 15px;
+}
+
+
+#logo{
+    height: 100px;
+    width: 100%;
+    text-align:center;
+    border-bottom: 1px solid black;
+}
+
+#desc{
+    height: 250px;
+    width: 100%;
+    border-bottom: 1px solid black;
+    overflow:hidden;
+}
+
+#cal{
+    height: 500px;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+#cal {
+  font-family: Asap, Helvetica, Arial;
+  margin: 5 auto;
+  width: 100%;
+  
+}
+#cal .clndr {
+  overflow: hidden;
+  border-bottom: 7px solid #69a776;
+}
+#cal .clndr .clndr-controls {
+  background-color: #69a776;
+  color: white;
+}
+#cal .clndr .clndr-controls .clndr-control-button,
+#cal .clndr .clndr-controls .clndr-next-button {
+  
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  /* Chrome/Safari */
+
+  -moz-user-select: none;
+  /* Firefox */
+
+  -ms-user-select: none;
+  /* IE10+ */
+
+  -webkit-transition: background-color 0.5s;
+  -moz-transition: background-color 0.5s;
+  -ms-transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+#cal .clndr .clndr-controls .clndr-previous-button:hover,
+#cal .clndr .clndr-controls .clndr-next-button:hover {
+  background-color: #528b5e;
+}
+#cal .clndr .clndr-controls .month {
+    width: 55%;
+    padding-top: 5px;
+  padding-bottom: 5px;
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+#cal .clndr .clndr-table {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  padding: 5px;
+  margin-left: 15px;
+}
+#cal .clndr .clndr-table .header-day{
+    font-weight: bold;
+    border:0;
+    border-bottom: 1px solid black;
+}
+#cal .clndr .clndr-table td{
+    padding: 2px 6px;
+    border: 1px solid black;
+    text-align: center;
+}
+#cal .clndr .clndr-table td:hover{
+  background-color: #b8b8b8;
+  cursor: pointer;
+}

@@ -32,7 +32,9 @@ var MainController = function(model) {
 	var dayViewController = new DayViewController(dayView,this,model);
 	views['dayView'] = dayView;
 
-	
+	var sidebarView = new SidebarView($("#sidebarView"));
+	var sidebarController = new SidebarController(sidebarView, this, model);
+	views['sidebarView'] = sidebarView;
 	
 	
 	/*
