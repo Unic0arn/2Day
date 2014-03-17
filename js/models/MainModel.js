@@ -41,6 +41,8 @@ var MainModel = function(){
 		for (var i = 0; i<jsonDays.length; i++){
 			var object = jsonDays[i];
 			//console.log(object);
+
+
 			var day = new Day(object.date);
 			day.setActivities(parseActivities(object.activites));
 			days[object.date] = day;
@@ -48,6 +50,25 @@ var MainModel = function(){
 	}
 
 
+
+	this.exportFile = function(){
+		//var jsonFile = activities.toJSON();
+		console.log(activities);
+		var jsonActivities = JSON.stringify(activities);
+		console.log(days);
+
+		var output = [];
+		for (var day in days) {
+
+			output.push(days[day]);
+		}
+		console.log(output);
+		var jsonDays = JSON.stringify(output);
+		console.log(jsonDays);
+		return "{'activities':" + jsonActivities + ", \n 'days':" + jsonDays + "}";
+
+
+	}
 	parseDays(jsonObject.days)
 	activities = parseActivities(jsonObject.activities);
 

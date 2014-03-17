@@ -17,10 +17,21 @@ var SidebarView = function(container){
 
 		var divCal = $(document.createElement('div'));
         divCal.attr('id','cal');
-        
+
+		var divBtn = $(document.createElement('div'));
+        divBtn.attr('id','buttonArea');
+
+        var btnSave = $(document.createElement('button'));
+        divBtn.append(btnSave);
+        btnSave.attr('id', 'saveButton');
+        btnSave.attr('download', '2Day-data.json');
+        btnSave.html('Save');
+
         container.append(row.clone().append(divLogo));
         container.append(row.clone().append(divDesc));
         container.append(row.clone().append(divCal));
+
+        container.append(row.clone().append(divBtn));
 
 	}
 

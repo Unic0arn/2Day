@@ -123,12 +123,20 @@ text-align: center;
 }
 
 #cal{
-    height: 500px;
+    height: 100%;
     width: 100%;
 }
 
 
+#buttonArea{
+    margin:auto;
+    text-align:center;
+}
 
+#saveButton{
+    margin:auto;
+    width: 100%;
+}
 
 
 

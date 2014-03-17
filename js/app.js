@@ -7,8 +7,8 @@ $(function() {
 	var mainController = new MainController(model);
 
 	//SelectStartview for debugging
-	mainController.switchView('dayView');
-
+	//mainController.switchView('dayView');
+	mainController.hideView('dayView');
 	//This part is a test for Gridster. Should move to GridView!
 	var gridster;
 
