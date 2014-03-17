@@ -17,7 +17,7 @@ var DayView = function(container){
 			divSchedule.addClass("col-md-12");
             divSchedule.attr('id','daySchedule');
 
-            var divScheduleContainer = $(document.createElement('ul'));
+            var divScheduleContainer = $(document.createElement('div'));
 			divScheduleContainer.addClass("divScheduleContainer");
 
 
@@ -28,7 +28,7 @@ var DayView = function(container){
 			
             for(var i=0; i < day.activities.length ; i++){
             	var activity = day.activities[i];
-            	var divActivity = $(document.createElement('li'));
+            	var divActivity = $(document.createElement('div'));
             	divActivity.addClass("activity");
             	var img = $(document.createElement('img'));
 			 	img.attr('src', "images/" + activity.image);
@@ -43,12 +43,18 @@ var DayView = function(container){
 				if(i+1 < day.activities.length){
 					var breakTilNext = day.activities[i + 1].startTime - activity.getEnd();
 
-					var divBreak = $(document.createElement('li'));
+					var divBreak = $(document.createElement('div'));
 					divBreak.addClass("break");
 					divBreak.width(toMins(breakTilNext) * pxPerMin);
 					divScheduleContainer.append(divBreak);
 				}
             }
+
+            var overlay = $(document.createElement('div'));
+            overlay.attr('id','scheduleOverlay');
+            divSchedule.append(overlay);
+
+
             container.append(row.clone().append(divSun));
             container.append(row.clone().append(divSchedule));
             divSchedule.append(divScheduleContainer);
@@ -86,7 +92,8 @@ var DayView = function(container){
 			var newPos = currentPos + ((target - currentPos) / 100);
 			//console.log(target-currentPos);
 			$('#daySchedule').scrollLeft(newPos);
-		}			
+		}
+		$('#scheduleOverlay').width(target+10);			
 	}
 
 	this.getScheduleContainerWidth = function(){

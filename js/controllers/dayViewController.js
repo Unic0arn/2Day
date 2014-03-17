@@ -15,27 +15,29 @@ var DayViewController = function(view, main, model){
 		
 		} */
 	}
-	initDay('2014-03-05');
+	initDay('2014-03-15');
 
 	setInterval(function() {
-		var time8 = new Date("Fri Mar 14 2014 08:00:00");
-		var time12 = new Date("Fri Mar 14 2014 12:00:00");
-		var time17 = new Date("Fri Mar 14 2014 17:07:00");
-		var time22 = new Date("Fri Mar 14 2014 22:07:00");
-		var time = new Date();
-    	view.updateClock(time12);
+		var time = new Date("Sat Mar 15 2014 09:00:00");
+		//var time = new Date("Sat Mar 15 2014 15:00:00");
+		//var time = new Date("Sat Mar 15 2014 17:07:00");
+		//var time = new Date("Sat Mar 15 2014 22:07:00");
+		//var time = new Date();
+    	view.updateClock(time);
 
     	
     	var daystart = this.day.getStart();
     	var dayend  = this.day.getEnd();
     	var daylength = dayend - daystart;
-    	var farday = time12 - daystart;
+    	var farday = time - daystart;
     	var maxWidth = view.getScheduleContainerWidth();
+
     	scrollPlace = (maxWidth * farday) / daylength;
+    	//console.log(scrollPlace);
     	//console.log("Start: " + getTime(daystart) + " End: " + getTime(dayend) + " Length of day: " + daylength);
     	//console.log("Current time: " + getTime(time) + " which is " + farday + "ns since daystart" + ", widh of container is: " + maxWidth);
     	view.updateScroll(scrollPlace);
-    }, 10);
+    }, 50);
 
 }
 
