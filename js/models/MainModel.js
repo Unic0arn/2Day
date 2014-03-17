@@ -20,7 +20,7 @@ var MainModel = function(){
 		Return: A list of activities in the form of Activity objects. 
 		*/
 	var parseActivities = function(jsonActivities){
-		//console.log(jsonActivities);
+		console.log(jsonActivities);
 		var newActivities = [];
 		for (var i = 0; i<jsonActivities.length; i++){
 			var object = jsonActivities[i];
@@ -40,17 +40,26 @@ var MainModel = function(){
 	var parseDays = function(jsonDays){
 		for (var i = 0; i<jsonDays.length; i++){
 			var object = jsonDays[i];
-			//console.log(object);
+			console.log(object);
 
 
 			var day = new Day(object.date);
-			day.setActivities(parseActivities(object.activites));
+			day.setActivities(parseActivities(object.activities));
 			days[object.date] = day;
 		}
 	}
 
 
+	this.importFile = function(data){
+		console.log(days);
+		var jsonObject2 = $.parseJSON(data);
+		activities = activities.concat(parseActivities(jsonObject2.activities));
+		parseDays(jsonObject2.days);
+		console.log(days);
+		console.log(activities);
 
+
+	}
 	this.exportFile = function(){
 		//var jsonFile = activities.toJSON();
 		console.log(activities);
@@ -65,37 +74,22 @@ var MainModel = function(){
 		console.log(output);
 		var jsonDays = JSON.stringify(output);
 		console.log(jsonDays);
-		return "{'activities':" + jsonActivities + ", \n 'days':" + jsonDays + "}";
+		return "{\"activities\":" + jsonActivities + ", \n \"days\":" + jsonDays + "}";
 
 
 	}
 	parseDays(jsonObject.days)
 	activities = parseActivities(jsonObject.activities);
-
+	console.log(days);
 }
 
 //Temporary storage for our object.
 var jsonObject = {
 	"activities":[
 		{"name":"Brush teeth", "type":"morning","duration":"10","image":"sample.jpg"},	
-		{"name":"Shower", "type":"morning","duration":"20","image":"sample.jpg"}
-	],
+		],
 	"days":[
-		{"date":"2014-03-05","activites":[
-			{"name":"Brush teeth", "type":"morning","duration":"50","image":"sample.jpg","starttime": "Sat Mar 15 2014 14:07:00"},	
-			{"name":"Shower", "type":"morning","duration":"20","image":"sample.jpg","starttime": "Sat Mar 15 2014 09:07:00"},
-			{"name":"Brush teeth", "type":"morning","duration":"10","image":"sample.jpg","starttime": "Sat Mar 15 2014 10:07:00"},	
-			{"name":"Shower", "type":"morning","duration":"20","image":"sample.jpg","starttime": "Sat Mar 15 2014 11:07:00"},
-			{"name":"Brush teeth", "type":"morning","duration":"10","image":"sample.jpg","starttime": "Sat Mar 15 2014 12:07:00"},	
-			{"name":"Shower", "type":"morning","duration":"20","image":"sample.jpg","starttime": "Sat Mar 15 2014 13:07:00"},
-			{"name":"Brush teeth", "type":"morning","duration":"10","image":"sample.jpg","starttime": "Sat Mar 15 2014 14:07:00"},	
-			{"name":"Shower", "type":"morning","duration":"20","image":"sample.jpg","starttime": "Sat Mar 15 2014 15:07:00"},
-			{"name":"Brush teeth", "type":"morning","duration":"10","image":"sample.jpg","starttime": "Sat Mar 15 2014 16:07:00"},	
-			{"name":"Shower", "type":"morning","duration":"20","image":"sample.jpg","starttime": "Sat Mar 15 2014 20:07:00"},
-			{"name":"Brush teeth", "type":"morning","duration":"10","image":"sample.jpg","starttime": "Sat Mar 15 2014 21:07:00"},	
-			{"name":"Shower", "type":"morning","duration":"20","image":"sample.jpg", "starttime": "Sat Mar 15 2014 23:07:00"}
-		]},
-		{"date":"2014-03-15","activites":[
+		{"date":"2014-03-15","activities":[
 			{"name":"Brush teeth", "type":"morning","duration":"60","image":"sample.jpg","starttime": "Sat Mar 15 2014 08:00:00"},	
 			{"name":"Shower", "type":"morning","duration":"30","image":"sample.jpg","starttime": "Sat Mar 15 2014 09:30:00"},
 			{"name":"Brush teeth", "type":"morning","duration":"105","image":"sample.jpg","starttime": "Sat Mar 15 2014 10:15:00"},	
@@ -105,7 +99,7 @@ var jsonObject = {
 			{"name":"Shower", "type":"morning","duration":"15","image":"sample.jpg","starttime": "Sat Mar 15 2014 15:15:00"},
 			{"name":"Brush teeth", "type":"morning","duration":"90","image":"sample.jpg","starttime": "Sat Mar 15 2014 16:00:00"},
 		]},
-		{"date":"2013-03-06","activites":[
+		{"date":"2013-03-06","activities":[
 			{"name":"Brush teeth", "type":"morning","duration":"10","image":"sample.jpg"},	
 			{"name":"Shower", "type":"morning","duration":"20","image":"sample.jpg"},
 			{"name":"Brush teeth", "type":"morning","duration":"10","image":"sample.jpg"},	

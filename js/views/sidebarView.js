@@ -27,12 +27,27 @@ var SidebarView = function(container){
         btnSave.attr('download', '2Day-data.json');
         btnSave.html('Save');
 
+        var uploadForm = $(document.createElement('form'));
+
+        
+        var input = $(document.createElement('input'));
+        input.attr('type', 'file');
+        input.attr('name', 'file');
+        input.attr('id', 'fileupload');
+        uploadForm.append(input);
+        
+        var btnUpload = $(document.createElement('button'));
+        btnUpload.attr('id', 'uploadButton');
+        btnUpload.html('Upload');
+
+        uploadForm.append(btnUpload);
+
         container.append(row.clone().append(divLogo));
         container.append(row.clone().append(divDesc));
         container.append(row.clone().append(divCal));
 
         container.append(row.clone().append(divBtn));
-
+        container.append(row.clone().append(uploadForm));
 	}
 
 	this.getCal = function(){

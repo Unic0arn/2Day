@@ -116,7 +116,7 @@ text-align: center;
 }
 
 #desc{
-    height: 250px;
+    height: 200px;
     width: 100%;
     border-bottom: 1px solid black;
     overflow:hidden;
@@ -136,6 +136,13 @@ text-align: center;
 #saveButton{
     margin:auto;
     width: 100%;
+}
+#fileupload{
+
+    width: 70%;
+}
+#uploadButton{
+    width:25%;
 }
 
 
