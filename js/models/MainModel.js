@@ -2,6 +2,7 @@
 var MainModel = function(){
 	var activities = [];
 	var days = [];
+	var chosenDay;
 
 	/** Returns the list of activity objects */
 	//var getActivities = function(){
@@ -9,9 +10,19 @@ var MainModel = function(){
 		return activities;
 	}
 
-	this.getDay = function(_day){
-		var day = days[_day];
-		return day;
+	this.getDay = function(){
+		return chosenDay;
+	}
+
+	this.chooseDay = function(_day){
+		if (days[_day] == undefined){
+			days[_day] = new Day(_day);
+			console.log("Created new day");
+		}
+		chosenDay = days[_day];
+		notifyObservers();
+		return chosenDay;	
+	
 	}
 
 
@@ -20,7 +31,7 @@ var MainModel = function(){
 		Return: A list of activities in the form of Activity objects. 
 		*/
 	var parseActivities = function(jsonActivities){
-		console.log(jsonActivities);
+		//console.log(jsonActivities);
 		var newActivities = [];
 		for (var i = 0; i<jsonActivities.length; i++){
 			var object = jsonActivities[i];
@@ -40,7 +51,7 @@ var MainModel = function(){
 	var parseDays = function(jsonDays){
 		for (var i = 0; i<jsonDays.length; i++){
 			var object = jsonDays[i];
-			console.log(object);
+			//console.log(object);
 
 
 			var day = new Day(object.date);
@@ -51,36 +62,58 @@ var MainModel = function(){
 
 
 	this.importFile = function(data){
-		console.log(days);
+		//console.log(days);
 		var jsonObject2 = $.parseJSON(data);
 		activities = activities.concat(parseActivities(jsonObject2.activities));
 		parseDays(jsonObject2.days);
-		console.log(days);
-		console.log(activities);
+		//console.log(days);
+		//console.log(activities);
 
 
 	}
 	this.exportFile = function(){
 		//var jsonFile = activities.toJSON();
-		console.log(activities);
+		//console.log(activities);
 		var jsonActivities = JSON.stringify(activities);
-		console.log(days);
+		//console.log(days);
 
 		var output = [];
 		for (var day in days) {
 
 			output.push(days[day]);
 		}
-		console.log(output);
+		//console.log(output);
 		var jsonDays = JSON.stringify(output);
-		console.log(jsonDays);
+		//console.log(jsonDays);
 		return "{\"activities\":" + jsonActivities + ", \n \"days\":" + jsonDays + "}";
 
 
 	}
 	parseDays(jsonObject.days)
 	activities = parseActivities(jsonObject.activities);
-	console.log(days);
+	//console.log(days);
+
+
+
+
+	/*****************************************  
+	      Observable implementation    
+	*****************************************/
+
+	var observers = [];
+
+	this.addObserver = function(observer) 
+	{
+		observers.push(observer);
+	}
+
+	var notifyObservers = function(arg) 
+	{
+		for(var i=0; i<observers.length; i++) 
+		{
+			observers[i].update(arg);
+		}	
+	}
 }
 
 //Temporary storage for our object.

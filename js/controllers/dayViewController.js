@@ -1,11 +1,11 @@
 var DayViewController = function(view, main, model){
 	
-	this.day;
 	var initDay = function(_day){
-		this.day = model.getDay(_day);
-		view.displayDay(this.day);
+		model.chooseDay(_day);
+		var day = model.getDay();
+		view.displayDay(day);
 		console.log("Earliest: ") ;
-		console.log(this.day.getStart());
+		console.log(day.getStart());
 		//ReferenceError: invalid assignment left-hand side
 		/*
 		if(typeof day = 'Day'){
@@ -18,27 +18,40 @@ var DayViewController = function(view, main, model){
 	initDay('2014-03-15');
 
 	setInterval(function() {
-		var time = new Date("Sat Mar 15 2014 09:00:00");
+		//var time = new Date("Sat Mar 15 2014 09:00:00");
 		//var time = new Date("Sat Mar 15 2014 15:00:00");
 		//var time = new Date("Sat Mar 15 2014 17:07:00");
-		//var time = new Date("Sat Mar 15 2014 22:07:00");
-		//var time = new Date();
+		//var time = new Date("Sat Mar 15 2014 20:07:00");
+		var time = new Date();
     	view.updateClock(time);
 
-    	
-    	var daystart = this.day.getStart();
-    	var dayend  = this.day.getEnd();
+    	var day = model.getDay();
+    	var daystart = day.getStart();
+    	var dayend  = day.getEnd();
     	var daylength = dayend - daystart;
     	var farday = time - daystart;
     	var maxWidth = view.getScheduleContainerWidth();
+    	if(time > dayend){
+    		scrollPlace = maxWidth;
+    	}else if(time < daystart){
+    		scrollPlace = 0;
+    	}else{
+    		scrollPlace = (maxWidth * farday) / daylength;
+    	}
 
-    	scrollPlace = (maxWidth * farday) / daylength;
-    	//console.log(scrollPlace);
-    	//console.log("Start: " + getTime(daystart) + " End: " + getTime(dayend) + " Length of day: " + daylength);
-    	//console.log("Current time: " + getTime(time) + " which is " + farday + "ns since daystart" + ", widh of container is: " + maxWidth);
+    	console.log(scrollPlace);
+    	console.log("Start: " + getTime(daystart) + " End: " + getTime(dayend) + " Length of day: " + daylength);
+    	console.log("Current time: " + getTime(time) + " which is " + farday + "ns since daystart" + ", widh of container is: " + maxWidth);
     	view.updateScroll(scrollPlace);
-    }, 50);
+    }, 100);
 
+
+
+
+	this.update = function(arg){
+		console.log(model.getDay());
+		view.displayDay(model.getDay());
+	}
 }
 
 function getTime(date){

@@ -5,7 +5,9 @@ var SidebarController = function(view, main, model){
         	weekOffset: 1,
         	clickEvents: {
         		click: function(target) {
-        				alert(target);
+        				console.log(target.date._i);
+        				model.chooseDay(target.date._i);
+        				console.log(model.getDay());
         		}
         	},
         });

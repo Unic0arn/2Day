@@ -31,6 +31,7 @@ var MainController = function(model) {
 	var dayView = new DayView($("#dayView"),this,model); //Don't we need to send this and model to view?
 	var dayViewController = new DayViewController(dayView,this,model);
 	views['dayView'] = dayView;
+	model.addObserver(dayViewController);
 
 	var sidebarView = new SidebarView($("#sidebarView"));
 	var sidebarController = new SidebarController(sidebarView, this, model);

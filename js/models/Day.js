@@ -6,7 +6,7 @@ var Day = function(_date){
 	this.getStart = function(){
 		if(start == null){
 			var earliest = new Date(2015,12);
-			console.log(this.activities);
+			//console.log(this.activities);
 			$.each(this.activities, function(i, a){
 				if(a.startTime < earliest){
 					earliest = a.startTime;

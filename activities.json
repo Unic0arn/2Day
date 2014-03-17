@@ -1,0 +1,4 @@
+{"activities":[
+		{"name":"Brush teeth", "type":"morning","duration":"10","image":"sample.jpg"},	
+		{"name":"Shower", "type":"morning","duration":"20","image":"sample.jpg"}
+	]}
