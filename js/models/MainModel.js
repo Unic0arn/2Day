@@ -36,9 +36,9 @@ var MainModel = function(){
 		for (var i = 0; i<jsonActivities.length; i++){
 			var object = jsonActivities[i];
 			
-			//console.log(object);
+			console.log(object);
 			var act = new Activity(i, object.name,object.type,object.duration,object.image);
-			act.setStartTime(new Date(object.starttime));
+			act.setStartTime(new Date(object.startTime));
 			newActivities.push(act);
 			
 		}
@@ -123,14 +123,14 @@ var jsonObject = {
 		],
 	"days":[
 		{"date":"2014-03-15","activities":[
-			{"name":"Brush teeth", "type":"morning","duration":"60","image":"sample.jpg","starttime": "Sat Mar 15 2014 08:00:00"},	
-			{"name":"Shower", "type":"morning","duration":"30","image":"sample.jpg","starttime": "Sat Mar 15 2014 09:30:00"},
-			{"name":"Brush teeth", "type":"morning","duration":"105","image":"sample.jpg","starttime": "Sat Mar 15 2014 10:15:00"},	
-			{"name":"Shower", "type":"morning","duration":"60","image":"sample.jpg","starttime": "Sat Mar 15 2014 12:00:00"},	
-			{"name":"Shower", "type":"morning","duration":"45","image":"sample.jpg","starttime": "Sat Mar 15 2014 13:15:00"},
-			{"name":"Brush teeth", "type":"morning","duration":"60","image":"sample.jpg","starttime": "Sat Mar 15 2014 14:00:00"},	
-			{"name":"Shower", "type":"morning","duration":"15","image":"sample.jpg","starttime": "Sat Mar 15 2014 15:15:00"},
-			{"name":"Brush teeth", "type":"morning","duration":"90","image":"sample.jpg","starttime": "Sat Mar 15 2014 16:00:00"},
+			{"name":"Brush teeth", "type":"morning","duration":"60","image":"sample.jpg","startTime": "Sat Mar 15 2014 08:00:00"},	
+			{"name":"Shower", "type":"morning","duration":"30","image":"sample.jpg","startTime": "Sat Mar 15 2014 09:30:00"},
+			{"name":"Brush teeth", "type":"morning","duration":"105","image":"sample.jpg","startTime": "Sat Mar 15 2014 10:15:00"},	
+			{"name":"Shower", "type":"morning","duration":"60","image":"sample.jpg","startTime": "Sat Mar 15 2014 12:00:00"},	
+			{"name":"Shower", "type":"morning","duration":"45","image":"sample.jpg","startTime": "Sat Mar 15 2014 13:15:00"},
+			{"name":"Brush teeth", "type":"morning","duration":"60","image":"sample.jpg","startTime": "Sat Mar 15 2014 14:00:00"},	
+			{"name":"Shower", "type":"morning","duration":"15","image":"sample.jpg","startTime": "Sat Mar 15 2014 15:15:00"},
+			{"name":"Brush teeth", "type":"morning","duration":"90","image":"sample.jpg","startTime": "Sat Mar 15 2014 16:00:00"},
 		]},
 		{"date":"2013-03-06","activities":[
 			{"name":"Brush teeth", "type":"morning","duration":"10","image":"sample.jpg"},	
