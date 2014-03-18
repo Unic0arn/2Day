@@ -20,8 +20,11 @@ var ActivityGridView = function(container,main,model){
 			// Start adding activity items to activityGridList
 			for (var i=0; i < activities.length; i++){
 			 	var activity = activities[i];
-				var activityItem = document.createElement('li');
-				activityItem.className = "activityItem";
+				var activityItem = $(document.createElement('li'));
+					//var activityItem = document.createElement('li');
+					//activityItem.className = "activityItem";
+				activityItem.addClass("activityItem");
+				activityItem.addClass(activity.setColour(activity.type));
 				activityItem.id = activity.id;
 				$(activityGridList).append(activityItem);
 
@@ -36,6 +39,9 @@ var ActivityGridView = function(container,main,model){
 				var activityItemLabel = $(document.createElement('p'));
 				activityItemLabel.addClass("activityItemLabel");
 				activityItemLabel.html(activity.name);
+
+				
+				
 				$(activityItem).append(activityItemLabel);
 
 			}//end adding activity items
@@ -46,7 +52,6 @@ var ActivityGridView = function(container,main,model){
     			$(".activityGridList").sortable();
 
     			//$(".activityItem").draggable();
-
 
     				$(".activityGridList").droppable({
         activeClass: "ui-state-default",
@@ -73,7 +78,12 @@ var ActivityGridView = function(container,main,model){
         }
     });
 
-
+    				/* An idea for sorting
+    				var list = $('.sortList');
+					var listItems = list.find('li').sort(function(a,b){ return $(a).attr('data-sort') - $(b).attr('data-sort'); });
+					list.find('li').remove();
+					list.append(listItems);
+					*/
 
     	}
     		    

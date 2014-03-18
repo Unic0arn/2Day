@@ -19,9 +19,24 @@ var Activity = function(_id,_name,_type,_duration,_image){
 	
 	this.setColour = function(activityType){
 		// We shall use this to pass the type of activity and get a colour code in return.
-		// needed by ActivityGridView, Planenr view and perhaps DayView?
-		
-		//if
-		//Switch
+		// Lol this function turned out to be useless. We can just set a class to activityType.
+
+		var colourClass = activityType;
+
+		switch (activityType)
+		{
+  		case 'morning': console.log(activityType);
+            break;
+  		case 'afternoon': console.log(activityType);
+            break;
+  		case 'night': console.log(activityType);
+            break;
+  		case 'others': console.log(activityType);
+            break;
+  		default:  console.log(activityType);
+  		colourClass = "others";
+		}
+		return colourClass;
+
 	} 
 }
