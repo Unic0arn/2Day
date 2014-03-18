@@ -10,6 +10,16 @@ var MainModel = function(){
 		return activities;
 	}
 
+	this.getActivity = function(_id){
+		console.log(activities);
+		for (var i=0; i < activities.length; i++){
+			var activity = activities[i];
+			if(activity.id==_id){
+				return activity;
+			}
+	}
+}
+
 	this.getDay = function(){
 		return chosenDay;
 	}

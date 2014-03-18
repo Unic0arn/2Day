@@ -18,9 +18,22 @@ var SchedulerController = function(view, main, model){
         drop: function(event, ui) {
 
             var item = $(ui.draggable);
-
+/*
             if (item.hasClass('activityItem'))
-                return;
+
+            	console.log(ui.draggable.prop('id'));
+            	var _id = ui.draggable.prop('id');
+                var itemActivity = model.getActivity(_id);
+                console.log(itemActivity.id);
+                /*model.getDay().addActivity(itemActivity);
+            /*
+            var id = ui.draggable.prop('id');
+            var activity = day.activities[id];
+            var activityItem = document.createElement('li');
+				activityItem.className = "activityItem";
+				activityItem.id = activity.id;
+            $(".activityRowList").append(activityItem);
+                return; */
                     /*
                     if(item.hasClass('breakPoint'))
                         item.removeAttr('id');
