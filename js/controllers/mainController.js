@@ -26,7 +26,7 @@ var MainController = function(model) {
 	var activityGridView = new ActivityGridView($("#activityGridView"),this,model);
 	var activityGridController = new ActivityGridController(activityGridView,this,model);
 	views['activityGridView'] = activityGridView;
-
+	model.addObserver(activityGridController);
 
 	var dayView = new DayView($("#dayView"),this,model); //Don't we need to send this and model to view?
 	var dayViewController = new DayViewController(dayView,this,model);
@@ -49,7 +49,7 @@ var MainController = function(model) {
 	*/
 	
 	//Test
-	activityGridView.displayActivities();
+	//activityGridView.displayActivities();
 
 
 	// END View declarations --------------------------------------------------------------------------------

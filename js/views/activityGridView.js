@@ -3,8 +3,7 @@ var ActivityGridView = function(container,main,model){
 		this.container = container;
     	//$(container).hide();
 
-    	this.displayActivities = function(){
-    		activities = model.getActivities();
+    	this.displayActivities = function(activities){
     		container.html(""); //Clear container
 
     		var activityGrid  = document.createElement('div');

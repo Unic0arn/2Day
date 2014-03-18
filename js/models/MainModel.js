@@ -68,7 +68,7 @@ var MainModel = function(){
 		parseDays(jsonObject2.days);
 		//console.log(days);
 		//console.log(activities);
-
+		notifyObservers();
 
 	}
 	this.exportFile = function(){
