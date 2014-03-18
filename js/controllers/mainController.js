@@ -37,7 +37,10 @@ var MainController = function(model) {
 	var sidebarController = new SidebarController(sidebarView, this, model);
 	views['sidebarView'] = sidebarView;
 	
-	
+	var schedulerView = new SchedulerView($("#schedulerView"));
+	var schedulerController = new SchedulerController(schedulerView, this, model);
+	views['schedulerView'] = schedulerView;
+
 	/*
 	var selectorView = new SelectorView($("#selectorView"),this, model);
 	var selectorViewController = new SelectorViewController(selectorView,this, model);
