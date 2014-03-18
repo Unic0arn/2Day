@@ -5,7 +5,7 @@
 		{"name":"Shave", "type":"morning","duration":"15","image":"afeitar.png"},
 		{"name":"Ride a bike", "type":"morning","duration":"30","image":"bike.png"},
 		{"name":"Birthday", "type":"afternoon","duration":"180","image":"birthday.png"},
-		{"name":"Brush hair", "type":"morning","duration":"10","image":"brushong_hair.png"},
+		{"name":"Brush hair", "type":"morning","duration":"10","image":"brushing_hair.png"},
 		{"name":"Call doctor", "type":"others","duration":"10","image":"call.png"},
 		{"name":"Chat", "type":"others","duration":"60","image":"chat.png"},
 		{"name":"Clean", "type":"afternoon","duration":"60","image":"cleaning150x150.jpg"},
