@@ -37,6 +37,10 @@ var ActivityGridView = function(container,main,model){
 
 			}//end adding activity items
 
+			    $(".activityImg").disableSelection();
+
+    			$(".activityGridList").disableSelection();
+    			$(".activityGridList").sortable();
     	}
     		    
 
