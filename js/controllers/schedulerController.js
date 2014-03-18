@@ -1,5 +1,16 @@
 var SchedulerController = function(view, main, model){
-    $(".activityRowList").sortable();
+
+
+
+    var initDay = function(_day){
+    	model.chooseDay(_day);
+		var day = model.getDay();
+		view.thisDayActivities(day);
+	}
+	initDay('2014-03-15');
+	$(".activityImg").disableSelection();
+    $(".activityGridList").disableSelection();
+	$(".activityRowList").sortable();
     $(".activityRowList").droppable({
         activeClass: "ui-state-default",
         hoverClass: "ui-state-hover",

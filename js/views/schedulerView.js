@@ -2,8 +2,7 @@ var SchedulerView = function(container){
 
 		this.container = container;
 
-		this.thisDayActivities  = function(){
-    		activities = model.getActivities();
+		this.thisDayActivities  = function(day){
     		container.html(""); //Clear container
 
     		var activityRow  = document.createElement('div');
@@ -12,13 +11,13 @@ var SchedulerView = function(container){
 
 			container.append(activityRow); // add the Row div to view div
 
-			var activityGridList = document.createElement('ul');
+			var activityRowList = document.createElement('ul');
 			activityRowList.className = "activityRowList";
 
 			$(activityRow).append(activityRowList);
 
 
-			// Start adding activity items to activityGridList
+			// Start adding activity items to activityRowList
 			for (var i=0; i < day.activities.length; i++){
 			 	var activity = day.activities[i];
 				var activityItem = document.createElement('li');
