@@ -17,7 +17,7 @@ var Activity = function(_id,_name,_type,_duration,_image){
 		return new Date(this.startTime.getTime() + this.duration*60000)
 	}
 	
-	this.setColour = function(activityType){
+	this.typeChecker = function(activityType){
 		// We shall use this to pass the type of activity and get a colour code in return.
 		// Lol this function turned out to be useless. We can just set a class to activityType.
 

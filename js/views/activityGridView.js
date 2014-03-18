@@ -9,7 +9,6 @@ var ActivityGridView = function(container,main,model){
     		var activityGrid  = document.createElement('div');
 			activityGrid.className = "activityGrid";
 
-
 			container.append(activityGrid); // add the Grid div to view div
 
 			var activityGridList = document.createElement('ul');
@@ -24,9 +23,8 @@ var ActivityGridView = function(container,main,model){
 					//var activityItem = document.createElement('li');
 					//activityItem.className = "activityItem";
 				activityItem.addClass("activityItem");
-				activityItem.addClass(activity.setColour(activity.type));
-				activityItem.id = activity.id;
-				$(activityGridList).append(activityItem);
+				activityItem.addClass(activity.typeChecker(activity.type));
+				activityItem.id = activity.id;		
 
 			    var img = $(document.createElement('img'));
 				img.attr('src', "images/" + activity.image); // replace with activity.name
@@ -39,19 +37,19 @@ var ActivityGridView = function(container,main,model){
 				var activityItemLabel = $(document.createElement('p'));
 				activityItemLabel.addClass("activityItemLabel");
 				activityItemLabel.html(activity.name);
-
-				
-				
 				$(activityItem).append(activityItemLabel);
 
+				//Testing the sections thing
+				//var activityItemSection = $(document.createElement('li'));
+				//$(activityItemSection).append(activityItem);
+				//$(activityGridList).append(activityItemSection);
+				$(activityGridList).append(activityItem);
 			}//end adding activity items
 
 			    $(".activityImg").disableSelection();
 
     			$(".activityGridList").disableSelection();
     			$(".activityGridList").sortable();
-
-    			//$(".activityItem").draggable();
 
     				$(".activityGridList").droppable({
         activeClass: "ui-state-default",
@@ -74,7 +72,19 @@ var ActivityGridView = function(container,main,model){
                                   
           item.addClass("reportRow");
           $(this).append(item);
-          */  
+          
+        /* Interesting, clone is probably what we need.
+        $("#divBreakPoint").draggable({
+            connectToSortable: '#divReportRows',
+            helper: 'clone'
+        });
+
+        $("#divReportGrouping div.item").draggable({
+            connectToSortable: '#divReportRows',
+            helper: 'original'
+        });
+		*/
+           
         }
     });
 
