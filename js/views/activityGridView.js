@@ -22,8 +22,7 @@ var ActivityGridView = function(container,main,model){
 			 	var activity = activities[i];
 				var activityItem = document.createElement('li');
 				activityItem.className = "activityItem";
-				activityItem.id = "activityID-" + activity.id;
-
+				activityItem.id = activity.id;
 				$(activityGridList).append(activityItem);
 
 			    var img = $(document.createElement('img'));
@@ -31,9 +30,13 @@ var ActivityGridView = function(container,main,model){
 				img.attr('alt', "activityItem");
 				img.attr('id', "activityID-" + activity.id);
 				img.addClass("activityImg");
-				 
-
 				$(activityItem).append(img);
+
+				//ActivityItem label
+				var activityItemLabel = $(document.createElement('p'));
+				activityItemLabel.addClass("activityItemLabel");
+				activityItemLabel.html(activity.name);
+				$(activityItem).append(activityItemLabel);
 
 			}//end adding activity items
 
@@ -41,6 +44,37 @@ var ActivityGridView = function(container,main,model){
 
     			$(".activityGridList").disableSelection();
     			$(".activityGridList").sortable();
+
+    			//$(".activityItem").draggable();
+
+
+    				$(".activityGridList").droppable({
+        activeClass: "ui-state-default",
+        hoverClass: "ui-state-hover",
+        accept: '.activityItem',
+        drop: function(event, ui) {
+
+            var item = $(ui.draggable);
+            
+            console.log("Sorted ID:"+item.prop('id'));
+
+
+            if (item.hasClass('activityItem'))
+            	console.log("Useless If-statement");
+                return;
+
+                    /* Sample stuff.
+                    if(item.hasClass('breakPoint'))
+                        item.removeAttr('id');
+                                  
+          item.addClass("reportRow");
+          $(this).append(item);
+          */  
+        }
+    });
+
+
+
     	}
     		    
 

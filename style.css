@@ -20,8 +20,8 @@
 	background:rgba(0,255,255,0.5);
 }
 .activityItem{
-    width:100px;
-    height:100px;
+    width:130px;
+    height:130px;
     background:rgba(200,200,150,100);
     padding:2px;
     margin:3px;
@@ -30,9 +30,18 @@
 }
 
 .activityImg{
-margin:6px;
-width:90%;
-height:90%;
+  position:relative;
+  left:5%;
+  top:5%;
+  width:90%;
+  height:70%;
+}
+.activityItemLabel{
+  color:gray;
+  text-align:center;
+  margin-top: 5px;
+  max-height: 100%;
+  max-width: 100%;
 }
 #sun{
     height: 0px;
