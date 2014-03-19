@@ -53,61 +53,29 @@ var ActivityGridView = function(container,main,model){
   					connectWith: '#desc',
   					placeholder: 'activityItem placeholder',
   					helper: 'clone',
-  					
-
 					});
-
-
-
-
-
-
 
     				$(".activityGridList").droppable({
         activeClass: "ui-state-default",
         hoverClass: "ui-state-hover",
         accept: '.activityItem',
         drop: function(event, ui) {
-
-            var item = $(ui.draggable);
-            
-            console.log("Sorted ID:"+item.prop('id'));
-
-
+                var item = $(ui.draggable);
+                console.log("Sorted ID:"+item.prop('id'));
             if (item.hasClass('activityItem'))
             	console.log("Useless If-statement");
                 return;
-
-                    /* Sample stuff.
-                    if(item.hasClass('breakPoint'))
-                        item.removeAttr('id');
-                                  
-          item.addClass("reportRow");
-          $(this).append(item);
-          
-        /* Interesting, clone is probably what we need.
-        $("#divBreakPoint").draggable({
-            connectToSortable: '#divReportRows',
-            helper: 'clone'
+                                 }
         });
 
-        $("#divReportGrouping div.item").draggable({
-            connectToSortable: '#divReportRows',
-            helper: 'original'
-        });
-		*/
-           
-        }
-    });
+ 
 
-    				/* An idea for sorting
-    				var list = $('.sortList');
-					var listItems = list.find('li').sort(function(a,b){ return $(a).attr('data-sort') - $(b).attr('data-sort'); });
-					list.find('li').remove();
-					list.append(listItems);
-					*/
 
     	}
     		    
+        
+
+
+
 
 }
