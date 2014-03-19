@@ -6,8 +6,9 @@ var ActivityGridController = function(view, main, model){
 		view.displayActivities(model.getActivities());
 	}
 
-	$('.activityGrid').on('click', '.activityItem', function(){
-		console.log("Click function working!");
+	$('#activityGridView').on('click', '.activityItem', function(){
+		var activityId = $(this).attr('id');
+		main.setDesc(activityId);
 	});
 	           
 

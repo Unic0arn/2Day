@@ -60,12 +60,10 @@ var MainController = function(model) {
 
 	// Functions that can be called from all controllers. ---------------------------------------------------
 	
-	// This function should probably be modified to return selected activityId.
 	
 
 
 	// Three functions for switching, showing and hiding views.---------------------------------------------
-	
 
 	this.switchView = function(newView){
 		for(var key in views){
@@ -84,26 +82,19 @@ var MainController = function(model) {
 		views[view].container.hide();
 	
 	}
-	//this.switchView('dayView')
+	
 	// Functions for updating data from the model to view. -------------------------------------------------
 
-	//These are just examples from lab4. Need to be modified to suit our views.
-/*
-	this.updateConfirmation = function(){
-		overviewViewController.update();
+	// This function gets id of clicked activity in activity grid view and sends to the sidebar desc.
+	this.setDesc = function(activityId){
+		sidebarController.updateDesc(this.stripId(activityId));
 	}
 
-	this.updateRecipe = function(){
-		fullRecipeViewController.update();
+	this.stripId = function(activityId){
+		var aId = activityId.replace("activityId-","");
+		//console.log(aId);
+		return aId
 	}
 
-	}
-	
-	this.updateDishView = function(dishId){
-	//Update Dish view
-		selectedDishId = dishId;
-		dishView.displayDish(selectedDishId);
-	}
-*/
 
 }

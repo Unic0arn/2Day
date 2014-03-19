@@ -12,7 +12,7 @@ var SidebarView = function(container){
 		var divDesc = $(document.createElement('div'));
 		divDesc.addClass("col-md-12");
         divDesc.attr('id','desc');
-        divDesc.append("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar odio nec urna suscipit iaculis.");
+        divDesc.append("Click an activity card to display information about it here.");
 
 
 		var divCal = $(document.createElement('div'));

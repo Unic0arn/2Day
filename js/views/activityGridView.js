@@ -24,12 +24,12 @@ var ActivityGridView = function(container,main,model){
 					//activityItem.className = "activityItem";
 				activityItem.addClass("activityItem");
 				activityItem.addClass(activity.typeChecker(activity.type));
-				activityItem.id = activity.id;		
+                activityItem.attr('id', "activityId-" + activity.id); //Ids can not be numeric
 
 			    var img = $(document.createElement('img'));
 				img.attr('src', "images/" + activity.image); // replace with activity.name
 				img.attr('alt', "activityItem");
-				img.attr('id', "activityID-" + activity.id);
+				img.attr('id', "activityId-" + activity.id);
 				img.addClass("activityImg");
 				$(activityItem).append(img);
 
@@ -39,10 +39,6 @@ var ActivityGridView = function(container,main,model){
 				activityItemLabel.html(activity.name);
 				$(activityItem).append(activityItemLabel);
 
-				//Testing the sections thing
-				//var activityItemSection = $(document.createElement('li'));
-				//$(activityItemSection).append(activityItem);
-				//$(activityGridList).append(activityItemSection);
 				$(activityGridList).append(activityItem);
 			}//end adding activity items
 

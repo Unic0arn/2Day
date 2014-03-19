@@ -38,4 +38,33 @@ var SidebarController = function(view, main, model){
 		window.open('data:text/csv;charset=utf-8,' + escape(model.exportFile()));
 		//model.addDishToMenu(main.getSelectedDishId());
 	});
+
+	this.updateDesc = function(activityId){
+		console.log(activityId);
+		activity = model.getActivities();
+		//$('#desc').html(activity[activityId].type);
+				$('#desc').html("");
+
+			var activityItemTitle = $(document.createElement('p'));
+				activityItemTitle.addClass("activityItemTitle");
+				activityItemTitle.html("<h2>"+activity[activityId].name+"</h2>");
+				$('#desc').append(activityItemTitle);
+
+			var activityItemDuration = $(document.createElement('p'));
+				activityItemDuration.html("Duration: "+activity[activityId].duration+" min");
+				$('#desc').append(activityItemDuration);
+
+			var activityItemType = $(document.createElement('p'));
+				activityItemType.html("Type: "+activity[activityId].type);
+				$('#desc').append(activityItemType);
+
+				var img = $(document.createElement('img'));
+				img.attr('src', "images/" + activity.image); // replace with activity.name
+				img.attr('alt', "activityItem");
+				img.attr('id', "activityId-" + activity.id);
+				img.addClass("activityImg");
+				//$(activityItem).append(img);
+
+	}
+	
 }
