@@ -139,10 +139,10 @@ var jsonObject = {
 		{"name":"Call doctor", "type":"others","duration":"10","image":"call.png"},
 		{"name":"Chat", "type":"others","duration":"60","image":"chat.png"},
 		{"name":"Clean", "type":"afternoon","duration":"60","image":"cleaning150x150.jpg"},
-		{"name":"Clothesline", "type":"morning","duration":"40","image":"Clothesline.png"},
+		{"name":"Hang clothes", "type":"morning","duration":"40","image":"Clothesline.png"},
 		{"name":"Cook", "type":"others","duration":"60","image":"cookinf2.png"},
 		{"name":"Dance class", "type":"others","duration":"90","image":"dance150x150.jpg"},
-		{"name":"Take dog", "type":"others","duration":"25","image":"dog.png"},
+		{"name":"Walk dog", "type":"others","duration":"25","image":"dog.png"},
 		{"name":"Draw", "type":"others","duration":"90","image":"draw.png"},
 		{"name":"Dress", "type":"Morning","duration":"20","image":"dress.png"},
 		{"name":"Eat", "type":"others","duration":"60","image":"eat.png"},
@@ -155,12 +155,12 @@ var jsonObject = {
 		{"name":"Go to bed", "type":"night","duration":"540","image":"sleep.png"},
 		{"name":"Go shopping", "type":"others","duration":"60","image":"supermarket.png"},
 		{"name":"Swim", "type":"others","duration":"50","image":"swiming.png"},
-		{"name":"Travell", "type":"others","duration":"60","image":"travell.png"},
+		{"name":"Travel", "type":"others","duration":"60","image":"travell.png"},
 		{"name":"Watch TV", "type":"afternoon","duration":"120","image":"wahtchTV150x150.jpg"},
 		{"name":"Excursion", "type":"others","duration":"360","image":"walkCamping.png"},
 		{"name":"Washing clothes", "type":"others","duration":"65","image":"wash_clothes.png"},
 		{"name":"Washing dishes", "type":"others","duration":"20","image":"wash_dish.png"},
-		{"name":"Studing", "type":"others","duration":"120","image":"works150x150.jpg"}
+		{"name":"Studying", "type":"others","duration":"120","image":"works150x150.jpg"}
 
 		
 		

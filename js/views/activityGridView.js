@@ -49,7 +49,19 @@ var ActivityGridView = function(container,main,model){
 			    $(".activityImg").disableSelection();
 
     			$(".activityGridList").disableSelection();
-    			$(".activityGridList").sortable();
+    			$(".activityGridList").sortable({
+  					connectWith: '#desc',
+  					placeholder: 'activityItem placeholder',
+  					helper: 'clone',
+  					
+
+					});
+
+
+
+
+
+
 
     				$(".activityGridList").droppable({
         activeClass: "ui-state-default",

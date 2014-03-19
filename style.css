@@ -33,6 +33,11 @@
 .activityItem.others{
   /*For all others, BG colour default*/
 }
+.activityItem.placeholder{
+  width:130px;
+  height:100px;
+  background:rgba(190,240,248,100);
+}
 .activityItem.morning{
   background:rgba(240,240,50,100);
 }

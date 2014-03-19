@@ -48,7 +48,28 @@ var SidebarView = function(container){
 
         container.append(row.clone().append(divBtn));
         container.append(row.clone().append(uploadForm));
+
+                //ONLY FOR TESTING! Remove when planner view is ready.
+                $( "#desc" ).droppable({
+                        drop: function( event, ui ) {
+                $( this )
+                //$( "#desc" ).html( "Dropped!" );
+                $( "#desc" ).sortable({
+                        connectWith: '.activityGridList'
+                });
+                        }
+                });
+
+
+
+
 	}
+
+        
+
+
+
+
 
 	this.getCal = function(){
 		return $("#cal");
