@@ -172,7 +172,17 @@ var jsonObject = {
 			{"name":"Shower", "type":"morning","duration":"20","image":"shower.png"},
 			{"name":"Excursion", "type":"others","duration":"360","image":"walkCamping.png"},
 			{"name":"Go to bed", "type":"night","duration":"540","image":"sleep.png"}
-		
+			]},		
+		{"date":"2014-03-15","activities":[
+			{"name":"Brush teeth", "type":"morning","duration":"60","image":"sample.jpg","startTime": "Teu Mar 18 2014 08:00:00"},	
+			{"name":"Shower", "type":"morning","duration":"30","image":"sample.jpg","startTime": "Teu Mar 18 2014 09:30:00"},
+			{"name":"Brush teeth", "type":"morning","duration":"105","image":"sample.jpg","startTime": "Teu Mar 18 2014 10:15:00"},	
+			{"name":"Shower", "type":"morning","duration":"60","image":"sample.jpg","startTime": "Teu Mar 18 2014 12:00:00"},	
+			{"name":"Shower", "type":"morning","duration":"45","image":"sample.jpg","startTime": "Teu Mar 18 2014 13:15:00"},
+			{"name":"Brush teeth", "type":"morning","duration":"60","image":"sample.jpg","startTime": "Teu Mar 18 2014 14:00:00"},	
+			{"name":"Shower", "type":"morning","duration":"15","image":"sample.jpg","startTime": "Teu Mar 18 2014 15:15:00"},
+			{"name":"Brush teeth", "type":"morning","duration":"90","image":"sample.jpg","startTime": "Teu Mar 18 2014 16:00:00"},
+
 		]},
 		{"date":"2013-03-06","activities":[
 			{"name":"Brush teeth", "type":"morning","duration":"10","image":"brushing_teeth.jpg"},	
