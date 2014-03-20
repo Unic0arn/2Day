@@ -28,8 +28,7 @@ var SidebarView = function(container){
         btnSave.html('Save');
 
         var uploadForm = $(document.createElement('form'));
-
-        
+ 
         var input = $(document.createElement('input'));
         input.attr('type', 'file');
         input.attr('name', 'file');
@@ -59,17 +58,24 @@ var SidebarView = function(container){
                 });
                         }
                 });
-
-
-
-
 	}
 
-        
+        this.updateDescView = function(activity){
+                    $('#desc').html("");
 
+                var activityItemTitle = $(document.createElement('p'));
+                    activityItemTitle.addClass("activityItemTitle");
+                    activityItemTitle.html("<h2>"+activity.name+"</h2>");
+                    $('#desc').append(activityItemTitle);
 
+                var activityItemDuration = $(document.createElement('p'));
+                    activityItemDuration.html("Duration: "+activity.duration+" min");
+                    $('#desc').append(activityItemDuration);
 
-
+                var activityItemType = $(document.createElement('p'));
+                    activityItemType.html("Type: "+activity.type);
+                    $('#desc').append(activityItemType);
+        }
 
 	this.getCal = function(){
 		return $("#cal");

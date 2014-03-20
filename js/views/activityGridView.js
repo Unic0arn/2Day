@@ -51,16 +51,16 @@ var ActivityGridView = function(container,main,model){
   					helper: 'clone',
 					});
 
-    				$(".activityGridList").droppable({
-        activeClass: "ui-state-default",
-        hoverClass: "ui-state-hover",
-        accept: '.activityItem',
-        drop: function(event, ui) {
-                var item = $(ui.draggable);
-                console.log("Sorted ID:"+item.prop('id'));
-            if (item.hasClass('activityItem'))
-            	console.log("Useless If-statement");
-                return;
+    			$(".activityGridList").droppable({
+                    activeClass: "ui-state-default",
+                    hoverClass: "ui-state-hover",
+                    accept: '.activityItem',
+                    drop: function(event, ui) {
+                    var item = $(ui.draggable);
+                    console.log("Sorted ID:"+item.prop('id'));
+                if (item.hasClass('activityItem'))
+            	    console.log("Useless If-statement");
+                    return;
                                  }
         });
 

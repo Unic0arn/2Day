@@ -6,7 +6,7 @@ var ActivityGridController = function(view, main, model){
 		view.displayActivities(model.getActivities());
 	}
 
-	$('#activityGridView').on('click', '.activityItem', function(){
+	$('#activityGridView').on('mousedown', '.activityItem', function(){
 		var activityId = $(this).attr('id');
 		main.setDesc(activityId);
 	});
