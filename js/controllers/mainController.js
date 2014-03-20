@@ -23,6 +23,10 @@ var MainController = function(model) {
 	views['nameView'] = nameView;
 		*/
 
+	var schedulerView = new SchedulerView($("#schedulerView"));
+	var schedulerController = new SchedulerController(schedulerView, this, model);
+	views['schedulerView'] = schedulerView;
+
 	var activityGridView = new ActivityGridView($("#activityGridView"),this,model);
 	var activityGridController = new ActivityGridController(activityGridView,this,model);
 	views['activityGridView'] = activityGridView;
@@ -38,9 +42,7 @@ var MainController = function(model) {
 	var sidebarController = new SidebarController(sidebarView, this, model);
 	views['sidebarView'] = sidebarView;
 	
-	var schedulerView = new SchedulerView($("#schedulerView"));
-	var schedulerController = new SchedulerController(schedulerView, this, model);
-	views['schedulerView'] = schedulerView;
+
 
 
 
