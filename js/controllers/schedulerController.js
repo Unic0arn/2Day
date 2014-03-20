@@ -21,11 +21,21 @@ var SchedulerController = function(view, main, model){
 
             if (item.hasClass('activityItem'))
 
-            	console.log(ui.draggable.prop('id'));
-            	/*var _id = ui.draggable.prop('id');
+                parent = $(item[0].parentElement)
+                if(parent.hasClass('activityGridList')){
+                console.log(ui.draggable.prop('id'));
+                var _id = main.stripId(ui.draggable.prop('id'));
+                console.log(_id);
                 var itemActivity = model.getActivity(_id);
                 console.log(itemActivity.id);
-                /*model.getDay().addActivity(itemActivity);
+                model.getDay().addActivity(itemActivity);
+                    console.log("Dropped from Grid");
+                    
+                }else if(parent.hasClass('activityRowList')){
+                    console.log("Dropped from Row");
+                }
+
+
             /*
             var id = ui.draggable.prop('id');
             var activity = day.activities[id];
