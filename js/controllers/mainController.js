@@ -6,7 +6,7 @@ var MainController = function(model) {
 
 	//var exampleVariable;
 	var views = []; //Array-list thingy for storing all view objects
-
+	var mc = this;
 	// BEGIN View & Controller declarations -------------------------------------------------------
 
 		//And create the needed controllers and views
@@ -42,13 +42,24 @@ var MainController = function(model) {
 	views['schedulerView'] = schedulerView;
 
 
-	$("#welcomeView").hide();
-	//$("#mainView").hide();
-	$("#dayView").hide();
-	$("#optionsView").hide();
-	$("#AbouUsView").hide();
-	$("#ContactUsView").hide();
-	/*
+
+	viewDoms = [$("#welcomeView"),$("#mainView"),$("#dayView"),$("#optionsView"),$("#aboutUsView"),$("#contactUsView")];
+
+	this.hideAll = function(){
+		for(var view in viewDoms){
+			viewDoms[view].hide();
+		}
+	}
+	this.hideAll();
+
+
+	$('#headerView').on('click', 'a', function(evt){
+
+		console.log(evt);
+		mc.hideAll();
+		$(evt.target.name).show();
+	});
+	
 	var selectorView = new SelectorView($("#selectorView"),this, model);
 	var selectorViewController = new SelectorViewController(selectorView,this, model);
 	views['selectorView'] = selectorView;
