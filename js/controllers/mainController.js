@@ -54,10 +54,12 @@ var MainController = function(model) {
 
 
 	$('#headerView').on('click', 'a', function(evt){
-
-		console.log(evt);
 		mc.hideAll();
 		$(evt.target.name).show();
+	});
+	$('#start').on('click', 'a', function(evt){
+		mc.hideAll();
+		$("#mainView").show();
 	});
 
 	
