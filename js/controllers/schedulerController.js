@@ -18,11 +18,11 @@ var SchedulerController = function(view, main, model){
         drop: function(event, ui) {
 
             var item = $(ui.draggable);
-/*
+
             if (item.hasClass('activityItem'))
 
             	console.log(ui.draggable.prop('id'));
-            	var _id = ui.draggable.prop('id');
+            	/*var _id = ui.draggable.prop('id');
                 var itemActivity = model.getActivity(_id);
                 console.log(itemActivity.id);
                 /*model.getDay().addActivity(itemActivity);
