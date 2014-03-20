@@ -29,7 +29,7 @@ var SchedulerController = function(view, main, model){
                 var itemActivity = model.getActivity(_id);
                 console.log(itemActivity.id);
                 model.getDay().addActivity(itemActivity);
-                    console.log("Dropped from Grid");
+                console.log("Dropped from Grid");
                     
                 }else if(parent.hasClass('activityRowList')){
                     console.log("Dropped from Row");
@@ -62,7 +62,7 @@ var SchedulerController = function(view, main, model){
     });
 
     this.update = function(arg){
-        console.log(model.getDay());
+        console.log("*****THIS HAS BEEN UPDATED****");
         view.thisDayActivities(model.getDay());
     }
     };
