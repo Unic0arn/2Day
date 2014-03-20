@@ -59,7 +59,7 @@ var MainController = function(model) {
 		mc.hideAll();
 		$(evt.target.name).show();
 	});
-	
+
 	var selectorView = new SelectorView($("#selectorView"),this, model);
 	var selectorViewController = new SelectorViewController(selectorView,this, model);
 	views['selectorView'] = selectorView;
@@ -67,7 +67,7 @@ var MainController = function(model) {
 	var cartView = new CartView($("#cartView"),this, model);
    	var cartViewController = new CartViewController(cartView,this, model);
 	views['cartView'] = cartView;
-	*/
+	
 	
 	//Test
 	//activityGridView.displayActivities();
