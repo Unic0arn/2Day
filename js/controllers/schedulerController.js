@@ -61,5 +61,9 @@ var SchedulerController = function(view, main, model){
         }
     });
 
+    this.update = function(arg){
+        console.log(model.getDay());
+        view.thisDayActivities(model.getDay());
+    }
     };
 
