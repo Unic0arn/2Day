@@ -1,0 +1,740 @@
+/*Sticky Menu by  Rosy*/
+      html {
+       font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+       color: #F7F9FC;
+    }
+    body{
+      position: relative;
+    }
+/*End comment Sticky Menu by  Rosy*/
+#mainContainer
+{
+	position: relative;
+	top: 0; left: 0; bottom: 0; right: 0;
+    padding:1px;
+    margin: auto;
+    overflow: auto;
+    width: 99.5%;
+    height: 99%;
+    background:rgba(255,255,255,100);
+}
+#activityGridView
+{
+	background:rgba(240,240,240,0.5);
+  max-height: 680px;
+  overflow: auto;
+}
+.activityItem{
+    width:130px;
+    height:130px;
+    background:rgba(200,200,200,100);
+    padding:2px;
+    margin:0.5%;
+    list-style-type:none;
+    display: inline-block;
+}
+.activityItem.others{
+  /*For all others, BG colour default*/
+  
+  background:rgba(191,51,43,100);
+}
+.activityItem.placeholder{
+  width:130px;
+  height:100px;
+  background-color: #FFFFF5;
+}
+.activityItem.morning{
+  background:rgba(220,163,43,100);
+}
+.activityItem.afternoon{
+  background:rgba(52,131,59,100);
+}
+.activityItem.night{
+  background:rgba(43,117,181,100);
+}
+.activityImg{
+  position:relative;
+  left:5%;
+  top:5%;
+  width:90%;
+  height:70%;
+}
+.activityItemLabel{
+  color:white;
+  text-align:center;
+  margin-top: 6%;
+  max-height: 100%;
+  max-width: 100%;
+  font-family: arial;
+  font-size: 105%;
+  font-weight: bold;
+}
+#sun{
+    height: 0px;
+}
+#daySchedule{
+    border: 1px solid black;
+    overflow-x:auto;
+    overflow-y:hidden;
+    width:100%;
+    float:left;
+}
+#dayView{
+    border:1px solid black;
+}
+.activity{
+    border:1px solid black;
+    float:left;
+    height:100px;
+    padding: 10px;
+    margin: 10px;
+    overflow: hidden;
+}
+.break{
+    margin: 10px 0px;
+    height: 100px;
+    float: left;
+    background-color: rgba(218, 218, 218, 0.38);
+}
+.dayImage{
+    max-height: 100%;
+    max-width: 100%;
+}
+.divScheduleContainer{
+    float:left;
+}
+.item
+    {
+        background-color: #DDDDDD;
+        border: solid 1px #777777;
+        margin: 2px;
+        width: 300px;
+    }
+#scheduleOverlay {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width:50%;
+    background: rgba(71, 71, 71, 0.44);
+    position: absolute;
+}
+#dayView ul{
+
+    list-style-type: none;
+}
+
+#clock {
+font-size: 36px;
+font-family: fantasy;
+text-align: center;
+
+}
+
+#mainView{
+max-width:100%;
+max-height:100%;
+padding: 30px;
+}
+
+#sidebarView{
+    border: 1px solid black;
+    width: 250px;
+    height: 100%;
+    margin-right: 15px;
+}
+
+
+#logo{
+    height: 100px;
+    width: 100%;
+    text-align:center;
+    border-bottom: 1px solid black;
+}
+
+#desc{
+    height: 200px;
+    width: 100%;
+    border-bottom: 1px solid black;
+    overflow:hidden;
+}
+
+#cal{
+    height: 100%;
+    width: 100%;
+}
+
+
+#buttonArea{
+    margin:auto;
+    text-align:center;
+}
+
+#saveButton{
+    margin:auto;
+    width: 100%;
+}
+#fileupload{
+
+    width: 70%;
+}
+#uploadButton{
+    width:25%;
+}
+
+
+
+
+
+#cal {
+  font-family: Asap, Helvetica, Arial;
+  margin: 5 auto;
+  width: 100%;
+  
+}
+#cal .clndr {
+  overflow: hidden;
+  border-bottom: 7px solid #69a776;
+}
+#cal .clndr .clndr-controls {
+  background-color: #69a776;
+  color: white;
+}
+#cal .clndr .clndr-controls .clndr-control-button,
+#cal .clndr .clndr-controls .clndr-next-button {
+  
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  /* Chrome/Safari */
+
+  -moz-user-select: none;
+  /* Firefox */
+
+  -ms-user-select: none;
+  /* IE10+ */
+
+  -webkit-transition: background-color 0.5s;
+  -moz-transition: background-color 0.5s;
+  -ms-transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+#cal .clndr .clndr-controls .clndr-previous-button:hover,
+#cal .clndr .clndr-controls .clndr-next-button:hover {
+  background-color: #528b5e;
+}
+#cal .clndr .clndr-controls .month {
+    width: 55%;
+    padding-top: 5px;
+  padding-bottom: 5px;
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+#cal .clndr .clndr-table {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  padding: 5px;
+  margin-left: 15px;
+}
+#cal .clndr .clndr-table .header-day{
+    font-weight: bold;
+    border:0;
+    border-bottom: 1px solid black;
+}
+#cal .clndr .clndr-table td{
+    padding: 2px 6px;
+    border: 1px solid black;
+    text-align: center;
+}
+#cal .clndr .clndr-table td:hover{
+  background-color: #b8b8b8;
+  cursor: pointer;
+}
+
+
+/*Start  ccs  for  Options  View by  Rosy*/
+
+.boton{
+  /* Fonts buttons*/
+  
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 23px;
+  font-weight: bold;
+    padding: 12px 22px;
+  margin-right: 30px;
+  cursor: pointer;
+  border: 0;
+    border-radius: 30px;
+
+  /* Animation buttons*/
+  
+  transition: all 0.20s linear;
+  -webkit-transition: all 0.20s linear;
+  -moz-transition: all 0.20s linear;
+  position: relative;
+  bottom: 0;
+}
+
+.rojo{
+  /* Estilos para el fondo del boton */
+  background: #376734;
+  box-shadow: 0px 5px 0 #254623;
+  margin-top: 4%;
+}
+.boton:active{
+  /* Posicion del boton al clickearlo */
+  bottom: -5px;
+}
+
+.rojo:active, {
+  /* Sombra del boton al clickearlo */
+  box-shadow: 0 0 0 #9a1604, inset 0 0 5px #000000;
+  background: #6CB268;
+  position: relative;
+}
+
+.rojo:hover, .rojo:focus{
+background: #6CB268;
+
+}
+.rojo a:hover , a:focus{
+
+        color: #0000;
+
+}
+#formContainer #forms {
+  position: relative;
+  text-align: left;
+  color: #274925;
+  font-weight: bold;
+  
+  border-color: #4C8E47;
+  border-style: none;
+  width: 100%;
+  height: 100%;
+ 
+ 
+}
+#formContainer #image {
+  height: 60%;
+  position: relative;
+  float: left;
+  border-color: #274925;
+  width: 100%;
+   padding-right: 20%;
+  
+}
+#formContainer #image #imgSelected {
+  border-color: #274925;
+  padding-left: auto;
+  padding-right: auto;
+  padding-top: auto;
+  padding-bottom: auto;
+  border-style: solid;
+  border-radius: 2%;
+}
+#formContainer #rigth {
+  width: 30%;
+  position: relative;
+  float: right;
+  margin-left: 0%;
+  padding-top: 0%;
+  padding-right: auto;
+  padding-bottom: auto;
+  padding-left: auto;
+  margin-top: 0%;
+
+  height: 100%;
+  
+}
+#formContainer #left {
+  width: 60%;
+  position: relative;
+  float: left;
+ 
+  padding-top: auto;
+  padding-right: auto;
+  padding-bottom: auto;
+  padding-left: auto;
+}
+
+#up #leftUp {
+  width: 70%;
+  height: 100%;
+  margin-left: 0%;
+  margin-right: 0%;
+  position: relative;
+  float: left;
+  color: #720E17;
+}
+#up {
+  width: 90%;
+  height: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
+  position: relative;
+  padding-top: 0%;
+  padding-right: 0%;
+  padding-bottom: 0%;
+  padding-left: 0%;
+  margin-bottom: 2%;
+  float: right;
+}
+#up #rigthUp {
+  width: 30%;
+  height: 100%;
+  position: relative;
+  background-color: #315584;
+}
+#formContainer {
+  width: 100%;
+  height: 50%;
+
+}
+#up #rigthUp #bottonDown {
+  position: relative;
+  float: left;
+}
+#up #rigthUp #bottonUp {
+  position: relative;
+  float: left;
+}
+#up p #bottonDown {
+  position: relative;
+}
+#up p #bottonUp {
+  position: relative;
+  float: left;
+}
+#grid {
+  width: 80%;
+  height: 28%;
+  margin-right: 10%;
+  margin-left: 10%;
+  background-color: #1E3350;
+  margin-top: 1%;
+}
+#up #bottonUp {
+  width: 30%;
+}
+#up #bottonDown {
+  width: 30%;
+}
+#up #bottonM {
+  width: 30%;
+  position: relative;
+}
+
+
+
+/*Welcome, about,  contact,  stickyMenu, footer by Rosy*/
+    
+    html {
+       font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+        font-size: 1,2%;
+        color: #F7F9FC;
+    }
+  
+    #content1{
+    background-color: #F7F9FC;
+    padding:0,55;
+}
+
+  
+    h1 {
+         font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+        font-size: 4%;
+  margin: 1% 0 1% 0;
+  font-weight: bold;
+}
+h2 {
+  margin-top: 0px;
+  background-color: #4F914A;
+  margin: 1% 0% 1% 0%;
+  font-size: xx-large;
+  color: #F7F9FC;
+  padding-left:2%;
+  
+}
+
+  
+    h1 a {
+        text-decoration: none;
+        color: #8cbf26;
+    }
+
+
+    
+    a {
+  font-weight: bold;
+  text-decoration: none;
+}
+a:link {
+  color: #F5F7FB;
+}
+a:visited {
+  color: #E4EBF4;
+
+}
+a:hover, a:active, a:focus {
+  color: #DCA32B;
+ 
+}
+
+    #header {
+  color: #4E9149;
+  max-width: 100%;
+  height: 50px;
+  margin: auto;
+  margin-top: 8%; /*Menu*/
+  position: static;
+    }
+    
+    
+    
+    #footer {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  background-color: #4F914A;
+  color: #0B0B0B;
+  text-align:left;
+  
+  padding-right: 0px;
+  text-align: left;
+  margin-top: 15px;
+  margin-right: 0%;
+  margin-bottom: 0%;
+  margin-left: 0%;
+  height: 4%;
+  width: 100%;
+  
+}
+
+footer a{
+  color:#fff;
+  
+  }
+  #black{
+  color: hsla(0,0%,0%,1);
+  font-weight: bold;
+  } 
+    
+
+  .content, footer {
+    width: 100%;
+    margin: auto;
+  
+    float: left;
+}
+  
+  
+
+
+    /*** Sticky Menu ***/
+
+    
+       nav{
+ 
+            margin: 0 auto; /* Centro el contenedor */
+      
+      background-color: #4E9149;
+      
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+            overflow: hidden;
+            text-align: left;
+        
+        }
+    
+    
+    #top {
+  width: 28%;
+  background-color: #FFFFFF;
+  
+  margin-top:6%;
+    
+  height: 4%;
+}
+
+    
+    
+        nav ul{
+
+            float: left;
+            list-style-type: none; /* Elimino los estilos de lista */
+margin-top: 0,15%;
+  margin-right: 0%;
+  margin-bottom: 0%;
+  margin-left: 0%;
+         
+            /* AÑADIMOS */
+            position: relative; 
+            
+      width: 100%
+
+        }
+    
+    nav ul li{
+  float: left; /* Floto los li para que se dispongan horizontalmente */
+  /* AÑADIMOS */
+  position: relative;
+  
+  width: 15%;
+  
+  text-align: center;
+font-size: large;
+
+  
+
+        }
+
+    nav ul li a {
+        
+        color: #fff;
+      font-size: 20px;
+        font-weight: bold;
+       padding: 8%;
+     /* El padding añadirá separación entre los elementos */
+    }
+
+ 
+
+    nav ul li a:hover {
+       
+        color: #B2D7AF;
+    background:#88C183;
+  border-radius:40%;
+  
+
+      
+    }
+    #menuLogo{
+      width: 70%;
+      
+      float: left;
+    }
+    #menu{
+      width: 100%;
+      position: relative;
+      float: right;
+    }
+   
+    
+    
+    nav li .active {
+    color: #B2D7AF;
+    background: #88C183;
+  border-radius:40%;
+  }
+    
+    .centered {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
+.floatleft {
+  float: left;
+  margin-left: 0px;
+  margin-right: 10px;
+}
+.floatright {
+  float: right;
+  margin-left: 10px;
+  margin-right: 0px;
+}
+    
+    
+    
+ 
+    
+    
+    
+    
+    #top p #logo {
+  border-radius: 50%;
+  border-color: #274925;
+  
+   } 
+  
+/*Welcome view*/
+#welcomeView{
+
+}
+.main #video {
+  padding-bottom: 2%;
+  position: relative;
+  margin-bottom: 2%;
+}
+.main #start div #start {
+  margin-top: 2%;
+  font-size: 25px;
+}
+.main #start {
+  position: relative;
+  padding-top: 2%;
+}
+
+#optionsView{
+
+  padding:20px;
+}
+
+#logo {
+  width: 15%;
+height: 10%;
+  border-color: #6AB166;
+  border-style: outset;
+  position: relative;
+  border-radius: 50%;
+}
+body{
+  background-color: #d0d9d4;
+  position: relative;
+}
+
+/*AbouUsView */
+#AbouUsView{
+  position: relative;
+  background: #ECF5EB;
+  width: 100%;
+  height: 80%;
+}
+#AbouUsView h2,#ContactUsView h2{
+  background: #4F914A;
+  position: relative;
+ text-align: center;
+}
+
+#ContactUsView{
+  background: #ECF5EB;
+  width: 100%;
+  height: 80%;
+  position: relative;
+  text-align: center;
+}
+
+#aboutUs #articleContact {
+  color: #274925;
+}
+
+#headerView{
+position:absolute;
+left:100px;
+top:0px;
+z-index:-1;
+}

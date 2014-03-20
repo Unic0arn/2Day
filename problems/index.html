@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>2Day planner</title>
+   <!-- Bootstrap:  CSS -->
+   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+   <!-- Gridster: CSS -->
+   <link rel="stylesheet" href = "js/gridster/jquery.gridster.css"/>
+   <!-- Simply scroll: CSS -->
+   <link rel="stylesheet" href="js/simplyscroll/jquery.simplyscroll.css" media="all" type="text/css">
+   <!-- Our own CSS -->
+   <link rel="stylesheet" type="text/css" href="style.css">
+ </head>
+  
+ <body>
+
+ <div id="bgContainer">
+
+ 
+  <div id="headerView">
+<!-- Container with  stickyMenu -->
+    <nav>
+      <ul id="menu">
+        <li><a href="#" name="#welcomeView">Start</a></li>
+        <li><a href="#" name="#mainView">Schedule</a></li>
+        <li><a href="#" name="#dayView">Show Day</a></li>
+        <li><a href="#" name="#optionsView">Options</a></li>
+        <li><a href="#" name="#aboutUsView">About us</a></li>
+        <li><a href="#" name="#contactUsView">Contact us</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Welcome view is the first screen -->
+  <div id="welcomeView" class="row">
+    <h2 align="center">Welcome</h2>
+    <div width="620" height="480"id="video" align="center">
+      <video id="video" class="ui-icon-video" title="Learn" poster="images/logo.png" controls muted >
+        <source src="video/screencast.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div id="start" >
+        <div align="center">
+          <a class="boton rojo">Start</a>
+        </div>
+    </div>
+  </div>
+
+  <!-- Main view contains the sidebar, and activity grid and scheduler -->
+  <div id="mainView" class="row">
+    <div id="sidebarView" class="col-md-4"></div>
+    
+    <div id="schedulingContainer" class="col-md-8">
+      <div id="activityGridView" class="row">
+        <div class="activityGrid">
+           <ul class="activityGridList">
+           <!-- Grid with selectable li activities appear here-->
+          </ul>
+        </div>
+      </div>
+      <div id="schedulerView" class="row">
+      </div>
+    </div>
+  </div>
+      
+      <!-- Day view is the result of the planning in main view -->
+  <div id="dayView" class="container"></div>
+
+  <div id="optionsView" class="container"> 
+    <h2 align="center">Options</h2>
+    <div id="grid">
+    <!--Here we need the  grid  layout(By Rosy)-->
+    </div>
+    <div id="up">
+      <a id="bottonUp"class="boton rojo"> Edit</a>
+      <a id="bottonM"class="boton rojo"> Delete</a>
+      <a id="bottonDown"class="boton rojo">Add+</a>
+    </div>
+    <div id="formContainer">
+      <div id="left">
+        <form action=action="#" method="post" enctype="multipart/form-data" name="forms" id="forms" autocomplete="on">
+          <p>&nbsp;</p>
+          <p>N
+            <span style="text-align: left">ombre:
+              <input name="nombre" type="text" autofocus required placeholder="Enter the activity's name" title="Enter the activity's name" autocomplete="on"  size="40">
+              *
+            </span>
+          </p>
+          <span style="text-align: left">Imagen :</span>
+            <input name="foto" type="file" autofocus required placeholder=="Select title="Select a  image" image file">
+            *
+          <label for="select">      <br />
+            <br />
+            Type of Activity :
+          </label>
+          <p> 
+            <select name="opciones" autofocus="autofocus" required="required" id="opciones" autofocusrequired>
+              <option value="" selected>- Select a type -</option>
+              <option value="1">Morning</option>
+              <option value="2">Afternon</option>
+              <option value="3">Evening</option>
+              <option value="4">Anytime</option>
+            </select>
+            *
+          </p>
+          <p>
+            <span style="text-align: left">
+              <label for="time">Duration of activity:</label>
+              <input name="duration" type="time" autofocus required id="duration" form="forms" max="16:00:00" min="00:10:00" step="300" title="Activity  duraction" value="00:30:00" >
+              *
+            </span>
+          </p>
+          <span style="text-align: left">
+            <label> Description</label>
+          </span>
+      
+          <span style="text-align: left; width: 55%; position: relative; height: 100%;">
+            <textarea name="descriptionArea" cols="40" rows="10" maxlength="250" autofocus wrap="hard" id="descriptionArea" placeholder="Write here the  description of activity" title="Description" spellcheck="true"></textarea>
+          </span>
+          <input type="submit" value="Save" class="boton rojo" > 
+          <input type="reset" value="Cancel" class="boton rojo" > 
+        </form>
+      </div>
+      <div id="rigth">
+        <div id="image">
+          <p>
+            <img src="images/dia.png" width="340" height="340" id="imgSelected" title="Activity's image" />
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="aboutUsView">
+    <div id="aboutUs">
+      <h2>About us </h2>
+      <article class="articleContact" id="articleContact">
+        <p style="font-size: xx-large; color: #4E9149; font-family: Baskerville, 'Palatino Linotype', Palatino, 'Century Schoolbook L', 'Times New Roman', serif;" dir="ltr">Group 32 KTH Interaction Programing:</p>
+        <p style="font-size: xx-large; color: #4E9149; font-family: Baskerville, 'Palatino Linotype', Palatino, 'Century Schoolbook L', 'Times New Roman', serif;" dir="ltr">&nbsp;</p>
+        <p dir="ltr">&nbsp;- Rosa Elena Alvarez Esteven</p>
+        <p dir="ltr"> <span style="font-weight: bolder">&nbsp;  - Ester Bautista Rodríguez</span></p>
+        <p dir="ltr"> <span style="font-weight: bolder">&nbsp;  - Fredrik Hallberg</span></p>
+        <p dir="ltr"> <span style="font-weight: bolder">&nbsp;  - Nicholas Pontus Palnén Rung</span></p>
+        <p style="font-weight: bolder">&nbsp; - Andreas Sylvan</p>
+        <p style="font-weight: bolder">&nbsp;</p>
+        <p style="font-weight: bolder">&nbsp; </p>
+      </article>
+    </div>
+  </div>
+
+
+
+  <div id="contactUsView">
+    <div id= "contact">
+      <h2>Contact</h2>
+      <article class="articleContact" id="articleContact">
+        <p style="text-align: center">2DAY        </p>
+       
+        <p style="text-align: center">SE XXX-XX        </p>
+        <p style="text-align: center">Stockholm</p>
+       
+        <p style="text-align: center"> Sweden</p>
+        <p style="text-align: center"> +46 0 000 00 00</p>
+        <p style="text-align: center">    2day@email.com </p>
+        <p>&nbsp;</p>
+        
+      </article>
+    </div>
+  </div>
+
+
+    <div id="footerView" class="row">
+      <footer class="row" id="menu"> 
+        <item><a href="#"> About us</a></item>
+        <item><a href="#">Contact</a></item>
+          <img src="images/creativecommons.gif" width="32" height="25"/>Creative commons.
+      </footer>
+  </div>
+
+
+
+  </div>
+
+ 	<!-- jQuery: Easier than JavaScript -->
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+	  <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <!-- Gridster JavaScript -->
+    <script src = "js/gridster/jquery.gridster.min.js"></script>
+    <script src = "js/clndr.min.js"></script>
+    <script src = "js/moment-with-langs.js"></script>
+    <script src = "js/underscore-min.js"></script>
+
+
+	<!-- The application JavaScript code: Put all references to our js files here -->
+
+  <script src="js/models/Day.js"></script>
+  <script src="js/models/MainModel.js"></script>
+  <script src="js/models/Activity.js"></script>
+
+  <script src="js/controllers/mainController.js"></script>
+  <script src="js/controllers/activityGridController.js"></script>
+  <script src="js/controllers/dayViewController.js"></script>
+  <script src="js/controllers/sidebarController.js"></script>
+  <script src="js/controllers/schedulerController.js"></script>
+
+
+  <script src="js/views/activityGridView.js"></script>
+  <script src="js/views/dayView.js"></script>
+  <script src="js/views/sidebarView.js"></script>
+  <script src="js/views/schedulerView.js"></script>
+  
+
+	<script src="js/app.js"></script>
+
+ </body>
+</html>
