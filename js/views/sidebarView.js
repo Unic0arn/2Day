@@ -4,11 +4,12 @@ var SidebarView = function(container){
 		var row = $(document.createElement('div'));
 		row.addClass('row');
 
-		var divLogo = $(document.createElement('div'));
+	/*	var divLogo = $(document.createElement('div'));
 		divLogo.addClass("col-md-12");
         divLogo.attr('id','logo');
         divLogo.append("<h1>2DAY</h1>");
-
+        */
+        
 		var divDesc = $(document.createElement('div'));
 		divDesc.addClass("col-md-12");
         divDesc.attr('id','desc');
@@ -41,7 +42,7 @@ var SidebarView = function(container){
 
         uploadForm.append(btnUpload);
 
-        container.append(row.clone().append(divLogo));
+        //container.append(row.clone().append(divLogo));
         container.append(row.clone().append(divDesc));
         container.append(row.clone().append(divCal));
 
@@ -49,6 +50,7 @@ var SidebarView = function(container){
         container.append(row.clone().append(uploadForm));
 
                 //ONLY FOR TESTING! Remove when planner view is ready.
+                /*
                 $( "#desc" ).droppable({
                         drop: function( event, ui ) {
                 $( this )
@@ -57,7 +59,7 @@ var SidebarView = function(container){
                         connectWith: '.activityGridList'
                 });
                         }
-                });
+                }); */
 	}
 
         this.updateDescView = function(activity){

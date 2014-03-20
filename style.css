@@ -45,6 +45,8 @@
 }
 .activityItem.others{
   /*For all others, BG colour default*/
+  
+  background:rgba(191,51,43,100);
 }
 .activityItem.placeholder{
   width:130px;
@@ -52,13 +54,13 @@
   background:rgba(190,240,248,100);
 }
 .activityItem.morning{
-  background:rgba(240,240,50,100);
+  background:rgba(220,163,43,100);
 }
 .activityItem.afternoon{
-  background:rgba(105,167,118,100);
+  background:rgba(52,131,59,100);
 }
 .activityItem.night{
-  background:rgba(50,50,240,100);
+  background:rgba(43,117,181,100);
 }
 .activityImg{
   position:relative;
@@ -68,13 +70,14 @@
   height:70%;
 }
 .activityItemLabel{
-  color:gray;
+  color:white;
   text-align:center;
-  margin-top: 5px;
+  margin-top: 6%;
   max-height: 100%;
   max-width: 100%;
   font-family: arial;
   font-size: 105%;
+  font-weight: bold;
 }
 #sun{
     height: 0px;
