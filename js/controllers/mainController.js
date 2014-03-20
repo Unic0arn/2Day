@@ -28,7 +28,7 @@ var MainController = function(model) {
 	views['schedulerView'] = schedulerView;
 	model.addObserver(schedulerController);
 
-	var activityGridView = new ActivityGridView($("#activityGridView"),this,model);
+	var activityGridView = new ActivityGridView($("#activityGridView"));
 	var activityGridController = new ActivityGridController(activityGridView,this,model);
 	views['activityGridView'] = activityGridView;
 	model.addObserver(activityGridController);

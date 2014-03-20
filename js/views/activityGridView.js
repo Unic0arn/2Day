@@ -1,4 +1,4 @@
-var ActivityGridView = function(container,main,model){
+var ActivityGridView = function(container){
 
 		this.container = container;
     	//$(container).hide();
