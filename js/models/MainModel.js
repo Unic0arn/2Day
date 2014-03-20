@@ -11,7 +11,7 @@ var MainModel = function(){
 	}
 
 	this.getActivity = function(_id){
-		console.log(activities);
+		//console.log(activities);
 		for (var i=0; i < activities.length; i++){
 			var activity = activities[i];
 			if(activity.id==_id){
@@ -36,17 +36,17 @@ var MainModel = function(){
 	}
 
 
-	/** Parses a json object and returns a list of new activy objects
-		Input: A JSON object of the form {"name":"","type":"","duration":"","image":""}
+	/** Parses a json object and returns
+	 {"name":"","type":"","duration":"","image":""}
 		Return: A list of activities in the form of Activity objects. 
 		*/
 	var parseActivities = function(jsonActivities){
-		console.log(jsonActivities);
+		//console.log(jsonActivities);
 		var newActivities = [];
-		for (var i = 0; i<jsonActivities.length; i++){
+		for (var i = activities.length; i<activities.length + jsonActivities.length; i++){
 			var object = jsonActivities[i];
 			
-			console.log(object);
+			//console.log(object);
 			var act = new Activity(i, object.name,object.type,object.duration,object.image);
 			act.setStartTime(new Date(object.startTime));
 			newActivities.push(act);
@@ -61,7 +61,7 @@ var MainModel = function(){
 	var parseDays = function(jsonDays){
 		for (var i = 0; i<jsonDays.length; i++){
 			var object = jsonDays[i];
-			console.log(object);
+			//console.log(object);
 
 
 			var day = new Day(object.date);
@@ -77,8 +77,8 @@ var MainModel = function(){
 		console.log(jsonObject2);
 		activities = activities.concat(parseActivities(jsonObject2.activities));
 		parseDays(jsonObject2.days);
-		console.log(days);
-		console.log(activities);
+		//console.log(days);
+		//console.log(activities);
 		notifyObservers();
 
 	}
