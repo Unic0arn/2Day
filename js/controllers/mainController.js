@@ -41,6 +41,13 @@ var MainController = function(model) {
 	var schedulerController = new SchedulerController(schedulerView, this, model);
 	views['schedulerView'] = schedulerView;
 
+
+	$("#welcomeView").hide();
+	//$("#mainView").hide();
+	$("#dayView").hide();
+	$("#optionsView").hide();
+	$("#AbouUsView").hide();
+	$("#ContactUsView").hide();
 	/*
 	var selectorView = new SelectorView($("#selectorView"),this, model);
 	var selectorViewController = new SelectorViewController(selectorView,this, model);
@@ -61,8 +68,6 @@ var MainController = function(model) {
 	// Functions that can be called from all controllers. ---------------------------------------------------
 	
 	
-
-
 	// Three functions for switching, showing and hiding views.---------------------------------------------
 
 	this.switchView = function(newView){
