@@ -22,6 +22,11 @@ body{
   overflow: auto;
   border-radius: 1%;
 }
+.activityRow{
+  background:rgba(240,240,240,0.5);
+  margin-top: 15px;
+  border-radius: 1%;
+}
 .activityItem{
   width:130px;
   height:130px;
