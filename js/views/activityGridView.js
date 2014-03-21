@@ -57,10 +57,35 @@ var ActivityGridView = function(container){
 			//helper: "clone",
 			helper: 'original',
 			cursor: 'move',
+        	containment: '#schedulingContainer',
 			start: function(event, ui) {
-              $('.activityGridList').find('li:hidden').show();
-            }
+              //$('.activityGridList').find('li:hidden').show();
+              console.log(event);
+            },
+            remove: function(event, ui) {
+            
+            alert("Card was removed");
+            } 
 		});
+
+/*
+    $("#fromList li").draggable('destroy').draggable({
+        connectToSortable: "#toList",
+        revert: "invalid",
+        containment: '#equipCont',
+        helper: function(e, ui) {
+            return jQuery(this).clone().css('width', jQuery(this).width());
+        }
+    });
+    $("#toList").droppable('destroy').droppable({
+        drop: function(e, ui) {
+            var dragClone = $(ui.draggable).clone();
+            $("#toList").append(dragClone);
+        }
+    });
+    $("ul, li").disableSelection();
+*/
+/*
 		$(".activityGridList").droppable({
 			activeClass: "ui-state-default",
 			hoverClass: "ui-state-hover",
@@ -73,7 +98,7 @@ var ActivityGridView = function(container){
 				return;
 			}
 		});
-
+*/
 
 
 	}

@@ -55,8 +55,8 @@ var MainController = function(model) {
 		}
 	}
 	this.hideAll();
-	//$("#mainView").show();
-	$("#welcomeView").show();
+	$("#mainView").show();
+	//$("#welcomeView").show();
 
 	// Controls for the Welcome View
 	$('#helpVideo').hide();

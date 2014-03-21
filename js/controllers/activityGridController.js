@@ -21,6 +21,7 @@ var ActivityGridController = function(view, main, model){
 		var bulle = model.getActivity(main.stripId(activityId));
 		alert(bulle.type);
 		*/
+
 		
 	});
 
