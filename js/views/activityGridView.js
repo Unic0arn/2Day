@@ -54,7 +54,9 @@ var ActivityGridView = function(container){
 		$(".activityGridList").sortable({
 			connectWith: '.activityRowList',
 			placeholder: 'activityItem placeholder',
-			helper: "clone",
+			//helper: "clone",
+			helper: 'original',
+			cursor: 'move',
 			start: function(event, ui) {
               $('.activityGridList').find('li:hidden').show();
             }
@@ -67,9 +69,12 @@ var ActivityGridView = function(container){
 				var item = $(ui.draggable);
 				console.log("Sorted ID:"+item.prop('id'));
 				if (item.hasClass('activityItem'))
-					console.log("Useless If-statement");
+					//console.log("Useless If-statement");
 				return;
 			}
 		});
+
+
+
 	}
 }

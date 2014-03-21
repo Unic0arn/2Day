@@ -17,7 +17,8 @@ var initDay = function(_day){
         view.thisDayActivities(model.getDay());
         $(".activityRowList").sortable({
            receive: handleDrop
-           // connectWith: '.activityGridList' // Drag backwards
+           //,
+           //connectWith: '.activityGridList' // Drag backwards
         });
         
         $(".activityRowList").droppable({

@@ -10,10 +10,18 @@ var ActivityGridController = function(view, main, model){
 		var activityId = $(this).attr('id');
 		main.setDesc(activityId);
 
+
 	});
 
 		$('#activityGridView').on('mouseup', '.activityItem', function(){
 		//Maybe needed later.
+		/*
+		var activityId = $(this).attr('id');
+		alert(main.stripId(activityId));
+		var bulle = model.getActivity(main.stripId(activityId));
+		alert(bulle.type);
+		*/
+		
 	});
 
 }
