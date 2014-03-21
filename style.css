@@ -97,6 +97,9 @@ to {background: yellow;}
 #dayView ul{
     list-style-type: none;
 }
+#dayView ul{
+    list-style-type: none;
+}
 .activity{
   border:1px solid black;
   float:left;
