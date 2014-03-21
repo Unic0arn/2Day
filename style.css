@@ -1,22 +1,6 @@
-/*Sticky Menu by  Rosy*/
-
 #headerView{
   height: 60px;
-
 }
-
-      html {
-       font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
-        font-size: 1,2%;
-        color: #F7F9FC;
-    }
-
-
-    body{
-
-      position: relative;
-    }
-/*End comment Sticky Menu by  Rosy*/
 #mainContainer
 {
 	position: relative;
@@ -45,8 +29,6 @@
     display: inline-block;
 }
 .activityItem.others{
-  /*For all others, BG colour default*/
-  
   background:rgba(191,51,43,100);
 }
 .activityItem.placeholder{
@@ -93,6 +75,9 @@
 #dayView{
     border:1px solid black;
 }
+#dayView ul{
+    list-style-type: none;
+}
 .activity{
     border:1px solid black;
     float:left;
@@ -130,57 +115,42 @@
     background: rgba(71, 71, 71, 0.44);
     position: absolute;
 }
-#dayView ul{
-
-    list-style-type: none;
-}
-
 #clock {
 font-size: 36px;
 font-family: fantasy;
 text-align: center;
-
 }
-
 #mainView{
 max-width:100%;
 max-height:100%;
 padding: 30px;
 }
-
 #sidebarView{
     border: 1px solid black;
     width: 250px;
     height: 100%;
     margin-right: 15px;
 }
-
-
 #logo{
     height: 100px;
     width: 100%;
     text-align:center;
     border-bottom: 1px solid black;
 }
-
 #desc{
     height: 200px;
     width: 100%;
     border-bottom: 1px solid black;
     overflow:hidden;
 }
-
 #cal{
     height: 100%;
     width: 100%;
 }
-
-
 #buttonArea{
     margin:auto;
     text-align:center;
 }
-
 #saveButton{
     margin:auto;
     width: 100%;
@@ -192,16 +162,10 @@ padding: 30px;
 #uploadButton{
     width:25%;
 }
-
-
-
-
-
 #cal {
   font-family: Asap, Helvetica, Arial;
   margin: 5 auto;
   width: 100%;
-  
 }
 #cal .clndr {
   overflow: hidden;
@@ -213,7 +177,6 @@ padding: 30px;
 }
 #cal .clndr .clndr-controls .clndr-control-button,
 #cal .clndr .clndr-controls .clndr-next-button {
-  
   padding-top: 5px;
   padding-left: 5px;
   padding-bottom: 5px;
@@ -271,13 +234,9 @@ padding: 30px;
   background-color: #b8b8b8;
   cursor: pointer;
 }
-
-
 /*Start  ccs  for  Options  View by  Rosy*/
-
 .boton{
   /* Fonts buttons*/
-  
   color: #fff;
   font-family: sans-serif;
   font-size: 23px;
@@ -289,16 +248,13 @@ padding: 30px;
   cursor: pointer;
   border: 0;
     border-radius: 30px;
-
   /* Animation buttons*/
-  
   transition: all 0.20s linear;
   -webkit-transition: all 0.20s linear;
   -moz-transition: all 0.20s linear;
   position: relative;
   bottom: 0;
 }
-
 .rojo{
   /* Estilos para el fondo del boton */
   background: #376734;
@@ -309,35 +265,27 @@ padding: 30px;
   /* Posicion del boton al clickearlo */
   bottom: -5px;
 }
-
 .rojo:active, {
   /* Sombra del boton al clickearlo */
   box-shadow: 0 0 0 #9a1604, inset 0 0 5px #000000;
   background: #6CB268;
   position: relative;
 }
-
 .rojo:hover, .rojo:focus{
 background: #6CB268;
-
 }
 .rojo a:hover , a:focus{
-
         color: #0000;
-
 }
 #formContainer #forms {
   position: relative;
   text-align: left;
   color: #274925;
   font-weight: bold;
-  
   border-color: #4C8E47;
   border-style: none;
   width: 100%;
   height: 100%;
- 
- 
 }
 #formContainer #image {
   height: 60%;
@@ -346,7 +294,6 @@ background: #6CB268;
   border-color: #274925;
   width: 100%;
    padding-right: 20%;
-  
 }
 #formContainer #image #imgSelected {
   border-color: #274925;
@@ -367,9 +314,7 @@ background: #6CB268;
   padding-bottom: auto;
   padding-left: auto;
   margin-top: 0%;
-
   height: 100%;
-  
 }
 #formContainer #left {
   width: 60%;
