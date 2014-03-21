@@ -39,17 +39,20 @@ body{
   height:110px;
   background:#F0F0F0;
   border-radius:5%;
--webkit-animation: myfirst 6s; /* Chrome, Safari, Opera */
-animation: myfirst 6s; /* Standard */
+-webkit-animation: blinker 6s; /* Chrome, Safari, Opera */
+animation: blinker 6s; /* Standard */
 }
 /* Chrome, Safari, Opera */
-@-webkit-keyframes myfirst
+@-webkit-keyframes blinker
 {
-from {background: red;}
-to {background: yellow;}
+0%   {background: #F0F0F0;}
+10%   {background: gray;}
+45%  {background: #F0F0F0;}
+50%  {background: white;}
+100% {background: #F0F0F0;}
 }
 /* Standard */
-@keyframes myfirst
+@keyframes blinker
 {
 0%   {background: #F0F0F0;}
 10%   {background: gray;}

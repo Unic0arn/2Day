@@ -9,7 +9,11 @@ var ActivityGridController = function(view, main, model){
 	$('#activityGridView').on('mousedown', '.activityItem', function(){
 		var activityId = $(this).attr('id');
 		main.setDesc(activityId);
+
 	});
-	           
+
+		$('#activityGridView').on('mouseup', '.activityItem', function(){
+		//Maybe needed later.
+	});
 
 }
