@@ -33,8 +33,9 @@
 }
 .activityItem.placeholder{
   width:130px;
-  height:100px;
-  background:rgba(190,240,248,100);
+  height:110px;
+  background:#F0F0F0;
+  border-radius:5%;
 }
 .activityItem.morning{
   background:rgba(220,163,43,100);
