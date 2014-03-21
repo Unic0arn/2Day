@@ -40,8 +40,8 @@ var MainModel = function(){
 		var pos;
 		activity = this.getActivity(activityId);
 		newAct = new Activity(activity.id,activity.name,activity.type, activity.duration,activity.image);
-		
-				
+
+
 		for (var i=0; i < chosenDay.activities.length; i++){
 			if (chosenDay.activities[i].id == prev){
 				pos = i;
