@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 html {
  font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
  font-size: 1,2%;
@@ -14,6 +15,21 @@ body{
 
 #headerView{
   height:40px;
+=======
+#headerView{
+  height: 60px;
+}
+#mainContainer
+{
+	position: relative;
+	top: 0; left: 0; bottom: 0; right: 0;
+    padding:1px;
+    margin: auto;
+    overflow: auto;
+    width: 99.5%;
+    height: 99%;
+    background:rgba(255,255,255,100);
+>>>>>>> 9950df1fd498b6fb11b4f6fca71d46d7d583528a
 }
 #activityGridView
 {
@@ -134,11 +150,23 @@ to {background: yellow;}
   background: rgba(71, 71, 71, 0.44);
   position: absolute;
 }
+<<<<<<< HEAD
+#dayView ul{
+
+  list-style-type: none;
+}
+
 #clock {
   font-size: 36px;
   font-family: fantasy;
   text-align: center;
 
+=======
+#clock {
+font-size: 36px;
+font-family: fantasy;
+text-align: center;
+>>>>>>> 9950df1fd498b6fb11b4f6fca71d46d7d583528a
 }
 #mainView{
   width:90%;
@@ -153,11 +181,14 @@ to {background: yellow;}
   width: 250px;
   height: 100%;
 }
+<<<<<<< HEAD
 
 #schedulingContainer{
   margin-left:280px;
 }
 
+=======
+>>>>>>> 9950df1fd498b6fb11b4f6fca71d46d7d583528a
 #logo{
   height: 100px;
   width: 100%;
@@ -204,7 +235,10 @@ to {background: yellow;}
 }
 #cal .clndr .clndr-controls .clndr-control-button,
 #cal .clndr .clndr-controls .clndr-next-button {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9950df1fd498b6fb11b4f6fca71d46d7d583528a
   padding-top: 5px;
   padding-left: 5px;
   padding-bottom: 5px;
@@ -275,8 +309,12 @@ to {background: yellow;}
   margin-bottom:14px;
   cursor: pointer;
   border: 0;
+<<<<<<< HEAD
   border-radius: 30px;
 
+=======
+    border-radius: 30px;
+>>>>>>> 9950df1fd498b6fb11b4f6fca71d46d7d583528a
   /* Animation buttons*/
   transition: all 0.20s linear;
   -webkit-transition: all 0.20s linear;
@@ -301,6 +339,7 @@ to {background: yellow;}
   position: relative;
 }
 .rojo:hover, .rojo:focus{
+<<<<<<< HEAD
   background: #6CB268;
 
 }
