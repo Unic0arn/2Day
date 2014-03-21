@@ -51,22 +51,7 @@ var ActivityGridView = function(container){
 			helper: "clone"
 		});
 */
-		$(".activityGridList").sortable({
-			connectWith: '.activityRowList',
-			placeholder: 'activityItem placeholder',
-			//helper: "clone",
-			helper: 'original',
-			cursor: 'move',
-        	containment: '#schedulingContainer',
-			start: function(event, ui) {
-              //$('.activityGridList').find('li:hidden').show();
-              console.log(event);
-            },
-            remove: function(event, ui) {
-            
-            alert("Card was removed");
-            } 
-		});
+		
 
 /*
     $("#fromList li").draggable('destroy').draggable({
