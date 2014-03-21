@@ -20,10 +20,12 @@
 <!-- Container with  stickyMenu -->
 
     <nav>
+    <!--
       <ul id="menuLogo">
         <li id="buttonLogo"><img class="boton rojo"src="images/logo.png" id="logo">
         </li>
       </ul>
+      -->
       <ul id"menu">
         <li><a href="#" name="#welcomeView">Welcome</a></li>
         <li><a href="#" name="#mainView">Schedule</a></li>
@@ -37,50 +39,47 @@
 
   </div>
   <!-- bgContainer is just if we want some other color in the margins -->
-  <div id="bgContainer" class="container">
+  <div id="bgContainer" class="">
     <!-- mainContainer covers the whole screen and contains all Views -->
-   
-  </div>
-
-
-  <!-- Welcome view is the first screen -->
   <div id="welcomeView" class="row" align="center">
     
-  <div class="container">
-   <div class="row">
-    <h2 class="container">Welcome</h2>
-      <img id="welcomeLogo"src="images/logo.png" />
-      <video id="helpVideo" class="ui-icon-video" title="Learn" poster="images/logo.png" controls muted >
-        <source src="video/screencast.mp4" type="video/mp4" />
-      </video>
-    </div>
+    <div class="container">
+      <div class="row">
+        <h2 class="container">Welcome</h2>
+        <img id="welcomeLogo"src="images/logo.png" />
+        <video id="helpVideo" class="ui-icon-video" title="Learn" poster="images/logo.png" controls muted >
+          <source src="video/screencast.mp4" type="video/mp4" />
+        </video>
+      </div>
 
-   <div class="row">
-    <div id="start" class="container">
+      <div class="row">
+        <div id="start" class="container">
           <br/>
           <br/>
           <a id="startButton" class="boton rojo">Start 2Day</a>
           <a id="helpButton" class="boton rojo">Help</a>
           <br/>
           <br/>
+        </div>
+      </div>
     </div>
-   </div>
-  </div>
   </div>
 
   <!-- Main view contains the sidebar, and activity grid and scheduler -->
   <div id="mainView">
-    <div id="sidebarView" class="col-md-4"></div>
-    
-    <div id="schedulingContainer" class="col-md-8">
-      <div id="activityGridView" class="row">
-        <div class="activityGrid">
-           <ul class="activityGridList">
-           <!-- Grid with selectable li activities appear here-->
-          </ul>
+    <div class="row">
+      <div id="sidebarView" class="col-md-4"></div>
+      
+      <div id="schedulingContainer">
+        <div id="activityGridView" class="row">
+          <div class="activityGrid">
+             <ul class="activityGridList">
+             <!-- Grid with selectable li activities appear here-->
+            </ul>
+          </div>
         </div>
-      </div>
-      <div id="schedulerView" class="row">
+        <div id="schedulerView" class="row">
+        </div>
       </div>
     </div>
   </div>
@@ -190,6 +189,11 @@
       </article>
     </div>
   </div>
+  </div>
+
+
+  <!-- Welcome view is the first screen -->
+  
 
 
 

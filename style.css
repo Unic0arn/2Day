@@ -1,48 +1,35 @@
-/*Sticky Menu by  Rosy*/
-
-#headerView{
-  height: 60px;
-
+html {
+ font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+ font-size: 1,2%;
+ color: #F7F9FC;
+}
+body{
+    background-color: #d0d9d4;
+  position: relative;
 }
 
-      html {
-       font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
-        font-size: 1,2%;
-        color: #F7F9FC;
-    }
+#bgContainer{
+  padding:20px;
+}
 
-
-    body{
-
-      position: relative;
-    }
-/*End comment Sticky Menu by  Rosy*/
-#mainContainer
-{
-	position: relative;
-	top: 0; left: 0; bottom: 0; right: 0;
-    padding:1px;
-    margin: auto;
-    overflow: auto;
-    width: 99.5%;
-    height: 99%;
-    background:rgba(255,255,255,100);
+#headerView{
+  height:40px;
 }
 #activityGridView
 {
 	background:rgba(240,240,240,0.5);
-  max-height: 680px;
+  max-height: 500px;
   overflow: auto;
   border-radius: 1%;
 }
 .activityItem{
-    width:130px;
-    height:130px;
-    background:rgba(200,200,200,100);
-    padding:2px;
-    margin:3px;
-    list-style-type:none;
-    display: inline-block;
+  width:130px;
+  height:130px;
+  background:rgba(200,200,200,100);
+  padding:2px;
+  margin:3px;
+  list-style-type:none;
+  display: inline-block;
 }
 .activityItem.others{
   /*For all others, BG colour default*/
@@ -81,116 +68,119 @@
   font-weight: bold;
 }
 #sun{
-    height: 0px;
+  height: 0px;
 }
 #daySchedule{
-    border: 1px solid black;
-    overflow-x:auto;
-    overflow-y:hidden;
-    width:100%;
-    float:left;
+  overflow-x:auto;
+  overflow-y:hidden;
+  width:100%;
+  float:left;
 }
 #dayView{
-    border:1px solid black;
 }
 .activity{
-    border:1px solid black;
-    float:left;
-    height:100px;
-    padding: 10px;
-    margin: 10px;
-    overflow: hidden;
+  border:1px solid black;
+  float:left;
+  height:100px;
+  padding: 10px;
+  margin: 10px;
+  overflow: hidden;
 }
 .break{
-    margin: 10px 0px;
-    height: 100px;
-    float: left;
-    background-color: rgba(218, 218, 218, 0.38);
+  margin: 10px 0px;
+  height: 100px;
+  float: left;
+  background-color: rgba(218, 218, 218, 0.38);
 }
 .dayImage{
-    max-height: 100%;
-    max-width: 100%;
+  max-height: 100%;
+  max-width: 100%;
 }
 .divScheduleContainer{
-    float:left;
+  float:left;
 }
 .item
-    {
-        background-color: #DDDDDD;
-        border: solid 1px #777777;
-        margin: 2px;
-        width: 300px;
-    }
+{
+  background-color: #DDDDDD;
+  border: solid 1px #777777;
+  margin: 2px;
+  width: 300px;
+}
 #scheduleOverlay {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width:50%;
-    background: rgba(71, 71, 71, 0.44);
-    position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width:50%;
+  background: rgba(71, 71, 71, 0.44);
+  position: absolute;
 }
 #dayView ul{
 
-    list-style-type: none;
+  list-style-type: none;
 }
 
 #clock {
-font-size: 36px;
-font-family: fantasy;
-text-align: center;
+  font-size: 36px;
+  font-family: fantasy;
+  text-align: center;
 
 }
 
 #mainView{
-max-width:100%;
-max-height:100%;
-padding: 30px;
+  width:90%;
+  max-height:100%;
+  float:left;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 #sidebarView{
-    border: 1px solid black;
-    width: 250px;
-    height: 100%;
-    margin-right: 15px;
+  border: 1px solid black;
+  float:left;
+  width: 250px;
+  height: 100%;
 }
 
+#schedulingContainer{
+  margin-left:280px;
+}
 
 #logo{
-    height: 100px;
-    width: 100%;
-    text-align:center;
-    border-bottom: 1px solid black;
+  height: 100px;
+  width: 100%;
+  text-align:center;
+  border-bottom: 1px solid black;
 }
 
 #desc{
-    height: 200px;
-    width: 100%;
-    border-bottom: 1px solid black;
-    overflow:hidden;
+  height: 200px;
+  width: 100%;
+  border-bottom: 1px solid black;
+  overflow:hidden;
 }
 
 #cal{
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 
 #buttonArea{
-    margin:auto;
-    text-align:center;
+  margin:auto;
+  text-align:center;
 }
 
 #saveButton{
-    margin:auto;
-    width: 100%;
+  margin:auto;
+  width: 100%;
 }
 #fileupload{
 
-    width: 70%;
+  width: 70%;
 }
 #uploadButton{
-    width:25%;
+  width:25%;
 }
 
 
@@ -213,7 +203,7 @@ padding: 30px;
 }
 #cal .clndr .clndr-controls .clndr-control-button,
 #cal .clndr .clndr-controls .clndr-next-button {
-  
+
   padding-top: 5px;
   padding-left: 5px;
   padding-bottom: 5px;
@@ -240,8 +230,8 @@ padding: 30px;
   background-color: #528b5e;
 }
 #cal .clndr .clndr-controls .month {
-    width: 55%;
-    padding-top: 5px;
+  width: 55%;
+  padding-top: 5px;
   padding-bottom: 5px;
   display: inline-block;
   text-align: center;
@@ -258,14 +248,14 @@ padding: 30px;
   margin-left: 15px;
 }
 #cal .clndr .clndr-table .header-day{
-    font-weight: bold;
-    border:0;
-    border-bottom: 1px solid black;
+  font-weight: bold;
+  border:0;
+  border-bottom: 1px solid black;
 }
 #cal .clndr .clndr-table td{
-    padding: 2px 6px;
-    border: 1px solid black;
-    text-align: center;
+  padding: 2px 6px;
+  border: 1px solid black;
+  text-align: center;
 }
 #cal .clndr .clndr-table td:hover{
   background-color: #b8b8b8;
@@ -282,13 +272,13 @@ padding: 30px;
   font-family: sans-serif;
   font-size: 23px;
   font-weight: bold;
-    padding: 12px 22px;
+  padding: 12px 22px;
   margin-right: 30px;
   margin-top:14px;
   margin-bottom:14px;
   cursor: pointer;
   border: 0;
-    border-radius: 30px;
+  border-radius: 30px;
 
   /* Animation buttons*/
   
@@ -318,12 +308,12 @@ padding: 30px;
 }
 
 .rojo:hover, .rojo:focus{
-background: #6CB268;
+  background: #6CB268;
 
 }
 .rojo a:hover , a:focus{
 
-        color: #0000;
+  color: #0000;
 
 }
 #formContainer #forms {
@@ -336,8 +326,8 @@ background: #6CB268;
   border-style: none;
   width: 100%;
   height: 100%;
- 
- 
+
+
 }
 #formContainer #image {
   height: 60%;
@@ -345,7 +335,7 @@ background: #6CB268;
   float: left;
   border-color: #274925;
   width: 100%;
-   padding-right: 20%;
+  padding-right: 20%;
   
 }
 #formContainer #image #imgSelected {
@@ -375,7 +365,7 @@ background: #6CB268;
   width: 60%;
   position: relative;
   float: left;
- 
+
   padding-top: auto;
   padding-right: auto;
   padding-bottom: auto;
@@ -449,20 +439,15 @@ background: #6CB268;
   position: relative;
 }
 /*Welcome, about,  contact,  stickyMenu, footer by Rosy*/
-    html {
-       font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
-        font-size: 1,2%;
-        color: #F7F9FC;
-    }
-    #content1{
-    background-color: #F7F9FC;
-    padding:0,55;
+#content1{
+  background-color: #F7F9FC;
+  padding:0,55;
 }
 h1 {
-         font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
-        font-size: 4%;
-  margin: 1% 0 1% 0;
-  font-weight: bold;
+ font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+ font-size: 4%;
+ margin: 1% 0 1% 0;
+ font-weight: bold;
 }
 h2 {
   margin-top: 2px;
@@ -471,9 +456,9 @@ h2 {
   color: #4F914A;
   padding-left:2%;
 }
-    h1 a {
-        text-decoration: none;
-        color: #8cbf26;
+h1 a {
+  text-decoration: none;
+  color: #8cbf26;
 }
 a {
   font-weight: bold;
@@ -488,14 +473,14 @@ a:visited {
 a:hover, a:active, a:focus {
   color: #DCA32B;
 }
-    header {
+header {
   color: #4E9149;
   max-width: 100%;
   margin: auto;
   margin-top: 8%; /*Menu*/
   position: static;
-    }
-    footer {
+}
+footer {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 5px;
@@ -514,29 +499,30 @@ a:hover, a:active, a:focus {
 }
 footer a{
   color:#fff;
-  }
-  #black{
+}
+#black{
   color: hsla(0,0%,0%,1);
   font-weight: bold;
-  } 
-  .content, footer {
-    width: 100%;
-    margin: auto;
+} 
+.content, footer {
+  width: 100%;
+  margin: auto;
   
-    float: left;
+  float: left;
 }
-    /*** Sticky Menu ***/
+/*** Sticky Menu ***/
 
 nav{
-    margin: 0 auto; /* Centro el contenedor */
-    background-color: #4E9149;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-            overflow: hidden;
-            text-align: left;
-        }
+  margin: 0 auto; /* Centro el contenedor */
+  background-color: #4E9149;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index:99;
+  width: 100%;
+  overflow: hidden;
+  text-align: left;
+}
 #top {
   width: 28%;
   background-color: #FFFFFF;
@@ -550,26 +536,26 @@ nav ul{
   margin-right: 0%;
   margin-bottom: 0%;
   margin-left: 0%;
-            /* AÑADIMOS */
- position: relative;      
- width: 100%
+  /* AÑADIMOS */
+  position: relative;      
+  width: 100%
 
-        } 
+} 
 nav ul li{
   float: left; /* Floto los li para que se dispongan horizontalmente */
   /* AÑADIMOS */
   position: relative;
   width: 15%;
   text-align: center;
-font-size: large;
+  font-size: large;
 }
 
 nav ul li a {
-    color: #fff;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 8%;
-     /* El padding añadirá separación entre los elementos */
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 8%;
+  /* El padding añadirá separación entre los elementos */
 }
 nav ul li a:hover {
   color: #B2D7AF;
@@ -577,18 +563,18 @@ nav ul li a:hover {
   border-radius:40%;
 }
 #menuLogo{
-      width: 70%;
-      position: relative;
-      float: left;
+  width: 70%;
+  position: relative;
+  float: left;
 }
 #menu{
-      width: 100%;
-      position: relative;
-      float: right;
+  width: 100%;
+  position: relative;
+  float: right;
 }
 nav li .active {
-    color: #B2D7AF;
-    background: #88C183;
+  color: #B2D7AF;
+  background: #88C183;
   border-radius:40%;
 }
 .centered {
@@ -613,8 +599,6 @@ nav li .active {
 }
 /*Welcome view*/
 #welcomeView{
-  padding: 20px;
-
 }
 .main #start div #start {
   margin-top: 2%;
@@ -629,16 +613,12 @@ nav li .active {
   padding:20px;
 }
 #logo {
-width: 15%;
-height: 9%;
-border-color: #6AB166;
-border-style: outset;
-position: relative;
-border-radius: 50%;
-}
-body{
-  background-color: #d0d9d4;
+  width: 15%;
+  height: 9%;
+  border-color: #6AB166;
+  border-style: outset;
   position: relative;
+  border-radius: 50%;
 }
 /*AbouUsView */
 #AbouUsView{
@@ -650,7 +630,7 @@ body{
 #AbouUsView h2,#ContactUsView h2{
   background: #4F914A;
   position: relative;
- text-align: center;
+  text-align: center;
 }
 #ContactUsView{
   background: #ECF5EB;
@@ -663,7 +643,7 @@ body{
   color: #274925;
 }
 #welcomeLogo, #helpVideo{
-width:80%;
-height:auto;
-border-radius: 1%;
+  width:80%;
+  height:auto;
+  border-radius: 1%;
 }

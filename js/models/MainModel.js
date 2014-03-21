@@ -23,7 +23,7 @@ var MainModel = function(){
 	this.getDay = function(){
 		return chosenDay;
 	}
-
+	this.update = function(){notifyObservers();}
 	this.chooseDay = function(_day){
 		if (days[_day] == undefined){
 			days[_day] = new Day(_day);

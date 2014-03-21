@@ -63,6 +63,7 @@ var MainController = function(model) {
 
 	$('#headerView').on('click', 'a', function(evt){
 		mc.hideAll();
+		model.update();
 		$(evt.target.name).show();
 	});
 	$('#start').on('click', '#startButton', function(evt){
