@@ -65,7 +65,7 @@ var DayView = function(container){
 		var containerWidth = toMins(day.getDayLength()) * pxPerMin + activityMargins + breakMargins; // Minutes * 2
 	*/
 	
-	var containerWidth = 0;
+	var containerWidth = 5;
 	var contents = $(".divScheduleContainer").find("div");
 	for (var i=0; i < contents.length; i++){
 		 containerWidth = containerWidth + $(contents[i]).outerWidth(true);

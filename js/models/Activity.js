@@ -25,13 +25,13 @@ var Activity = function(_id,_name,_type,_duration,_image){
 
 		switch (activityType)
 		{
-  		case 'morning': console.log(activityType);
+  		case 'morning': //console.log(activityType);
             break;
-  		case 'afternoon': console.log(activityType);
+  		case 'afternoon': //console.log(activityType);
             break;
-  		case 'night': console.log(activityType);
+  		case 'night': //console.log(activityType);
             break;
-  		case 'others': console.log(activityType);
+  		case 'others': //console.log(activityType);
             break;
   		default:  console.log(activityType);
   		colourClass = "others";
