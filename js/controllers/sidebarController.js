@@ -34,6 +34,15 @@ var SidebarController = function(view, main, model){
 	return false;
 	});
 
+	$('#sidebarView').on('click', '#saveActivity', function(evt){
+			console.log(evt);
+			activityId = evt.target.value;
+			console.log(activityId)
+			console.log($('#durationField'));
+			newDuration = $('#durationField')[0].value;
+			model.changeDurationOfActivity(activityId,newDuration);
+	});
+
 	$('#sidebarView').on('click', '#saveButton', function(){
 		window.open('data:text/csv;charset=utf-8,' + escape(model.exportFile()));
 		//model.addDishToMenu(main.getSelectedDishId());
@@ -41,8 +50,7 @@ var SidebarController = function(view, main, model){
 
 	this.updateDesc = function(activityId){
 		//console.log(activityId);
-		activities = model.getActivities();
-		activity = activities[activityId];
+		activity = model.getActivityFromDay(activityId);
 		view.updateDescView(activity);	
 	}
 	

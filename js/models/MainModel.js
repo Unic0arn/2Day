@@ -34,7 +34,36 @@ var MainModel = function(){
 		return chosenDay;	
 
 	}
+	this.getActivityFromDay = function(_id){
+		for (var i=0; i < chosenDay.activities.length; i++){
+			if (chosenDay.activities[i].id == _id){
+				return chosenDay.activities[i];
+			}
+		}
 
+	}
+	this.changeDurationOfActivity = function(_id, newDuration){
+		diff = 0;
+
+
+		for (var i=0; i < chosenDay.activities.length; i++){
+			if (chosenDay.activities[i].id == _id){
+				console.log("found it : " + _id);
+				console.log(newDuration);
+				activity = chosenDay.activities[i];
+				diff = newDuration - activity.duration;
+				pos = i;
+				activity.duration = parseInt(activity.duration) + parseInt(diff);
+				break;
+			}
+		}
+		console.log("diff =  " + diff);
+		for(var i = pos + 1; i < chosenDay.activities.length; i++){
+			chosenDay.activities[i].startTime = new Date(chosenDay.activities[i].startTime.getTime() +  diff*60000);
+		}
+		console.log(chosenDay.activities);
+
+	}
 	this.addActivityToDay = function(prev, activityId){
 		console.log(chosenDay.activities);
 		var pos;

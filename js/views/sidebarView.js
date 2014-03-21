@@ -16,6 +16,7 @@ var SidebarView = function(container){
         divDesc.append("Click an activity card to display information about it here.");
 
 
+
 		var divCal = $(document.createElement('div'));
         divCal.attr('id','cal');
 
@@ -26,7 +27,7 @@ var SidebarView = function(container){
         divBtn.append(btnSave);
         btnSave.attr('id', 'saveButton');
         btnSave.attr('download', '2Day-data.json');
-        btnSave.html('Save');
+        btnSave.html('Download');
 
         var uploadForm = $(document.createElement('form'));
  
@@ -62,22 +63,35 @@ var SidebarView = function(container){
                 }); */
 	}
 
-        this.updateDescView = function(activity){
-                    $('#desc').html("");
+    this.updateDescView = function(activity){
+        $('#desc').html("");
 
-                var activityItemTitle = $(document.createElement('p'));
-                    activityItemTitle.addClass("activityItemTitle");
-                    activityItemTitle.html("<h2>"+activity.name+"</h2>");
-                    $('#desc').append(activityItemTitle);
+        var activityItemTitle = $(document.createElement('p'));
+        activityItemTitle.addClass("activityItemTitle");
+        activityItemTitle.html("<h2>"+activity.name+"</h2>");
+        $('#desc').append(activityItemTitle);
 
-                var activityItemDuration = $(document.createElement('p'));
-                    activityItemDuration.html("Duration: "+activity.duration+" min");
-                    $('#desc').append(activityItemDuration);
+        var activityItemDuration = $(document.createElement('p'));
+        activityItemDuration.html("Duration:  min");
+        $('#desc').append(activityItemDuration);
 
-                var activityItemType = $(document.createElement('p'));
-                    activityItemType.html("Type: "+activity.type);
-                    $('#desc').append(activityItemType);
-        }
+        var inputDuration = $(document.createElement('input'));
+        inputDuration.type = "text";
+        inputDuration.attr('id','durationField');
+        inputDuration.val(activity.duration);
+        $('#desc').append(inputDuration);
+
+        var activityItemType = $(document.createElement('p'));
+        activityItemType.html("Type: "+activity.type);
+        $('#desc').append(activityItemType);
+
+
+        var btnSaveAct = $(document.createElement('button'));
+        btnSaveAct.val(activity.id);
+        btnSaveAct.attr('id', 'saveActivity');
+        btnSaveAct.html('Save Activity');
+        $('#desc').append(btnSaveAct);
+    }
 
 	this.getCal = function(){
 		return $("#cal");

@@ -42,9 +42,7 @@ var ActivityGridView = function(container){
 			$(activityGridList).append(activityItem);
 		}//end adding activity items
 
-		$(".activityImg").disableSelection();
-
-		$(".activityGridList").disableSelection();
+		
 		/*
 		Might be needed for cloning http://bugs.jqueryui.com/ticket/4993
 		$(".activityItem").draggable({

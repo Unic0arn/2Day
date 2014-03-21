@@ -30,7 +30,10 @@ var initDay = function(_day){
     }
     this.update();
 
-
+$('#schedulerView').on('mousedown', '.activityItem', function(){
+    var activityId = $(this).attr('id');
+    main.setDesc(activityId);
+  });
 var handleDrop = function(event, ui){
 
     console.log(ui);
