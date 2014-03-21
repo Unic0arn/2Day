@@ -33,6 +33,7 @@
 	background:rgba(240,240,240,0.5);
   max-height: 680px;
   overflow: auto;
+  border-radius: 1%;
 }
 .activityItem{
     width:130px;
@@ -613,6 +614,7 @@ nav li .active {
 /*Welcome view*/
 #welcomeView{
   padding: 20px;
+
 }
 .main #start div #start {
   margin-top: 2%;
@@ -660,8 +662,8 @@ body{
 #aboutUs #articleContact {
   color: #274925;
 }
-#welcomeLogo{
-margin-left:auto;
-margin-right:auto;
-width:50%;
+#welcomeLogo, #helpVideo{
+width:80%;
+height:auto;
+border-radius: 1%;
 }
