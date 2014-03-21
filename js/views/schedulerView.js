@@ -22,14 +22,14 @@ var SchedulerView = function(container){
 			 	var activity = day.activities[i];
 				var activityItem = document.createElement('li');
 				activityItem.className = "activityItem";
-				activityItem.id = activity.id;
+				activityItem.id = "activityId-" + activity.id;
 
 				$(activityRowList).append(activityItem);
 
 			    var img = $(document.createElement('img'));
 				img.attr('src', "images/" + activity.image); // replace with activity.name
 				img.attr('alt', "activityItem");
-				img.attr('id', activity.id);
+				img.attr('id', "activityId-" + activity.id);
 				img.addClass("activityImg");
 				 
 

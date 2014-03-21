@@ -40,7 +40,7 @@ var SidebarController = function(view, main, model){
 	});
 
 	this.updateDesc = function(activityId){
-		console.log(activityId);
+		//console.log(activityId);
 		activities = model.getActivities();
 		activity = activities[activityId];
 		view.updateDescView(activity);	

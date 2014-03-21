@@ -55,7 +55,7 @@ var MainController = function(model) {
 		}
 	}
 	this.hideAll();
-
+$("#mainView").show();
 
 	$('#headerView').on('click', 'a', function(evt){
 		mc.hideAll();

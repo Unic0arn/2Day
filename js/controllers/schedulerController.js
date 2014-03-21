@@ -10,48 +10,39 @@ var initDay = function(_day){
   initDay('2014-03-15');
   $(".activityImg").disableSelection();
   $(".activityGridList").disableSelection();
-  $(".activityRowList").sortable();
-  $(".activityRowList").droppable({
-    activeClass: "ui-state-default",
-    hoverClass: "ui-state-hover",
-    accept: '.activityItem',
-    drop: handleDrop
-  });
+  
 
     this.update = function(arg){
         console.log("*****THIS HAS BEEN UPDATED****");
         view.thisDayActivities(model.getDay());
-        $(".activityRowList").sortable();
+        $(".activityRowList").sortable({
+           receive: handleDrop
+           // connectWith: '.activityGridList' // Drag backwards
+        });
+        
         $(".activityRowList").droppable({
             activeClass: "ui-state-default",
             hoverClass: "ui-state-hover",
             accept: '.activityItem',
-            drop: handleDrop
+            //drop: handleDrop
         });
     }
+    this.update();
 
-    
+
 var handleDrop = function(event, ui){
 
-    console.log("dropped");
-    var item = $(ui.draggable);
+    console.log(ui);
+    console.log(ui.item[0].id);
+    console.log(ui.item[0].previousSibling.id);
 
-    if (item.hasClass('activityItem'))
 
-        parent = $(item[0].parentElement)
-    if(parent.hasClass('activityGridList')){
-        console.log(ui.draggable.prop('id'));
-        var _id = main.stripId(ui.draggable.prop('id'));
-        console.log(_id);
-        var itemActivity = model.getActivity(_id);
-        console.log(itemActivity.id);
-        model.getDay().addActivity(itemActivity);
-        console.log("Dropped from Grid");
+    var _id = main.stripId(ui.item[0].id);
+    console.log(_id);
 
-    }else if(parent.hasClass('activityRowList')){
-        console.log("Dropped from Row");
-    }
-
+    var _prevId = main.stripId(ui.item[0].previousSibling.id);
+    model.addActivityToDay(_prevId, _id);
+    
 
         /*
         var id = ui.draggable.prop('id');
