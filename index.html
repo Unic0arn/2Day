@@ -16,7 +16,7 @@
  </head>
   
  <body>
-  <div id="headerView" class="container">
+  <div id="headerView" class="container center">
 <!-- Container with  stickyMenu -->
 
     <nav>
@@ -25,7 +25,7 @@
         </li>
       </ul>
       <ul id"menu">
-        <li><a href="#" name="#welcomeView">Start</a></li>
+        <li><a href="#" name="#welcomeView">Welcome</a></li>
         <li><a href="#" name="#mainView">Schedule</a></li>
         <li><a href="#" name="#dayView">Show Day</a></li>
         <li><a href="#" name="#optionsView">Options</a></li>
@@ -44,19 +44,26 @@
 
 
   <!-- Welcome view is the first screen -->
-  <div id="welcomeView" class="container">
-    <h2 align="center">Welcome</h2>
-    <div width="620" height="480"id="video" align="center">
-      <video id="video" class="ui-icon-video" title="Learn" poster="images/logo.png" controls muted >
-        <source src="video/screencast.mp4" type="video/mp4">
+  <div id="welcomeView" class="row">
+    
+  <div class="container">
+   <div class="row">
+    <h2 class="container">Welcome</h2>
+      <img id="welcomeLogo"src="images/logo.png" />
+      <video id="helpVideo" class="ui-icon-video" title="Learn" poster="images/logo.png" controls muted >
+        <source src="video/screencast.mp4" type="video/mp4" />
       </video>
     </div>
-    <div id="start" >
-        <div align="center">
-          <a class="boton rojo">Start</a>
-        </div>
+
+   <div class="row">
+    <div id="start" class="container">
+          <a id="startButton" class="boton rojo">Start 2Day</a>
+          <a id="helpButton" class="boton rojo">Help</a>
     </div>
+   </div>
   </div>
+  </div>
+
   <!-- Main view contains the sidebar, and activity grid and scheduler -->
   <div id="mainView">
     <div id="sidebarView" class="col-md-4"></div>
@@ -80,11 +87,8 @@
   <div id="optionsView" class="container">
           
     <h2 align="center">Options</h2>
-
     <div id="grid">
-      
     <!--Here we need the  grid  layout(By Rosy)-->
-
     </div>
     <div id="up">
       <a id="bottonUp"class="boton rojo"> Edit</a>

@@ -55,15 +55,23 @@ var MainController = function(model) {
 		}
 	}
 	this.hideAll();
-$("#mainView").show();
+	//$("#mainView").show();
+	$("#welcomeView").show();
+
+	// Controls for the Welcome View
+	$('#helpVideo').hide();
 
 	$('#headerView').on('click', 'a', function(evt){
 		mc.hideAll();
 		$(evt.target.name).show();
 	});
-	$('#start').on('click', 'a', function(evt){
+	$('#start').on('click', '#startButton', function(evt){
 		mc.hideAll();
 		$("#mainView").show();
+	});
+		$('#start').on('click', '#helpButton', function(evt){
+		$('#helpVideo').toggle();
+		$('#welcomeLogo').toggle();
 	});
 
 	
