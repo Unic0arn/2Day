@@ -51,7 +51,8 @@ var MainModel = function(){
 			}
 		}
 		for(var i = pos + 2; i < chosenDay.activities.length; i++){
-			chosenDay.activities[i].startTime = chosenDay.activities[i].startTime +  newAct.duration*60000;
+			console.log(chosenDay.activities[i].startTime + "  +  " +  newAct.duration);
+			chosenDay.activities[i].startTime = new Date(chosenDay.activities[i].startTime.getTime() +  newAct.duration*60000);
 
 		}
 		console.log(chosenDay.activities);
