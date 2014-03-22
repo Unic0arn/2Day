@@ -43,7 +43,10 @@ var MainController = function(model) {
 	var sidebarController = new SidebarController(sidebarView, this, model);
 	views['sidebarView'] = sidebarView;
 	
-
+	var optionView = new OptionView($("#optionsView"));
+	var optionController = new OptionController(optionView, this, model);
+	views['optionView'] = optionView;
+	model.addObserver(optionController);
 
 
 
@@ -121,3 +124,4 @@ var MainController = function(model) {
 
 
 }
+
