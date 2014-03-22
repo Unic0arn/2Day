@@ -2,12 +2,9 @@ var ActivityGridController = function(view, main, model){
 
 	view.displayActivities(model.getActivities());
 
-
 	$('#activityGridView').on('mousedown', '.activityItem', function(){
 		var activityId = $(this).attr('id');
-		//main.setDesc(activityId);
-
-
+		main.setDesc(activityId);
 	});
 
 	$('#activityGridView').on('mouseup', '.activityItem', function(){
@@ -25,7 +22,6 @@ var ActivityGridController = function(view, main, model){
 	this.update = function(arg){
 		view.displayActivities(model.getActivities());
 		$(".activityImg").disableSelection();
-
 		$(".activityGridList").disableSelection();
 		$(".activityGridList").sortable({
 		connectWith: '.activityRowList',
@@ -35,22 +31,16 @@ var ActivityGridController = function(view, main, model){
 			cursor: 'move',
 			containment: '#schedulingContainer',
 			start: function(event, ui) {
-              //$('.activityGridList').find('li:hidden').show();
               console.log(event);
           },
           remove: updateView
       });
-
-
-
-
 	}
 	
 
 	var updateView = function(){
 		view.displayActivities(model.getActivities());
 		$(".activityImg").disableSelection();
-
 		$(".activityGridList").disableSelection();
 		$(".activityGridList").sortable({
 		connectWith: '.activityRowList',
@@ -60,11 +50,11 @@ var ActivityGridController = function(view, main, model){
 			cursor: 'move',
 			containment: '#schedulingContainer',
 			start: function(event, ui) {
-              //$('.activityGridList').find('li:hidden').show();
               console.log(event);
           },
           remove: updateView
       });
 	}
+
 
 }

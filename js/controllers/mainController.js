@@ -29,16 +29,15 @@ var MainController = function(model) {
 	model.addObserver(schedulerController);
 
 	var activityGridView = new ActivityGridView($("#activityGridView"));
-	var activityGridController = new ActivityGridController(activityGridView,this,model);
+	var activityGridController = new ActivityGridController(activityGridView, this, model);
 	views['activityGridView'] = activityGridView;
 	model.addObserver(activityGridController);
 
-	var dayView = new DayView($("#dayView"),this,model); //Don't we need to send this and model to view?
-	var dayViewController = new DayViewController(dayView,this,model);
+	var dayView = new DayView($("#dayView"),this,model);
+	var dayViewController = new DayViewController(dayView, this, model);
 	views['dayView'] = dayView;
 	model.addObserver(dayViewController);
 	
-
 	var sidebarView = new SidebarView($("#sidebarView"));
 	var sidebarController = new SidebarController(sidebarView, this, model);
 	views['sidebarView'] = sidebarView;

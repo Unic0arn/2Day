@@ -13,8 +13,7 @@ var SidebarView = function(container){
 		var divDesc = $(document.createElement('div'));
 		divDesc.addClass("col-md-12");
         divDesc.attr('id','desc');
-        divDesc.append("Click an activity card to display information about it here.");
-
+        divDesc.append("<h2> Information </h2> <p>Click an activity card to display information about it here.</p> <p> You may also edit the duration of activities in the scheduler here. </p>");
 
 
 		var divCal = $(document.createElement('div'));
@@ -50,17 +49,6 @@ var SidebarView = function(container){
         container.append(row.clone().append(divBtn));
         container.append(row.clone().append(uploadForm));
 
-                //ONLY FOR TESTING! Remove when planner view is ready.
-                /*
-                $( "#desc" ).droppable({
-                        drop: function( event, ui ) {
-                $( this )
-                //$( "#desc" ).html( "Dropped!" );
-                $( "#desc" ).sortable({
-                        connectWith: '.activityGridList'
-                });
-                        }
-                }); */
 	}
 
     this.updateDescView = function(activity){
