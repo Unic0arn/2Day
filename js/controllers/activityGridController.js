@@ -8,41 +8,32 @@ var ActivityGridController = function(view, main, model){
 	});
 
 	$('#activityGridView').on('mouseup', '.activityItem', function(){
-		//Maybe needed later.
 		/*
 		var activityId = $(this).attr('id');
 		alert(main.stripId(activityId));
 		var bulle = model.getActivity(main.stripId(activityId));
 		alert(bulle.type);
 		*/
-
-		
 	});
 
-	//This thing is called the first time
+	//This global update function is called the first time
 	this.update = function(arg){
 		view.displayActivities(model.getActivities());
-		$(".activityImg").disableSelection();
-		$(".activityGridList").disableSelection();
-		$(".activityGridList").sortable({
-		connectWith: '.activityRowList',
-		placeholder: 'activityItem placeholder',
-			//helper: "clone",
-			helper: 'original',
-			cursor: 'move',
-			containment: '#schedulingContainer',
-			start: function(event, ui) {
-              console.log(event);
-          },
-          remove: updateView
-      }); 
+		setSortable();
 	}
 	
 
-	//This thing is needed after an activity has been moved.
+	//This local update function is needed after an activity has been moved to the scheduler.
+	var replentishView = function(idToAdd){
+		console.log("Replentish:");
+		console.log(idToAdd);
+		//view.displayActivities(model.getActivities());
 
-	var updateView = function(){
-		view.displayActivities(model.getActivities());
+		view.displayActivities(null, model.getActivity(idToAdd));
+		setSortable();
+	}
+
+	var setSortable = function(){
 		$(".activityImg").disableSelection();
 		$(".activityGridList").disableSelection();
 		$(".activityGridList").sortable({
@@ -53,14 +44,20 @@ var ActivityGridController = function(view, main, model){
 			cursor: 'move',
 			containment: '#schedulingContainer',
 			start: function(event, ui) {
+				
+				//console.log("Start:");
+				//console.log(main.stripId(ui.item[0].id));
               console.log(event);
           },
-          remove: updateView
+          remove: function(event, ui) {
+          		console.log("Remove:");
+          		console.log(main.stripId(ui.item[0].id));
+          		var removedId = main.stripId(ui.item[0].id);
+          	replentishView(removedId);
+          	
+          	//console.log(ui.helper);
+          }
       }); 
-	}
-
-	var setSortable = function(){
-
 	}
 
 

@@ -3,8 +3,35 @@ var ActivityGridView = function(container){
 	this.container = container;
     	//$(container).hide();
 
-	this.displayActivities = function(activities){
-		container.html(""); //Clear container
+	this.displayActivities = function(activities,repActivity){
+
+		//Check if this is a total repaint or just a replentishment
+		if(activities == null){
+		/* All I tried to do is to add one fucking object to a fucking array but it fucking doesnt fucking work so fuck this fucking shit.
+		activities = [];
+		activities[0].id = repActivity.id;
+		activities[0].name = repActivity.name;
+		activities[0].image = repActivity.image;
+		activities[0].type = repActivity.type;
+		activities[0].id = repActivity.id;
+
+		alert(activities.lenght);
+
+		//tempActivities.push(repActivity);
+		//tempActivities[0] = repActivity;
+		//alert(tempActivities.id);
+		//var activities = activities.push(repActivity);
+		//console.log(activities.lenght);
+		//alert(activities[0].id);
+
+		*/
+		}
+		else
+ 		{
+  		container.html(""); //Clear container
+  		//If not null, use activities array to repaint and clear.
+  		}
+		
 		var activityGrid  = document.createElement('div');
 		activityGrid.className = "activityGrid";
 		container.append(activityGrid); // add the Grid div to view div
