@@ -41,6 +41,9 @@ var OptionView = function(container){
 				$(activityGridList).append(activityItem);
 			}//end adding activity items
 
+
+			/* You can't just copy the code and ids, this breaks the activity grid.
+
 			    $(".activityImg").disableSelection();
 
     			$(".activityGridList").disableSelection();
@@ -61,7 +64,13 @@ var OptionView = function(container){
             	    console.log("Useless If-statement");
                     return;
                                  }
+
         });
+
+
+		*/
+
+
 			var up  = $(document.createElement('div'));
 			up.attr('id','up');
 			var bup = $(document.createElement('a'));

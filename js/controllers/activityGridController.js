@@ -19,6 +19,7 @@ var ActivityGridController = function(view, main, model){
 		
 	});
 
+	//This thing is called the first time
 	this.update = function(arg){
 		view.displayActivities(model.getActivities());
 		$(".activityImg").disableSelection();
@@ -34,9 +35,11 @@ var ActivityGridController = function(view, main, model){
               console.log(event);
           },
           remove: updateView
-      });
+      }); 
 	}
 	
+
+	//This thing is needed after an activity has been moved.
 
 	var updateView = function(){
 		view.displayActivities(model.getActivities());
@@ -53,7 +56,11 @@ var ActivityGridController = function(view, main, model){
               console.log(event);
           },
           remove: updateView
-      });
+      }); 
+	}
+
+	var setSortable = function(){
+
 	}
 
 
