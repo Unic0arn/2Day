@@ -3,6 +3,9 @@ var OptionView = function(container){
 		this.container = container;
     	//$(container).hide();
     	this.displayOption = function(activities){
+
+
+
     		container.html(""); //Clear container
 
     		var activityGrid  = $(document.createElement('div'));
@@ -40,6 +43,8 @@ var OptionView = function(container){
 
 				$(activityGridList).append(activityItem);
 			}//end adding activity items
+
+			
 
 
 			/* You can't just copy the code and ids, this breaks the activity grid.

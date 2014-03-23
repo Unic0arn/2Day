@@ -4,16 +4,11 @@ var ActivityGridController = function(view, main, model){
 
 	$('#activityGridView').on('mousedown', '.activityItem', function(){
 		var activityId = $(this).attr('id');
-		main.setDesc(activityId);
+		//Broken:
+		//main.setDesc(activityId);
 	});
 
 	$('#activityGridView').on('mouseup', '.activityItem', function(){
-		/*
-		var activityId = $(this).attr('id');
-		alert(main.stripId(activityId));
-		var bulle = model.getActivity(main.stripId(activityId));
-		alert(bulle.type);
-		*/
 	});
 
 	//This global update function is called the first time
@@ -27,7 +22,6 @@ var ActivityGridController = function(view, main, model){
 	var replentishView = function(idToAdd){
 		console.log("Replentish:");
 		console.log(idToAdd);
-		//view.displayActivities(model.getActivities());
 
 		view.displayActivities(null, model.getActivity(idToAdd));
 		setSortable();
@@ -54,7 +48,6 @@ var ActivityGridController = function(view, main, model){
           		console.log(main.stripId(ui.item[0].id));
           		var removedId = main.stripId(ui.item[0].id);
           	replentishView(removedId);
-          	
           	//console.log(ui.helper);
           }
       }); 
