@@ -3,18 +3,11 @@ var SidebarView = function(container){
 	this.init = function(){
 		var row = $(document.createElement('div'));
 		row.addClass('row');
-
-	/*	var divLogo = $(document.createElement('div'));
-		divLogo.addClass("col-md-12");
-        divLogo.attr('id','logo');
-        divLogo.append("<h1>2DAY</h1>");
-        */
         
 		var divDesc = $(document.createElement('div'));
 		divDesc.addClass("col-md-12");
         divDesc.attr('id','desc');
         divDesc.append("<h2> Information </h2> <p>Click an activity card to display information about it here.</p> <p> You may also edit the duration of activities in the scheduler here. </p>");
-
 
 		var divCal = $(document.createElement('div'));
         divCal.attr('id','cal');
@@ -51,7 +44,7 @@ var SidebarView = function(container){
 
 	}
 
-    this.updateDescView = function(activity){
+    this.updateDescView = function(activity,edit){
         $('#desc').html("");
 
         var activityItemTitle = $(document.createElement('p'));
@@ -63,22 +56,29 @@ var SidebarView = function(container){
         activityItemDuration.html("Duration:  min");
         $('#desc').append(activityItemDuration);
 
-        var inputDuration = $(document.createElement('input'));
-        inputDuration.type = "text";
-        inputDuration.attr('id','durationField');
-        inputDuration.val(activity.duration);
-        $('#desc').append(inputDuration);
-
         var activityItemType = $(document.createElement('p'));
         activityItemType.html("Type: "+activity.type);
         $('#desc').append(activityItemType);
 
+        if (edit == true){
+            var inputDuration = $(document.createElement('input'));
+            inputDuration.type = "text";
+            inputDuration.attr('id','durationField');
+            inputDuration.val(activity.duration);
+             $('#desc').append(inputDuration);
 
-        var btnSaveAct = $(document.createElement('button'));
-        btnSaveAct.val(activity.id);
-        btnSaveAct.attr('id', 'saveActivity');
-        btnSaveAct.html('Save Activity');
-        $('#desc').append(btnSaveAct);
+            var btnSaveAct = $(document.createElement('button'));
+            btnSaveAct.val(activity.id);
+            btnSaveAct.attr('id', 'saveActivity');
+            btnSaveAct.html('Save Activity');
+            $('#desc').append(btnSaveAct);
+        }
+        else
+        {
+            var secretTip = $(document.createElement('p'));
+            secretTip.html("Tip: To edit duration, please drop the activity into the scheduler.");
+            $('#desc').append(secretTip);
+        }
     }
 
 	this.getCal = function(){

@@ -111,8 +111,8 @@ var MainController = function(model) {
 	// Functions for updating data from the model to view. -------------------------------------------------
 
 	// This function gets id of clicked activity in activity grid view and sends to the sidebar desc.
-	this.setDesc = function(activityId){
-		sidebarController.updateDesc(this.stripId(activityId));
+	this.setDesc = function(activityId,edit){
+		sidebarController.updateDesc(this.stripId(activityId),edit);
 	}
 
 	this.stripId = function(activityId){

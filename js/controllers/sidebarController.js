@@ -48,10 +48,15 @@ var SidebarController = function(view, main, model){
 		//model.addDishToMenu(main.getSelectedDishId());
 	});
 
-	this.updateDesc = function(activityId){
+	this.updateDesc = function(activityId,edit){
 		//console.log(activityId);
+		if(edit == true){
 		activity = model.getActivityFromDay(activityId);
-		view.updateDescView(activity);	
+		}
+		else{
+		activity = model.getActivity(activityId);
+		}
+		view.updateDescView(activity,edit);	
 	}
 	
 }
