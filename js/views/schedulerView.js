@@ -14,29 +14,16 @@ var SchedulerView = function(container){
 			var activityRowList = document.createElement('ul');
 			activityRowList.className = "activityRowList";
 
-			$(activityRow).append(activityRowList);
 
 
 			// Start adding activity items to activityRowList
 			for (var i=0; i < day.activities.length; i++){
+
 			 	var activity = day.activities[i];
-				var activityItem = document.createElement('li');
-				activityItem.className = "activityItem";
-				activityItem.id = "activityId-" + activity.id;
-
-				$(activityRowList).append(activityItem);
-
-			    var img = $(document.createElement('img'));
-				img.attr('src', "images/" + activity.image); // replace with activity.name
-				img.attr('alt', "activityItem");
-				img.attr('id', "activityId-" + activity.id);
-				img.addClass("activityImg");
-				 
-
-				$(activityItem).append(img);
+				$(activityRowList).append(activity.createCard(activity));
 
 			}//end adding activity items
-
+			$(activityRow).append(activityRowList);
     	}
 
 

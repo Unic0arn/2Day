@@ -3,26 +3,10 @@ var MainController = function(model) {
 	// The MainController is a communication hub between the view controllers and the model.
 	
 	// variable declarations -------------------------------------------------------------------------------
-
-	//var exampleVariable;
-	var views = []; //Array-list thingy for storing all view objects
+	var views = []; //Array for storing all view objects
 	var mc = this;
+
 	// BEGIN View & Controller declarations -------------------------------------------------------
-
-		//And create the needed controllers and views
-	/* EXAMPLE (Copy paste these 3 rows for each view/controller and rename:
-	// --- Create an object variable that is an instance of the Function/object NameView, pass 
-	// --- the HTML container to the function. 
-	var nameView = new NameView($("#nameView"));
-	// --- Create an instance of the controller for this view and pass along: 
-		// view object with HTML(DOM)-reference,
-		// main controller (so that the other controllers can reach functions here) and
-		// the model (so the controllers can reach it).
-	var nameViewController = newNameViewController(nameView,this, model);
-	// --- Put this view object in the views Array-list thingy and give it a key with the same name.
-	views['nameView'] = nameView;
-		*/
-
 	var schedulerView = new SchedulerView($("#schedulerView"));
 	var schedulerController = new SchedulerController(schedulerView, this, model);
 	views['schedulerView'] = schedulerView;

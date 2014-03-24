@@ -4,6 +4,7 @@ var OptionController = function(view, main, model){
 
 	this.update = function(arg){
 		view.displayOption(model.getActivities());
+		setSortable();
 	}
 
 	$('#optionsView').on('mousedown', '.activityItem', function(){
@@ -26,4 +27,34 @@ var OptionController = function(view, main, model){
 		$("#imgSelected").attr("src",image.attr('src'));
 		$("#nameActivity").val(label.text());
 	});
+
+
+			//Added this like in activityGridView, even though Options may not need to be sortable.
+			var setSortable = function(){
+
+			    $(".activityImg").disableSelection();
+
+    			$(".optionGridList").disableSelection();
+    			$(".optionGridList").sortable({
+  					connectWith: '#nothing',
+  					placeholder: 'activityItem placeholder',
+  					helper: 'clone',
+					});
+
+    			$(".optionGridList").droppable({
+                    activeClass: "ui-state-default",
+                    hoverClass: "ui-state-hover",
+                    accept: '.activityItem',
+                    drop: function(event, ui) {
+                    var item = $(ui.draggable);
+                    //console.log("Sorted ID:"+item.prop('id'));
+                if (item.hasClass('activityItem'))
+            	    //console.log("Useless If-statement");
+                    return;
+                                 }
+        		});
+		}
+
+
+
 }
