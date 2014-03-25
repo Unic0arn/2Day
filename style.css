@@ -26,7 +26,11 @@ body{
   background:rgba(240,240,240,0.5);
   margin-top: 15px;
   border-radius: 1%;
+  min-height: 130px; 
 }
+.activityRowList{
+  min-height: 130px;
+  }
 .activityItem{
   width:130px;
   height:130px;
