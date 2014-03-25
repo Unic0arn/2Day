@@ -67,9 +67,10 @@ var MainModel = function(){
 	this.addActivityToDay = function(prev, activityId){
 		console.log(chosenDay.activities);
 		var pos;
+		
 		activity = this.getActivity(activityId);
 		newAct = new Activity(activity.id,activity.name,activity.type, activity.duration,activity.image);
-
+		if(prev){
 
 		for (var i=0; i < chosenDay.activities.length; i++){
 			if (chosenDay.activities[i].id == prev){
@@ -82,6 +83,17 @@ var MainModel = function(){
 		for(var i = pos + 2; i < chosenDay.activities.length; i++){
 			console.log(chosenDay.activities[i].startTime + "  +  " +  newAct.duration);
 			chosenDay.activities[i].startTime = new Date(chosenDay.activities[i].startTime.getTime() +  newAct.duration*60000);
+
+		}
+		}
+		else{
+			chosenDay.activities.splice(0,0,newAct);
+
+			for(var i = 1; i < chosenDay.activities.length; i++){
+			console.log(chosenDay.activities[i].startTime + "  +  " +  newAct.duration);
+			chosenDay.activities[i].startTime = new Date(chosenDay.activities[i].startTime.getTime() +  newAct.duration*60000);
+
+		}
 
 		}
 		console.log(chosenDay.activities);

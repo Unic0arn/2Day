@@ -38,13 +38,19 @@ var handleDrop = function(event, ui){
 
     console.log(ui);
     console.log(ui.item[0].id);
+    if(ui.item[0].previousSibling){
     console.log(ui.item[0].previousSibling.id);
+  }
 
 
     var _id = main.stripId(ui.item[0].id);
     console.log(_id);
-
+    if(ui.item[0].previousSibling){
     var _prevId = main.stripId(ui.item[0].previousSibling.id);
+    }
+    else{
+      var _prevId = false;
+    }
     model.addActivityToDay(_prevId, _id);
     
 
