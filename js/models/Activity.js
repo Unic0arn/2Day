@@ -1,10 +1,11 @@
-var Activity = function(_id,_name,_type,_duration,_image){
+var Activity = function(_id,_name,_type,_duration,_image,_description){
 	this.id = _id
 	this.name = _name;
 	this.type = _type;
 	this.duration = _duration;
 	this.startTime;
 	this.image = _image;
+	this.description = _description;
 
 	this.changeDuration = function(newDuration){
 		this.duration = newDuration;
@@ -28,7 +29,7 @@ var Activity = function(_id,_name,_type,_duration,_image){
 			activityItem.addClass("activityItem");
 			activityItem.addClass(activity.typeChecker(activity.type));
             activityItem.attr('id', "activityId-" + activity.id); //Ids can not be numeric
-
+			//ActivityItem image
             var img = $(document.createElement('img'));
 			img.attr('src', "images/" + activity.image);
 			img.attr('alt', "activityItem");
@@ -37,10 +38,17 @@ var Activity = function(_id,_name,_type,_duration,_image){
 			$(activityItem).append(img);
 
 			//ActivityItem label
-			var activityItemLabel = $(document.createElement('p'));
+			var activityItemLabel = $(document.createElement('label'));
 			activityItemLabel.addClass("activityItemLabel");
 			activityItemLabel.html(activity.name);
 			$(activityItem).append(activityItemLabel);
+			
+			//ActivityItem data
+			var description = $(document.createElement('p'));
+			description.css("display","none");
+			description.html("{\"type\":\"" + activity.type + "\",\"duration\":\"" + activity.duration + 
+			"\",\"description\":\"" + activity.description + "\"}");
+			$(activityItem).append(description);
 		
 			return activityItem;
 		}

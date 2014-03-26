@@ -102,7 +102,7 @@ var MainModel = function(){
 
 
 	/** Parses a json object and returns
-	 {"name":"","type":"","duration":"","image":""}
+	 {"name":"","type":"","duration":"","image":"","description":""}
 		Return: A list of activities in the form of Activity objects. 
 		*/
 	var parseActivities = function(jsonActivities){
@@ -112,7 +112,7 @@ var MainModel = function(){
 			var object = jsonActivities[i];
 			
 			//console.log(object);
-			var act = new Activity(i, object.name,object.type,object.duration,object.image);
+			var act = new Activity(i, object.name,object.type,object.duration,object.image,object.description);
 			act.setStartTime(new Date(object.startTime));
 			newActivities.push(act);
 			
@@ -195,37 +195,37 @@ var MainModel = function(){
 //Temporary storage for our object.
 var jsonObject = {
 	"activities":[
-	{"name":"Brush teeth", "type":"morning","duration":"10","image":"brushing_teeth.jpg"},	
-	{"name":"Shower", "type":"morning","duration":"20","image":"shower.png"},
-	{"name":"Shave", "type":"morning","duration":"15","image":"afeitar.png"},
-	{"name":"Ride a bike", "type":"morning","duration":"30","image":"bike.png"},
-	{"name":"Birthday", "type":"afternoon","duration":"180","image":"birthday.png"},
-	{"name":"Brush hair", "type":"morning","duration":"10","image":"brushing_hair.png"},
-	{"name":"Call doctor", "type":"others","duration":"10","image":"call.png"},
-	{"name":"Chat", "type":"others","duration":"60","image":"chat.png"},
-	{"name":"Clean", "type":"afternoon","duration":"60","image":"cleaning150x150.jpg"},
-	{"name":"Hang clothes", "type":"morning","duration":"40","image":"Clothesline.png"},
-	{"name":"Cook", "type":"others","duration":"60","image":"cookinf2.png"},
-	{"name":"Dance class", "type":"others","duration":"90","image":"dance150x150.jpg"},
-	{"name":"Walk dog", "type":"others","duration":"25","image":"dog.png"},
-	{"name":"Draw", "type":"others","duration":"90","image":"draw.png"},
-	{"name":"Dress", "type":"Morning","duration":"20","image":"dress.png"},
-	{"name":"Eat", "type":"others","duration":"60","image":"eat.png"},
-	{"name":"Fishing", "type":"others","duration":"240","image":"fishing150x150.jpg"},
-	{"name":"Football", "type":"afternoon","duration":"120","image":"football.png"},
-	{"name":"Radio", "type":"others","duration":"60","image":"listeningRadio150x150.jpg"},
-	{"name":"Hairdresser's", "type":"others","duration":"120","image":"peluqueria.png"},
-	{"name":"Roller skate", "type":"afternoon","duration":"90","image":"roller150x150.jpg"},
-	{"name":"Go to karaoke", "type":"afternoon","duration":"120","image":"sing150x150.jpg"},
-	{"name":"Go to bed", "type":"night","duration":"540","image":"sleep.png"},
-	{"name":"Go shopping", "type":"others","duration":"60","image":"supermarket.png"},
-	{"name":"Swim", "type":"others","duration":"50","image":"swiming.png"},
-	{"name":"Travel", "type":"others","duration":"60","image":"travell.png"},
-	{"name":"Watch TV", "type":"afternoon","duration":"120","image":"wahtchTV150x150.jpg"},
-	{"name":"Excursion", "type":"others","duration":"360","image":"walkCamping.png"},
-	{"name":"Washing clothes", "type":"others","duration":"65","image":"wash_clothes.png"},
-	{"name":"Washing dishes", "type":"others","duration":"20","image":"wash_dish.png"},
-	{"name":"Studying", "type":"others","duration":"120","image":"works150x150.jpg"}
+	{"name":"Brush teeth", "type":"Morning","duration":"10","image":"brushing_teeth.jpg","description":"d1"},	
+	{"name":"Shower", "type":"Morning","duration":"20","image":"shower.png","description":"d2"},
+	{"name":"Shave", "type":"Morning","duration":"15","image":"afeitar.png","description":"d3"},
+	{"name":"Ride a bike", "type":"Morning","duration":"30","image":"bike.png","description":"d4"},
+	{"name":"Birthday", "type":"Afternoon","duration":"180","image":"birthday.png","description":"d5"},
+	{"name":"Brush hair", "type":"Morning","duration":"10","image":"brushing_hair.png","description":"d6"},
+	{"name":"Call doctor", "type":"Others","duration":"10","image":"call.png","description":"d7"},
+	{"name":"Chat", "type":"Others","duration":"60","image":"chat.png","description":"d8"},
+	{"name":"Clean", "type":"Afternoon","duration":"60","image":"cleaning150x150.jpg","description":"d9"},
+	{"name":"Hang clothes", "type":"Morning","duration":"40","image":"Clothesline.png","description":"d10"},
+	{"name":"Cook", "type":"Others","duration":"60","image":"cookinf2.png","description":"d11"},
+	{"name":"Dance class", "type":"Others","duration":"90","image":"dance150x150.jpg","description":"d12"},
+	{"name":"Walk dog", "type":"Others","duration":"25","image":"dog.png","description":"d13"},
+	{"name":"Draw", "type":"Others","duration":"90","image":"draw.png","description":"d14"},
+	{"name":"Dress", "type":"Morning","duration":"20","image":"dress.png","description":"d15"},
+	{"name":"Eat", "type":"Others","duration":"60","image":"eat.png","description":"d16"},
+	{"name":"Fishing", "type":"Others","duration":"240","image":"fishing150x150.jpg","description":"d17"},
+	{"name":"Football", "type":"Afternoon","duration":"120","image":"football.png","description":"d18"},
+	{"name":"Radio", "type":"Others","duration":"60","image":"listeningRadio150x150.jpg","description":"d19"},
+	{"name":"Hairdresser's", "type":"Others","duration":"120","image":"peluqueria.png","description":"d20"},
+	{"name":"Roller skate", "type":"Afternoon","duration":"90","image":"roller150x150.jpg","description":"d21"},
+	{"name":"Go to karaoke", "type":"Afternoon","duration":"120","image":"sing150x150.jpg","description":"d22"},
+	{"name":"Go to bed", "type":"Night","duration":"540","image":"sleep.png","description":"d23"},
+	{"name":"Go shopping", "type":"Others","duration":"60","image":"supermarket.png","description":"d24"},
+	{"name":"Swim", "type":"Others","duration":"50","image":"swiming.png","description":"d25"},
+	{"name":"Travel", "type":"Others","duration":"60","image":"travell.png","description":"d26"},
+	{"name":"Watch TV", "type":"Afternoon","duration":"120","image":"wahtchTV150x150.jpg","description":"d27"},
+	{"name":"Excursion", "type":"Others","duration":"360","image":"walkCamping.png","description":"d28"},
+	{"name":"Washing clothes", "type":"Others","duration":"65","image":"wash_clothes.png","description":"d29"},
+	{"name":"Washing dishes", "type":"Others","duration":"20","image":"wash_dish.png","description":"d30"},
+	{"name":"Studying", "type":"Others","duration":"120","image":"works150x150.jpg","description":"d31"}
 
 
 
@@ -233,29 +233,29 @@ var jsonObject = {
 	],
 	"days":[
 	{"date":"2014-03-05","activities":[
-	{"name":"Brush teeth", "type":"morning","duration":"10","image":"brushing_teeth.jpg"},	
-	{"name":"Shower", "type":"morning","duration":"20","image":"shower.png"},
-	{"name":"Excursion", "type":"others","duration":"360","image":"walkCamping.png"},
-	{"name":"Go to bed", "type":"night","duration":"540","image":"sleep.png"}
+	{"name":"Brush teeth", "type":"Morning","duration":"10","image":"brushing_teeth.jpg","description":"d1"},	
+	{"name":"Shower", "type":"Morning","duration":"20","image":"shower.png","description":"d1"},
+	{"name":"Excursion", "type":"Others","duration":"360","image":"walkCamping.png","description":"d1"},
+	{"name":"Go to bed", "type":"Night","duration":"540","image":"sleep.png","description":"d1"}
 	]},		
 	{"date":"2014-03-15","activities":[
-	{"name":"Brush teeth", "type":"morning","duration":"60","image":"sample.jpg","startTime": "Teu Mar 18 2014 08:00:00"},	
-	{"name":"Shower", "type":"morning","duration":"30","image":"sample.jpg","startTime": "Teu Mar 18 2014 09:30:00"},
-	{"name":"Brush teeth", "type":"morning","duration":"105","image":"sample.jpg","startTime": "Teu Mar 18 2014 10:15:00"},	
-	{"name":"Shower", "type":"morning","duration":"60","image":"sample.jpg","startTime": "Teu Mar 18 2014 12:00:00"},	
-	{"name":"Shower", "type":"morning","duration":"45","image":"sample.jpg","startTime": "Teu Mar 18 2014 13:15:00"},
-	{"name":"Brush teeth", "type":"morning","duration":"60","image":"sample.jpg","startTime": "Teu Mar 18 2014 14:00:00"},	
-	{"name":"Shower", "type":"morning","duration":"15","image":"sample.jpg","startTime": "Teu Mar 18 2014 15:15:00"},
-	{"name":"Brush teeth", "type":"morning","duration":"90","image":"sample.jpg","startTime": "Teu Mar 18 2014 16:00:00"},
+	{"name":"Brush teeth", "type":"Morning","duration":"60","image":"sample.jpg","startTime": "Teu Mar 18 2014 08:00:00","description":"d1"},	
+	{"name":"Shower", "type":"Morning","duration":"30","image":"sample.jpg","startTime": "Teu Mar 18 2014 09:30:00","description":"d1"},
+	{"name":"Brush teeth", "type":"Morning","duration":"105","image":"sample.jpg","startTime": "Teu Mar 18 2014 10:15:00","description":"d1"},	
+	{"name":"Shower", "type":"Morning","duration":"60","image":"sample.jpg","startTime": "Teu Mar 18 2014 12:00:00","description":"d1"},	
+	{"name":"Shower", "type":"Morning","duration":"45","image":"sample.jpg","startTime": "Teu Mar 18 2014 13:15:00","description":"d1"},
+	{"name":"Brush teeth", "type":"Morning","duration":"60","image":"sample.jpg","startTime": "Teu Mar 18 2014 14:00:00","description":"d1"},	
+	{"name":"Shower", "type":"Morning","duration":"15","image":"sample.jpg","startTime": "Teu Mar 18 2014 15:15:00","description":"d1"},
+	{"name":"Brush teeth", "type":"Morning","duration":"90","image":"sample.jpg","startTime": "Teu Mar 18 2014 16:00:00","description":"d1"},
 
 	]},
 	{"date":"2013-03-06","activities":[
-	{"name":"Brush teeth", "type":"morning","duration":"10","image":"brushing_teeth.jpg"},	
-	{"name":"Shower", "type":"morning","duration":"20","image":"shower.png"},
-	{"name":"Brush teeth", "type":"morning","duration":"10","image":"test.jpg"},	
-	{"name":"Shower", "type":"morning","duration":"20","image":"test2.jpg"},
-	{"name":"Brush teeth", "type":"morning","duration":"10","image":"test.jpg"},	
-	{"name":"Go to bed", "type":"night","duration":"540","image":"sleep.png"}
+	{"name":"Brush teeth", "type":"Morning","duration":"10","image":"brushing_teeth.jpg","description":"d1"},	
+	{"name":"Shower", "type":"Morning","duration":"20","image":"shower.png","description":"d1"},
+	{"name":"Brush teeth", "type":"Morning","duration":"10","image":"test.jpg","description":"d1"},	
+	{"name":"Shower", "type":"Morning","duration":"20","image":"test2.jpg","description":"d1"},
+	{"name":"Brush teeth", "type":"Morning","duration":"10","image":"test.jpg","description":"d1"},	
+	{"name":"Go to bed", "type":"Night","duration":"540","image":"sleep.png","description":"d1"}
 	]}
 	]
 };
