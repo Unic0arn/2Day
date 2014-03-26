@@ -18,6 +18,7 @@ var SidebarView = function(container){
         var btnSave = $(document.createElement('button'));
         divBtn.append(btnSave);
         btnSave.attr('id', 'saveButton');
+        btnSave.addClass("rojo");
         btnSave.attr('download', '2Day-data.json');
         btnSave.html('Download');
 
@@ -27,10 +28,12 @@ var SidebarView = function(container){
         input.attr('type', 'file');
         input.attr('name', 'file');
         input.attr('id', 'fileupload');
+        input.addClass("");
         uploadForm.append(input);
         
         var btnUpload = $(document.createElement('button'));
         btnUpload.attr('id', 'uploadButton');
+        btnUpload.addClass("rojo");
         btnUpload.html('Upload');
 
         uploadForm.append(btnUpload);
@@ -52,29 +55,35 @@ var SidebarView = function(container){
         activityItemTitle.html("<h2>"+activity.name+"</h2>");
         $('#desc').append(activityItemTitle);
 
-        var activityItemDuration = $(document.createElement('p'));
-        activityItemDuration.html("Duration:  min");
-        $('#desc').append(activityItemDuration);
-
         var activityItemType = $(document.createElement('p'));
         activityItemType.html("Type: "+activity.type);
         $('#desc').append(activityItemType);
 
+        var activityItemDescription = $(document.createElement('p'));
+        activityItemDescription.html("Description: "+activity.description);
+        $('#desc').append(activityItemDescription);
+
         if (edit == true){
             var inputDuration = $(document.createElement('input'));
             inputDuration.type = "text";
+            inputDuration.addClass("form-control");
             inputDuration.attr('id','durationField');
             inputDuration.val(activity.duration);
              $('#desc').append(inputDuration);
 
             var btnSaveAct = $(document.createElement('button'));
             btnSaveAct.val(activity.id);
+            btnSaveAct.addClass("rojo");
             btnSaveAct.attr('id', 'saveActivity');
             btnSaveAct.html('Save Activity');
             $('#desc').append(btnSaveAct);
         }
         else
         {
+            var activityItemDuration = $(document.createElement('p'));
+            activityItemDuration.html("Duration: " +activity.duration+ " min");
+            $('#desc').append(activityItemDuration);
+
             var secretTip = $(document.createElement('p'));
             secretTip.html("Tip: To edit duration, please drop the activity into the scheduler.");
             $('#desc').append(secretTip);

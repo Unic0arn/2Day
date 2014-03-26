@@ -304,7 +304,7 @@ animation: blinker 6s; /* Standard */
 .rojo{
   /* Estilos para el fondo del boton */
   background: #376734;
-  box-shadow: 0px 5px 0 #254623;
+  box-shadow: 0px 1px 0 #254623;
   margin-top: 4%;
 }
 .boton:active{
