@@ -87,11 +87,17 @@ var MainModel = function(){
 		}
 		else{
 			chosenDay.activities.splice(0,0,newAct);
-
+			//myDate = new Date(theDate);
+			var from = chosenDay.date; 
+			var numbers = from.match(/\d+/g); 
+			var theDate = new Date(numbers[0], numbers[1]-1, numbers[2], 8);
+			str = theDate.toString();
+			console.log("This day is this day: " + chosenDay);
+			newAct.setStartTime(theDate);
 			for(var i = 1; i < chosenDay.activities.length; i++){
-			console.log(chosenDay.activities[i].startTime + "  +  " +  newAct.duration);
-			chosenDay.activities[i].startTime = new Date(chosenDay.activities[i].startTime.getTime() +  newAct.duration*60000);
-		}
+				console.log(chosenDay.activities[i].startTime + "  +  " +  newAct.duration);
+				chosenDay.activities[i].startTime = new Date(chosenDay.activities[i].startTime.getTime() +  newAct.duration*60000);
+			}
 
 		}
 		console.log(chosenDay.activities);
