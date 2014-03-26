@@ -58,22 +58,27 @@ var Activity = function(_id,_name,_type,_duration,_image,_description){
 
 	this.typeChecker = function(activityType){
 		// We shall use this to pass the type of activity and get a colour code in return.
-		// Lol this function turned out to be useless. We can just set a class to activityType.
+		// Had to modify this to handle upper/lowercase.
 
-		var colourClass = activityType;
+		var colourClass = activityType.toString().toLowerCase();
+		console.log(colourClass);
 
 		switch (activityType)
 		{
   		case 'morning': //console.log(activityType);
+  		case 'Morning':
             break;
   		case 'afternoon': //console.log(activityType);
+  		case 'Afternoon':
             break;
   		case 'night': //console.log(activityType);
+  		case 'Night':
             break;
   		case 'others': //console.log(activityType);
+  		case 'Others':
             break;
   		default:  console.log(activityType);
-  		colourClass = "others";
+  		colourClass = "undefined";
 		}
 		return colourClass;
 
