@@ -83,7 +83,6 @@ var MainModel = function(){
 		for(var i = pos + 2; i < chosenDay.activities.length; i++){
 			console.log(chosenDay.activities[i].startTime + "  +  " +  newAct.duration);
 			chosenDay.activities[i].startTime = new Date(chosenDay.activities[i].startTime.getTime() +  newAct.duration*60000);
-
 		}
 		}
 		else{
@@ -92,13 +91,21 @@ var MainModel = function(){
 			for(var i = 1; i < chosenDay.activities.length; i++){
 			console.log(chosenDay.activities[i].startTime + "  +  " +  newAct.duration);
 			chosenDay.activities[i].startTime = new Date(chosenDay.activities[i].startTime.getTime() +  newAct.duration*60000);
-
 		}
 
 		}
 		console.log(chosenDay.activities);
+	}
+
+	this.removeActivityToDay = function(activityId){
+		for (var i=0; i < chosenDay.activities.length; i++){
+			if (chosenDay.activities[i].id == activityId){
+				chosenDay.activities.splice(i,1);
+				break;
+			}
 
 	}
+}
 
 
 	/** Parses a json object and returns

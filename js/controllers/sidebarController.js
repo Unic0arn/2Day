@@ -43,6 +43,7 @@ var SidebarController = function(view, main, model){
 			newDuration = $('#durationField')[0].value;
 			model.changeDurationOfActivity(activityId,newDuration);
 	});
+   
 
 	$('#sidebarView').on('click', '#saveButton', function(){
 		window.open('data:text/csv;charset=utf-8,' + escape(model.exportFile()));
@@ -58,9 +59,35 @@ var SidebarController = function(view, main, model){
 		activity = model.getActivity(activityId);
 		}
 		view.updateDescView(activity,edit);	
+		    $("#trashContainer").sortable({
+            items: '> img:not(#trashCanImage)',
+            activeClass: "ui-state-default",
+            hoverClass: "ui-state-hover",
+            receive: handleDrop,
+            });
+
+    $("#trashContainer").droppable({
+            items: '> img:not(#trashCanImage)',
+            activeClass: "ui-state-default",
+            hoverClass: "ui-state-hover",
+            accept: '.activityItem',
+            drop: function(event, ui) {
+                ui.helper.remove();
+                }
+     });    
+
 	}
+	var handleDrop = function(event, ui){
+
+    console.log(ui);
+    console.log(ui.item[0].id);
+
+    var _id = main.stripId(ui.item[0].id);
+    console.log(_id);
+    model.removeActivityToDay(_id);
+    
 	
-		
+	}
 
 
 }

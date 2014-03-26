@@ -62,21 +62,7 @@ var SidebarView = function(container){
             $(trashContainer).append(trashCanImage);
             container.append(row.clone().append(trashContainer));
 
-            $("#trashContainer").sortable({
-            items: '> img:not(#trashCanImage)',
-            activeClass: "ui-state-default",
-            hoverClass: "ui-state-hover",
-            });
 
-            $("#trashContainer").droppable({
-            items: '> img:not(#trashCanImage)',
-            activeClass: "ui-state-default",
-            hoverClass: "ui-state-hover",
-            accept: '.activityItem',
-            drop: function(event, ui) {
-                ui.helper.remove();
-                }
-            });
 
 
 
