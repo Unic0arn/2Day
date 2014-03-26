@@ -654,3 +654,11 @@ nav li .active {
   height:auto;
   border-radius: 1%;
 }
+#trashContainer{
+
+  border-top:1px solid black;
+  width:100%;
+  padding-top:10px;
+  padding-left:25%;
+
+}

@@ -12,6 +12,7 @@ var SidebarController = function(view, main, model){
         	},
         });
 
+
 	$('#sidebarView').on('change', '#fileupload', function(evt){
 		console.log(evt);
 		console.log(evt.target.files[0]);
@@ -59,4 +60,7 @@ var SidebarController = function(view, main, model){
 		view.updateDescView(activity,edit);	
 	}
 	
+		
+
+
 }

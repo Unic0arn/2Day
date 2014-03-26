@@ -16,7 +16,8 @@ var initDay = function(_day){
         console.log("*****THIS HAS BEEN UPDATED****");
         view.thisDayActivities(model.getDay());
         $(".activityRowList").sortable({
-           receive: handleDrop
+           receive: handleDrop,
+           connectWith: '.trashContainer'
            //,
            //connectWith: '.activityGridList' // Drag backwards
         });

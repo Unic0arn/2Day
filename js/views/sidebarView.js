@@ -8,6 +8,8 @@ var SidebarView = function(container){
 		divDesc.addClass("col-md-12");
         divDesc.attr('id','desc');
         divDesc.append("<h2> Information </h2> <p>Click an activity card to display information about it here.</p> <p> You may also edit the duration of activities in the scheduler here. </p>");
+      
+
 
 		var divCal = $(document.createElement('div'));
         divCal.attr('id','cal');
@@ -44,6 +46,39 @@ var SidebarView = function(container){
 
         container.append(row.clone().append(divBtn));
         container.append(row.clone().append(uploadForm));
+
+
+        //Trash-can
+
+        var trashContainer = $(document.createElement('div'));
+
+            trashContainer.addClass("container");
+            trashContainer.addClass("trashContainer");
+            trashContainer.attr('id', 'trashContainer'); 
+            var trashCanImage = $(document.createElement('img'));
+            trashCanImage.attr('src', "images/" + "trash.png");
+            trashCanImage.attr('alt', "activityItem");
+            trashCanImage.attr('id', "trashCanImage");
+            $(trashContainer).append(trashCanImage);
+            container.append(row.clone().append(trashContainer));
+
+            $("#trashContainer").sortable({
+            items: '> img:not(#trashCanImage)',
+            activeClass: "ui-state-default",
+            hoverClass: "ui-state-hover",
+            });
+
+            $("#trashContainer").droppable({
+            items: '> img:not(#trashCanImage)',
+            activeClass: "ui-state-default",
+            hoverClass: "ui-state-hover",
+            accept: '.activityItem',
+            drop: function(event, ui) {
+                ui.helper.remove();
+                }
+            });
+
+
 
 	}
 
