@@ -39,6 +39,7 @@ body{
   margin:3px;
   list-style-type:none;
   display: inline-block;
+  text-align:center; /* changed here */
 }
 .activityItem.others{
   background:rgba(191,51,43,100);
@@ -79,16 +80,17 @@ animation: blinker 6s; /* Standard */
   background:rgba(43,117,181,100);
 }
 .activityImg{
-  position:relative;
+  /*position:relative;
   left:5%;
-  top:5%;
+   */
+  margin-top:5%;
   width:90%;
   height:70%;
 }
 .activityItemLabel{
   color:white;
   text-align:center;
-  margin-top: 6%;
+  margin-top: 5%;
   max-height: 100%;
   max-width: 100%;
   font-family: arial;
