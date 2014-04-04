@@ -85,6 +85,7 @@ var SidebarController = function(view, main, model){
     var _id = main.stripId(ui.item[0].id);
     console.log(_id);
     model.removeActivityToDay(_id);
+    $( '#trashContainer li').remove();
     
 	
 	}
