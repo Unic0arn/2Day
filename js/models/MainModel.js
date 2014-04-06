@@ -19,7 +19,27 @@ var MainModel = function(){
 			}
 		}
 	}
-
+	this.removeActivity = function(_name){
+		for (var i=0; i < activities.length; i++){
+			if(activities[i].name==_name){
+				activities.splice(i,1);
+				for (var j=0; j < days.length; j++){
+					for (var k=0; k < days[j].activities.length; k++){
+						if (days[j].activities[k].name == _name){
+							days[j].activities.splice(k,1);
+							k = days[j].activities.length;
+						}
+					}
+				}
+				i = activities.length;
+				//this.saveFile("activities.json", activities);
+			}
+		}
+	}
+	this.addActivity = function(_name,_type,_duration,_image,_description){
+		var newAct = new Activity(activities.length+1,_name,_type,_duration,_image,_description);
+		activities.push(newAct);
+	}
 	this.getDay = function(){
 		return chosenDay;
 	}
@@ -160,6 +180,36 @@ var MainModel = function(){
 		notifyObservers();
 
 	}
+	this.loadFile = function(name){
+		$.ajax({
+			url: "js/models/" + name,
+			dataType: "json",
+			async:false,
+			success : function(result){
+				parseDays(result.days);
+				activities = parseActivities(result.activities);
+			}
+		});
+	}
+	this.saveFile = function(name, _activities){
+		var jsonActivities = JSON.stringify(_activities);
+		var output = [];
+		for (var day in days) {
+			output.push(days[day]);
+		}
+		var jsonDays = JSON.stringify(output);
+		var jsonAll = "{\"activities\":" + jsonActivities + ", \n \"days\":" + jsonDays + "}";
+		$.ajax({
+			url: "class/jsonFunctions.php",
+			type: "POST",
+			data: { nombre : name, datos : jsonAll },
+			async:false,
+			success : function(result){
+				alert(result);
+			}
+		});
+		console.log("aqui");
+	}
 	this.exportFile = function(){
 		//var jsonFile = activities.toJSON();
 		//console.log(activities);
@@ -178,8 +228,9 @@ var MainModel = function(){
 
 
 	}
-	parseDays(jsonObject.days)
-	activities = parseActivities(jsonObject.activities);
+	this.loadFile("activities.json");
+	//parseDays(jsonObject.days)
+	//activities = parseActivities(jsonObject.activities);
 	//console.log(days);
 
 
@@ -239,10 +290,6 @@ var jsonObject = {
 	{"name":"Washing clothes", "type":"Others","duration":"65","image":"wash_clothes.png","description":"d29"},
 	{"name":"Washing dishes", "type":"Others","duration":"20","image":"wash_dish.png","description":"d30"},
 	{"name":"Studying", "type":"Others","duration":"120","image":"works150x150.jpg","description":"d31"}
-
-
-
-
 	],
 	"days":[
 	{"date":"2014-03-05","activities":[
@@ -259,7 +306,7 @@ var jsonObject = {
 	{"name":"Shower", "type":"Morning","duration":"45","image":"sample.jpg","startTime": "Teu Mar 18 2014 13:15:00","description":"d1"},
 	{"name":"Brush teeth", "type":"Morning","duration":"60","image":"sample.jpg","startTime": "Teu Mar 18 2014 14:00:00","description":"d1"},	
 	{"name":"Shower", "type":"Morning","duration":"15","image":"sample.jpg","startTime": "Teu Mar 18 2014 15:15:00","description":"d1"},
-	{"name":"Brush teeth", "type":"Morning","duration":"90","image":"sample.jpg","startTime": "Teu Mar 18 2014 16:00:00","description":"d1"},
+	{"name":"Brush teeth", "type":"Morning","duration":"90","image":"sample.jpg","startTime": "Teu Mar 18 2014 16:00:00","description":"d1"}
 
 	]},
 	{"date":"2013-03-06","activities":[

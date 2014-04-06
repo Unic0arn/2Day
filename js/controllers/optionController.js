@@ -1,5 +1,6 @@
 var OptionController = function(view, main, model){
 	var newActivity = true;
+	var preActivity = "";
     view.displayOption(model.getActivities());
 
 	this.update = function(arg){
@@ -23,19 +24,32 @@ var OptionController = function(view, main, model){
 		else{
 			var deleteActivity = confirm("Are you sure that do you want to delete this activity?");
 			if (deleteActivity){
-				
+				if (preActivity.length != 0){
+					model.removeActivity(preActivity);
+					model.saveFile("activities.json", model.getActivities());
+				}
+				else{
+					alert("There was an error");
+				}
 			}
 		}
 		
 	}); 
 	$('#optionsView').on('click', '#btnSave', function(){
 		if (newActivity){
-			
+			var jsonEdit = JSON.parse("{\"name\":\""+$("#nameActivity").val()+ "\",\"type\":\""+$("#opciones").prop("selected", true)+"\",\"duration\":\""+$("#duration").val()+"\",\"image\":\""+$("#imgSelected").attr("src")+"\",\"description\":\""+$("#descriptionArea").val()+"\"}");
+			model.addActivity($("#nameActivity").val(), $("#opciones option:selected").text(), 
+			$("#duration").val(), $("#imgSelected").attr("src").substring(6), $("#descriptionArea").val());
+			model.saveFile("activities.json", model.getActivities());
 		}
 		else{
 			var editActivity = confirm("Are you sure that do you want to edit this activity?");
 			if (editActivity){
-				
+				var jsonEdit = JSON.parse("{\"name\":\""+$("#nameActivity").val()+ "\",\"type\":\""+$("#opciones").prop("selected", true)+"\",\"duration\":\""+$("#duration").val()+"\",\"image\":\""+$("#imgSelected").attr("src")+"\",\"description\":\""+$("#descriptionArea").val()+"\"}");
+				model.removeActivity(preActivity);
+				model.addActivity($("#nameActivity").val(), $("#opciones option:selected").text(), 
+				$("#duration").val(), $("#imgSelected").attr("src").substring(6), $("#descriptionArea").val());
+				model.saveFile("activities.json", model.getActivities());
 			}
 		}
 	}); 
@@ -53,6 +67,7 @@ var OptionController = function(view, main, model){
 		$("#descriptionArea").val(data.description);
 		$("#opciones option:contains('" + data.type + "')").prop("selected", true);
 		$("#duration").val(data.duration);
+		preActivity = $("#nameActivity").val();
 	});
 
 
