@@ -7,7 +7,23 @@ var OptionController = function(view, main, model){
 		view.displayOption(model.getActivities());
 		setSortable();
 	}
-
+	$('#optionsView').on('change', '#upFoto', function(){
+		var inputFileImage = document.getElementById("upFoto");
+		var file = inputFileImage.files[0];
+		var data = new FormData();
+		data.append('archivo',file);
+		$.ajax({
+			url:'class/upload.php',
+			type:'POST',
+			contentType:false,
+			data:data,
+			processData:false,
+			cache:false,
+			success : function(result){
+				var name = JSON.parse(result);
+				$("#imgSelected").attr("src","images/" + name["name"]);
+			}});
+	});
 	$('#optionsView').on('mousedown', '.activityItem', function(){
 		var activityId = $(this).attr('id');
 		main.setDesc(activityId);
@@ -27,6 +43,7 @@ var OptionController = function(view, main, model){
 				if (preActivity.length != 0){
 					model.removeActivity(preActivity);
 					model.saveFile("activities.json", model.getActivities());
+					view.displayOption(model.getActivities());
 				}
 				else{
 					alert("There was an error");
@@ -37,20 +54,38 @@ var OptionController = function(view, main, model){
 	}); 
 	$('#optionsView').on('click', '#btnSave', function(){
 		if (newActivity){
-			var jsonEdit = JSON.parse("{\"name\":\""+$("#nameActivity").val()+ "\",\"type\":\""+$("#opciones").prop("selected", true)+"\",\"duration\":\""+$("#duration").val()+"\",\"image\":\""+$("#imgSelected").attr("src")+"\",\"description\":\""+$("#descriptionArea").val()+"\"}");
-			model.addActivity($("#nameActivity").val(), $("#opciones option:selected").text(), 
-			$("#duration").val(), $("#imgSelected").attr("src").substring(6), $("#descriptionArea").val());
-			model.saveFile("activities.json", model.getActivities());
+			if ($("#nameActivity").val() == "" || $("#opciones option:selected").text() == "- Select a type -" || $("#duration").val() == ""
+				|| $("#upFoto")[0].files[0] === undefined){
+				alert("You need to complete fields with *");
+			}
+			else{
+				model.addActivity($("#nameActivity").val(), $("#opciones option:selected").text(), 
+				$("#duration").val(), $("#upFoto")[0].files[0].name, $("#descriptionArea").val());
+				model.saveFile("activities.json", model.getActivities());
+				view.displayOption(model.getActivities());
+			}
 		}
 		else{
-			var editActivity = confirm("Are you sure that do you want to edit this activity?");
-			if (editActivity){
-				var jsonEdit = JSON.parse("{\"name\":\""+$("#nameActivity").val()+ "\",\"type\":\""+$("#opciones").prop("selected", true)+"\",\"duration\":\""+$("#duration").val()+"\",\"image\":\""+$("#imgSelected").attr("src")+"\",\"description\":\""+$("#descriptionArea").val()+"\"}");
-				model.removeActivity(preActivity);
-				model.addActivity($("#nameActivity").val(), $("#opciones option:selected").text(), 
-				$("#duration").val(), $("#imgSelected").attr("src").substring(6), $("#descriptionArea").val());
-				model.saveFile("activities.json", model.getActivities());
+			if ($("#nameActivity").val() == "" || $("#opciones option:selected").text() == "- Select a type -" || $("#duration").val() == ""){
+				alert("You need to complete fields with *");
 			}
+			else{
+				var editActivity = confirm("Are you sure that do you want to edit this activity?");
+				if (editActivity){
+					var imageSource;
+					if ($("#upFoto")[0].files[0] === undefined){
+						imageSource = $("#imgSelected").attr("src").substring(7);
+					}
+					else{
+						imageSource = $("#upFoto")[0].files[0].name;
+					}
+					model.removeActivity(preActivity);
+					model.addActivity($("#nameActivity").val(), $("#opciones option:selected").text(), 
+					$("#duration").val(), imageSource, $("#descriptionArea").val());
+					model.saveFile("activities.json", model.getActivities());
+					view.displayOption(model.getActivities());
+				}
+			}	
 		}
 	}); 
 	$('#optionsView').on('click', '#btnCancel', function(){
@@ -58,6 +93,7 @@ var OptionController = function(view, main, model){
 	});
 	$('#optionsView').on('click', 'li', function(){
 		newActivity = false;
+		$("#btnCancel").click();
 		var image = $(this).children('img');
 		var label = $(this).children('label');
 		var data = JSON.parse($(this).children('p').text());
